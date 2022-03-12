@@ -1,3 +1,9 @@
+:root {
+    --primary: #0e0e0e;
+    --light: #f3f3f3;
+    --grey: #efefef;
+}
+
 html {
   font-size: 14px;
 }
@@ -16,3 +22,49 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.sidebar-container {
+    position: fixed;
+    width: 220px;
+    height: 100%;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #f3f3f3;
+    color: #fff;
+}
+
+ul {
+    list-style-type: none;
+    color: black;
+}
+
+.nav-link {
+    color: black;
+}
+
+.content-container {
+    padding-top: 20px;
+    padding-left: 220px;
+}
+
+.active-link {
+    color: var(--primary) !important;
+    border-right: 5px solid black;
+    font-weight: 600;
+}
+
+.btn-cta {
+    font-weight: bold;
+    font-size: large;
+    color: #000000;
+    border: 2px solid #000000;
+}
+
+.btn-cta:hover {
+    font-weight: bold;
+    font-size: large;
+    color: #f3f3f3;
+    background-color: #000000;
+    transition: background-color .7s, transform .7s;
+    }

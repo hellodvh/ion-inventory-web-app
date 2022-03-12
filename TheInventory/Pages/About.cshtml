@@ -1,25 +1,20 @@
 ﻿@page
-@model IndexModel
+@model TheInventory.Pages.AboutModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "About";
 }
-
-@*<div class="text-center">
-    <h1 class="display-4">The Inventory</h1>
-    <p>The Inventory.</p>
-</div>*@
-
+<!--Top Navbar-->
+  <nav class="navbar navbar-expand-lg bg-light sticky-top rounded-3">
+    <h4>@ViewData["Title"]</h4>
+  </nav>
 <!--Hero Section-->
 <div class="container my-5">
     <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 shadow-lg">
       <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-        <h3 class="display-4 fw-bold lh-1">Welcome to The Inventory</h3>
-        <p class="lead">Quickly View, Update, and Build electric vehicles and items with The Inventory Web App, the world’s most innovative inventory management system, featuring Inventory Management, Parts Manufacturing, Vehicle Assembly, and Garage Storage.</p>
+        <h1 class="display-4 fw-bold lh-1">Welcome to The Inventory</h1>
+        <p class="lead">Quickly View, Update, and Build electric vehicles and parts with The Inventory Web App, the world’s most innovative inventory management system, featuring Inventory Management, Parts Manufacturing, Vehicle Assembly, and Garage Storage.</p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-          <button type="button" class="btn btn-cta">Manage Inventory</button>
-          
-          <!--TODO: Redirect page on button click-->
-          
+          <button type="button" class="btn btn-cta ">Manage Inventory</button>
           <!-- btn-lg px-4 me-md-2 fw-bold -->
         </div>
       </div>
@@ -39,7 +34,6 @@
         <div>
           <h2>Manage Inventory</h2>
           <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
-          
         </div>
       </div>
       <div class="col d-flex align-items-start">
@@ -49,7 +43,6 @@
         <div>
           <h2>Manufacture Parts</h2>
           <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
-          
         </div>
       </div>
       <div class="col d-flex align-items-start">
@@ -59,7 +52,6 @@
         <div>
           <h2>Assemble Vehicles</h2>
           <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
-          
         </div>
       </div>
     </div>
