@@ -16,7 +16,12 @@
         <h3 class="display-4 fw-bold lh-1">Welcome to The Inventory</h3>
         <p class="lead">Quickly View, Update, and Build electric vehicles and items with The Inventory Web App, the world’s most innovative inventory management system, featuring Inventory Management, Parts Manufacturing, Vehicle Assembly, and Garage Storage.</p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-          <button type="button" class="btn btn-cta">Manage Inventory</button>
+
+            <!--Page redirect-->
+            <form method="post" asp-page="Index">
+                <button type="submit" class="btn btn-cta">Manage Inventory</button>
+            </form>
+          
           
           <!--TODO: Redirect page on button click-->
           

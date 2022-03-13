@@ -2,10 +2,37 @@
     --primary: #0e0e0e;
     --light: #f3f3f3;
     --grey: #efefef;
+    --scrollbarBG: #CFD8DC;
+    --thumbBG: #ff0000;
 }
 
+/* Works on Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: white black;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: black;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+
 html {
-  font-size: 14px;
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+
 }
 
 @media (min-width: 768px) {
@@ -14,13 +41,8 @@ html {
   }
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-}
-
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 
 .sidebar-container {
@@ -33,6 +55,15 @@ body {
     background: #f3f3f3;
     color: #fff;
 }
+
+.sidebar-logo .logo {
+    text-align: center;
+    padding: 20px 10px 10px 10px;
+    margin: auto;
+    display: block;
+    height: 65px;
+}
+
 
 ul {
     list-style-type: none;

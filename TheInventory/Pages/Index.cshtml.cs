@@ -16,5 +16,11 @@ namespace TheInventory.Pages
         {
 
         }
+
+        //Page redirect on button form submit
+        public IActionResult OnPost()
+        {
+            return RedirectToPage("Inventory");
+        }
     }
 }
