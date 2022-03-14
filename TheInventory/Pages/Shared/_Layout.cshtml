@@ -9,39 +9,19 @@
     <link rel="stylesheet" href="~/TheInventory.styles.css" asp-append-version="true" />
     <!--FontAwesome Icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=PT+Sans&family=PT+Serif&display=swap" rel="stylesheet">
     
 </head>
 <body>
-    @*<header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">TheInventory</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>*@
-
     <!--Sidebar Container-->
     <div class ="sidebar-container">
         <div class="sidebar-logo">
             <img class="logo" src="./images/logo.png"/>
         </div>
-
         <h4 class="pb-2 border-bottom text-center text-dark">The Inventory</h4>
-        <!--TODO: Add Logo image to sidebar-->
         <ul class="sidebar-navigation">
             <li>
                 <a class="nav-link" asp-area="" asp-page="/Index"><i class="fa fa-home" aria-hidden="true" style="padding-right: 10px"></i>Home</a>
@@ -75,7 +55,6 @@
         </div>
     </div>
     <!--Content Container-->
-
     @*<div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

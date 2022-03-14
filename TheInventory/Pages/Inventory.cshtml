@@ -4,6 +4,107 @@
     ViewData["Title"] = "Inventory";
 }
 
-<h1>@ViewData["Title"]</h1>
+<!--Top Navbar-->
+  <nav class="navbar navbar-expand-lg bg-light sticky-top rounded-3">
+      <img class="rounded-lg-3" src="images/pallet.png" alt="Inventory stock" width="32" style="margin:10px">
+    <h4>@ViewData["Title"]</h4>
+  </nav>
 
-<p>Use this page for the Inventory</p>
+<!--Inventory Container-->
+<div class="container-fluid">
+    <!--Iventory Stats Section-->
+    <div class="row rounded-3 mt-5">
+        <div class="col-xl col-md-4 pb-3">
+        <!--Card: Materials-->
+            <div class="card h-100 rounded-3 shadow-lg">
+                <div class="row h-100 no-gutters">
+                    <div class="col-6 p-3">
+                        <h5 class="text-center">Materials</h5>
+                        <h2 class="text-center">330</h2>
+                        @*<div class="col-auto">
+                            
+                        </div>*@
+                    </div>
+                    <div class="col d-flex rounded-3">
+                        <div class="mx-auto align-self-center">
+                            
+                            <img class="rounded-lg-3" src="images/raw-materials.png" alt="Inventory stock" width="64" style="margin:10px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl col-md-4 pb-3">
+        <!--Card: Parts-->
+        <div class="card h-100 rounded-3 shadow-lg">
+                <div class="row h-100 no-gutters">
+                    <div class="col-6 p-3">
+                        <h5 class="text-center">Parts</h5>
+                        <h2 class="text-center">128</h2>
+                        @*<div class="col-auto">
+                            <a asp-page="/Manufacturing" class="btn btn-cta btn-sm" role="button" aria-pressed="true">View</a>
+                        </div>*@
+                    </div>
+                    <div class="col d-flex rounded-3">
+                        <div class="mx-auto align-self-center">
+                            
+                            <img class="rounded-lg-3" src="images/motor.png" alt="Inventory stock" width="64" style="margin:10px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl col-md-4 pb-3">
+        <!--Card: Vehicles-->
+        <div class="card h-100 rounded-3 shadow-lg">
+                <div class="row h-100 no-gutters">
+                    <div class="col-6 p-3">
+                        <h5 class="text-center">Vehicles</h5>
+                        <h2 class="text-center">64</h2>
+                        @*<div class="col-auto">
+                            <a asp-page="/Assembly" class="btn btn-cta btn-sm" role="button" aria-pressed="true">View</a>
+                        </div>*@
+                    </div>
+                    <div class="col d-flex rounded-3">
+                        <div class="mx-auto align-self-center">
+                            
+                            <img class="rounded-lg-3" src="images/car.png" alt="Inventory stock" width="64">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Inventory Charts Section-->
+    @*<div class="container-fluid w-100">*@
+        <!--Iventory Charts Section-->
+        <div class="row rounded-3 mt-1">
+            
+            <div class="col-xl col-md-6 pb-3">
+                <div class="card h-100 rounded-3 shadow-lg">
+                    Materials Bar Chart
+                    
+                </div>
+            </div>
+
+            <div class="col-xl col-md-6 pb-3">
+                <div class="card h-100 rounded-3 shadow-lg">
+                    Parts Doughnut Chart
+                </div>
+            </div>
+
+            <div class="col-xl col-md-6 pb-3">
+                <div class="card h-100 rounded-3 shadow-lg">
+                    Vehicle Pie Chart
+                </div>
+            </div>
+        </div>
+    @*</div>*@
+
+
+    <!--Inventory Items Section-->
+</div>
+
+

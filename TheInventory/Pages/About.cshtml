@@ -3,28 +3,15 @@
 @{
     ViewData["Title"] = "About";
 }
+
 <!--Top Navbar-->
   <nav class="navbar navbar-expand-lg bg-light sticky-top rounded-3">
+      <img class="rounded-lg-3" src="images/information.png" alt="information" width="32" style="margin:10px">
     <h4>@ViewData["Title"]</h4>
   </nav>
 <!--Hero Section-->
-<div class="container my-5">
-    <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 shadow-lg">
-      <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-        <h1 class="display-4 fw-bold lh-1">Welcome to The Inventory</h1>
-        <p class="lead">Quickly View, Update, and Build electric vehicles and parts with The Inventory Web App, the world’s most innovative inventory management system, featuring Inventory Management, Parts Manufacturing, Vehicle Assembly, and Garage Storage.</p>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-          <button type="button" class="btn btn-cta "><a asp-page="/Inventory">Manage Inventory</a></button>
-          <!-- btn-lg px-4 me-md-2 fw-bold -->
-        </div>
-      </div>
-      <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
-          <img class="rounded-lg-3" src="images/tesla-header.jpg" alt="" width="720">
-      </div>
-    </div>
-  </div>
   <!--Features Section-->
-  <div class="container px-4 py-5" id="hanging-icons">
+  <div class="container px-4 py-5">
     <h2 class="pb-2 border-bottom">Features</h2>
     <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
       <div class="col d-flex align-items-start">
@@ -55,4 +42,8 @@
         </div>
       </div>
     </div>
+
+    <img src="https://badges.aleen42.com/src/github.svg" alt="badge"/><img src="https://badges.aleen42.com/src/visual_studio.svg" alt="badge"/>
+    
+
   </div>

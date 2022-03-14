@@ -1,3 +1,16 @@
+/*
+    | Google Fonts Import |
+*/
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=PT+Sans&family=PT+Serif&display=swap');
+
+/*
+    | Google Fonts CSS rules |
+
+    font-family: 'Archivo', sans-serif;
+    font-family: 'PT Sans', sans-serif;
+    font-family: 'PT Serif', serif;
+*/
+
 :root {
     --primary: #0e0e0e;
     --light: #f3f3f3;
@@ -5,6 +18,10 @@
     --scrollbarBG: #CFD8DC;
     --thumbBG: #ff0000;
 }
+
+/*
+    | Scrollbar |
+*/
 
 /* Works on Firefox */
 * {
@@ -27,12 +44,13 @@
     border: 2px solid black;
 }
 
-
+/*
+    | html |
+*/
 html {
     font-size: 14px;
     position: relative;
     min-height: 100%;
-
 }
 
 @media (min-width: 768px) {
@@ -41,10 +59,17 @@ html {
   }
 }
 
+/*
+    | body |
+*/
 body {
     margin-bottom: 60px;
+    font-family: 'Archivo', sans-serif;
 }
 
+/*
+    | sidebar |
+*/
 .sidebar-container {
     position: fixed;
     width: 220px;
@@ -64,7 +89,6 @@ body {
     height: 65px;
 }
 
-
 ul {
     list-style-type: none;
     color: black;
@@ -74,28 +98,36 @@ ul {
     color: black;
 }
 
-.content-container {
-    padding-top: 20px;
-    padding-left: 220px;
-}
-
 .active-link {
     color: var(--primary) !important;
     border-right: 5px solid black;
     font-weight: 600;
 }
 
+/*
+    | content-container |
+*/
+.content-container {
+    padding-top: 20px;
+    padding-left: 220px;
+}
+
+/*
+    | btn-cta |
+*/
 .btn-cta {
+    font-family: 'Archivo', sans-serif;
     font-weight: bold;
     font-size: large;
     color: #000000;
     border: 2px solid #000000;
 }
 
-.btn-cta:hover {
-    font-weight: bold;
-    font-size: large;
-    color: #f3f3f3;
-    background-color: #000000;
-    transition: background-color .7s, transform .7s;
+    .btn-cta:hover {
+        font-family: 'Archivo', sans-serif;
+        font-weight: bold;
+        font-size: large;
+        color: #f3f3f3;
+        background-color: #000000;
+        transition: background-color .7s, transform .7s;
     }
