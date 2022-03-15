@@ -1,0 +1,85 @@
+﻿@page
+@model TheInventory.Pages.ChartModel
+@{
+    
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <h5>Chart Example</h5>
+        <div>
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <h5>Bar Chart Example</h5>
+        <div>
+            <canvas id="myBarChart"></canvas>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+     @*<script type="text/javascript">
+
+         $(function () {
+         //alert("Test, OK.");
+             const myChart = new Chart(document.getElementById('myChart'),
+             config
+         );
+         });
+
+     </script>*@
+     <script>
+      const labels = [
+        'Copper',
+        'Steel',
+        'Lithium-ion',
+        'Aluminum',
+        'Rubber',
+        'Glass',
+      ];
+
+      const data = {
+        labels: labels,
+        datasets: [{
+          label: 'Raw Materials',
+          borderColor: '#2bffc7',
+          data: [60, 10, 50, 25, 60, 30, 45],
+          fill: false,
+        }]
+      };
+
+      const config = {
+          type: 'line',
+          data: data,
+          options: {
+              animations: {
+                  tension: {
+                      duration: 5000,
+                      easing: 'linear',
+                      from: 1,
+                      to: 0,
+                      loop: true
+                  }
+              },
+              scales: {
+                  y: { 
+                      min: 0,
+                      max: 100
+                  }
+              }
+          }
+      };
+
+      const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+      );
+    </script>
+    
+}

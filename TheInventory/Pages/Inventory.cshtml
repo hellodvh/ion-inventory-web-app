@@ -21,13 +21,9 @@
                     <div class="col-6 p-3">
                         <h5 class="text-center">Materials</h5>
                         <h2 class="text-center">330</h2>
-                        @*<div class="col-auto">
-                            
-                        </div>*@
                     </div>
                     <div class="col d-flex rounded-3">
                         <div class="mx-auto align-self-center">
-                            
                             <img class="rounded-lg-3" src="images/raw-materials.png" alt="Inventory stock" width="64" style="margin:10px">
                         </div>
                     </div>
@@ -61,9 +57,7 @@
                     <div class="col-6 p-3">
                         <h5 class="text-center">Vehicles</h5>
                         <h2 class="text-center">64</h2>
-                        @*<div class="col-auto">
-                            <a asp-page="/Assembly" class="btn btn-cta btn-sm" role="button" aria-pressed="true">View</a>
-                        </div>*@
+                            @*<a asp-page="/Assembly" class="btn btn-cta btn-sm" role="button" aria-pressed="true">View</a>*@
                     </div>
                     <div class="col d-flex rounded-3">
                         <div class="mx-auto align-self-center">
@@ -75,36 +69,573 @@
             </div>
         </div>
     </div>
-
-
-    <!--Inventory Charts Section-->
-    @*<div class="container-fluid w-100">*@
-        <!--Iventory Charts Section-->
-        <div class="row rounded-3 mt-1">
+    <!--Iventory Charts Section-->
+    <div class="row mt-1">
             
-            <div class="col-xl col-md-6 pb-3">
-                <div class="card h-100 rounded-3 shadow-lg">
-                    Materials Bar Chart
-                    
+        <div class="col-xl col-md-4 pb-3">
+            <div class="card rounded-3 shadow-lg">
+                <div class="card-header text-center">
+                    Materials
                 </div>
+                <div class="card-body chart-canvas">
+                        <canvas id="bar"></canvas>
+                </div>  
             </div>
-
-            <div class="col-xl col-md-6 pb-3">
-                <div class="card h-100 rounded-3 shadow-lg">
-                    Parts Doughnut Chart
+        </div>
+        <div class="col-xl col-md-4 pb-3">
+            <div class="card rounded-3 shadow-lg">
+                <div class="card-header text-center">
+                    Parts
                 </div>
-            </div>
-
-            <div class="col-xl col-md-6 pb-3">
-                <div class="card h-100 rounded-3 shadow-lg">
-                    Vehicle Pie Chart
+                <div class="card-body chart-canvas">
+                    <canvas id="doughnut"></canvas>
                 </div>
             </div>
         </div>
-    @*</div>*@
 
+        <div class="col-xl col-md-4 pb-3">
+            <div class="card rounded-3 shadow-lg">
+                <div class="card-header text-center">
+                    Vehicles
+                </div>
+                <div class="card-body chart-canvas"> 
+                    <canvas id="pie"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <!--Inventory Items Section-->
+<!--Inventory Items Section-->
+    <div class="row mt-1">
+        <!--Raw Materials-->
+        <div class="col-xl col-md-4 pb-3">
+            <div class="card rounded-3 shadow-lg">
+                <div class="card-header text-center">
+                    Materials
+                </div>
+                <div class="card-body scroll-card">
+                    <!--1-->
+                    <div class="card mb-2 shadow-sm hover-effect">
+                        <div class="row g-0">
+                            <div class="col-md-2 align-self-center bg-light">
+                                <img src="./images/raw-materials.png" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                    <h5 class="card-title">Steel Bar</h5>
+                                    <p class="card-text">Raw Materials</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 align-self-center counter">
+                                <div class="input-group">
+                                    <input type="number" class="form-control">
+                                    <button class="btn btn-sm btn-outline-success" type="button" id="button-update">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--2-->
+                    <div class="card mb-2 shadow-sm hover-effect">
+                        <div class="row g-0">
+                            <div class="col-md-2 align-self-center bg-light">
+                                <img src="./images/raw-materials.png" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                    <h5 class="card-title">Copper Wire</h5>
+                                    <p class="card-text">Raw Materials</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 align-self-center counter">
+                                <div class="input-group">
+                                    <input type="number" class="form-control">
+                                    <button class="btn btn-sm btn-outline-success" type="button" id="button-update">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--3-->
+                    <div class="card mb-2 shadow-sm hover-effect">
+                        <div class="row g-0">
+                            <div class="col-md-2 align-self-center bg-light">
+                                <img src="./images/raw-materials.png" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                    <h5 class="card-title">Glass Sheet</h5>
+                                    <p class="card-text">Raw Materials</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 align-self-center counter">
+                                <div class="input-group">
+                                    <input type="number" class="form-control">
+                                    <button class="btn btn-sm btn-outline-success" type="button" id="button-update">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--4-->
+                    <div class="card mb-2 shadow-sm hover-effect">
+                        <div class="row g-0">
+                            <div class="col-md-2 align-self-center bg-light">
+                                <img src="./images/raw-materials.png" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                    <h5 class="card-title">Aluminum Sheet</h5>
+                                    <p class="card-text">Raw Materials</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 align-self-center counter">
+                                <div class="input-group">
+                                    <input type="number" class="form-control">
+                                    <button class="btn btn-sm btn-outline-success" type="button" id="button-update">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--5-->
+                    <div class="card mb-2 shadow-sm hover-effect">
+                        <div class="row g-0">
+                            <div class="col-md-2 align-self-center bg-light">
+                                <img src="./images/raw-materials.png" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                    <h5 class="card-title">Rubber</h5>
+                                    <p class="card-text">Raw Materials</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 align-self-center counter">
+                                <div class="input-group">
+                                    <input type="number" class="form-control">
+                                    <button class="btn btn-sm btn-outline-success" type="button" id="button-update">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--6-->
+                    <div class="card mb-2 shadow-sm hover-effect">
+                        <div class="row g-0">
+                            <div class="col-md-2 align-self-center bg-light">
+                                <img src="./images/raw-materials.png" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                    <h5 class="card-title">Magnets</h5>
+                                    <p class="card-text">Raw Materials</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 align-self-center counter">
+                                <div class="input-group">
+                                    <input type="number" class="form-control">
+                                    <button class="btn btn-sm btn-outline-success" type="button" id="button-update">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--7-->
+                    <div class="card mb-2 shadow-sm hover-effect">
+                        <div class="row g-0">
+                            <div class="col-md-2 align-self-center bg-light">
+                                <img src="./images/raw-materials.png" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                    <h5 class="card-title">Iron Bars</h5>
+                                    <p class="card-text">Raw Materials</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 align-self-center counter">
+                                <div class="input-group">
+                                    <input type="number" class="form-control">
+                                    <button class="btn btn-sm btn-outline-success" type="button" id="button-update">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+        </div>
+        <!--Vehicle Parts-->
+        <div class="col-xl col-md-4 pb-3">
+            <div class="card rounded-3 shadow-lg">
+                <div class="card-header text-center">
+                    Vehicle Parts
+                </div>
+                <div class="card-body scroll-card">
+                    <!--1-->
+                    <div class="card mb-2 shadow-sm hover-effect">
+                        <div class="row g-0">
+                            <div class="col-md-2 align-self-center bg-light">
+                                <img src="./images/motor.png" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                    <h5 class="card-title">Electric Motor</h5>
+                                    <p class="card-text">Parts</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 align-self-center counter">
+                                <div class="input-group">
+                                    <input type="number" class="form-control">
+                                    <button class="btn btn-sm btn-outline-success" type="button" id="button-update">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--2-->
+                    <div class="card mb-2 shadow-sm hover-effect">
+                        <div class="row g-0">
+                            <div class="col-md-2 align-self-center bg-light">
+                                <img src="./images/motor.png" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                    <h5 class="card-title">Electric Motor</h5>
+                                    <p class="card-text">Parts</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 align-self-center counter">
+                                <div class="input-group">
+                                    <input type="number" class="form-control">
+                                    <button class="btn btn-sm btn-outline-success" type="button" id="button-update">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--3-->
+                    <div class="card mb-2 shadow-sm hover-effect">
+                        <div class="row g-0">
+                            <div class="col-md-2 align-self-center bg-light">
+                                <img src="./images/motor.png" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                    <h5 class="card-title">Electric Motor</h5>
+                                    <p class="card-text">Parts</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 align-self-center counter">
+                                <div class="input-group">
+                                    <input type="number" class="form-control">
+                                    <button class="btn btn-sm btn-outline-success" type="button" id="button-update">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--4-->
+                    <div class="card mb-2 shadow-sm hover-effect">
+                        <div class="row g-0">
+                            <div class="col-md-2 align-self-center bg-light">
+                                <img src="./images/motor.png" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                    <h5 class="card-title">Electric Motor</h5>
+                                    <p class="card-text">Parts</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 align-self-center counter">
+                                <div class="input-group">
+                                    <input type="number" class="form-control">
+                                    <button class="btn btn-sm btn-outline-success" type="button" id="button-update">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--5-->
+                    <div class="card mb-2 shadow-sm hover-effect">
+                        <div class="row g-0">
+                            <div class="col-md-2 align-self-center bg-light">
+                                <img src="./images/motor.png" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                    <h5 class="card-title">Electric Motor</h5>
+                                    <p class="card-text">Parts</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 align-self-center counter">
+                                <div class="input-group">
+                                    <input type="number" class="form-control">
+                                    <button class="btn btn-sm btn-outline-success" type="button" id="button-update">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--6-->
+                    <div class="card mb-2 shadow-sm hover-effect">
+                        <div class="row g-0">
+                            <div class="col-md-2 align-self-center bg-light">
+                                <img src="./images/motor.png" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                    <h5 class="card-title">Electric Motor</h5>
+                                    <p class="card-text">Parts</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 align-self-center counter">
+                                <div class="input-group">
+                                    <input type="number" class="form-control">
+                                    <button class="btn btn-sm btn-outline-success" type="button" id="button-update">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--7-->
+                    <div class="card mb-2 shadow-sm hover-effect">
+                        <div class="row g-0">
+                            <div class="col-md-2 align-self-center bg-light">
+                                <img src="./images/motor.png" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                    <h5 class="card-title">Electric Motor</h5>
+                                    <p class="card-text">Parts</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 align-self-center counter">
+                                <div class="input-group">
+                                    <input type="number" class="form-control">
+                                    <button class="btn btn-sm btn-outline-success" type="button" id="button-update">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!---->
+                </div>  
+            </div>
+        </div>
+        <!--Electric Vehicle Models-->
+        <div class="col-xl col-md-4 pb-3">
+            <div class="card rounded-3 shadow-lg">
+                <div class="card-header text-center">
+                    Electric Vehicles
+                </div>
+                <div class="card-body scroll-card">
+                    <!--1-->
+                    <div class="card mb-2 shadow-sm hover-effect">
+                        <div class="row g-0">
+                            <div class="col-md-2 align-self-center bg-light">
+                                <img src="./images/car.png" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                    <h5 class="card-title">Model S</h5>
+                                    <p class="card-text">Electric Vehicle</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 align-self-center counter">
+                                <div class="input-group">
+                                    <input type="number" class="form-control">
+                                    <button class="btn btn-sm btn-outline-success" type="button" id="button-update">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--2-->
+                    <div class="card mb-2 shadow-sm hover-effect">
+                        <div class="row g-0">
+                            <div class="col-md-2 align-self-center bg-light">
+                                <img src="./images/car.png" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                    <h5 class="card-title">Model 3</h5>
+                                    <p class="card-text">Electric Vehicle</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 align-self-center counter">
+                                <div class="input-group">
+                                    <input type="number" class="form-control">
+                                    <button class="btn btn-sm btn-outline-success" type="button" id="button-update">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--3-->
+                    <div class="card mb-2 shadow-sm hover-effect">
+                        <div class="row g-0">
+                            <div class="col-md-2 align-self-center bg-light">
+                                <img src="./images/car.png" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                    <h5 class="card-title">Model X</h5>
+                                    <p class="card-text">Electric Vehicle</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 align-self-center counter">
+                                <div class="input-group">
+                                    <input type="number" class="form-control">
+                                    <button class="btn btn-sm btn-outline-success" type="button" id="button-update">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--4-->
+                    <div class="card mb-2 shadow-sm hover-effect">
+                        <div class="row g-0">
+                            <div class="col-md-2 align-self-center bg-light">
+                                <img src="./images/car.png" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                    <h5 class="card-title">Model Y</h5>
+                                    <p class="card-text">Electric Vehicle</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 align-self-center counter">
+                                <div class="input-group">
+                                    <input type="number" class="form-control">
+                                    <button class="btn btn-sm btn-outline-success" type="button" id="button-update">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--5-->
+                    <div class="card mb-2 shadow-sm hover-effect">
+                        <div class="row g-0">
+                            <div class="col-md-2 align-self-center bg-light">
+                                <img src="./images/car.png" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                    <h5 class="card-title">Truck</h5>
+                                    <p class="card-text">Electric Vehicle</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 align-self-center counter">
+                                <div class="input-group">
+                                    <input type="number" class="form-control">
+                                    <button class="btn btn-sm btn-outline-success" type="button" id="button-update">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--6-->
+                    <div class="card mb-2 shadow-sm hover-effect">
+                        <div class="row g-0">
+                            <div class="col-md-2 align-self-center bg-light">
+                                <img src="./images/car.png" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                    <h5 class="card-title">Model S</h5>
+                                    <p class="card-text">Electric Vehicle</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 align-self-center counter">
+                                <div class="input-group">
+                                    <input type="number" class="form-control">
+                                    <button class="btn btn-sm btn-outline-success" type="button" id="button-update">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--7-->
+                    <div class="card mb-2 shadow-sm hover-effect">
+                        <div class="row g-0">
+                            <div class="col-md-2 align-self-center bg-light">
+                                <img src="./images/car.png" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                    <h5 class="card-title">Model S</h5>
+                                    <p class="card-text">Electric Vehicle</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 align-self-center counter">
+                                <div class="input-group">
+                                    <input type="number" class="form-control">
+                                    <button class="btn btn-sm btn-outline-success" type="button" id="button-update">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+<script type="text/javascript">
 
+    //Bar Chart
+    var barchart = document.getElementById('bar').getContext('2d');
+    var mybarchart = new Chart(barchart, {
+        type: 'bar',
+        data: {
+            labels: ['Steel', 'Copper', 'Iron', 'Glass', 'Rubber', 'Aluminum'],
+            datasets: [{
+                label: 'Bar Chart',
+                data: [100, 200, 300, 100, 250, 150],
+                backgroundColor: '#dee2e6',
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            indexAxis: 'y',
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    })
+    //Pie Chart
+    var piechart = document.getElementById('pie').getContext('2d');
+    var mypiechart = new Chart(piechart, {
+        type: 'pie',
+        data: {
+            labels: ['Model S', 'Model 3', 'Model X', 'Model Y'],
+            datasets: [{
+                label: 'Pie Chart',
+                data: [100, 150, 300, 50, 25],
+                backgroundColor: '#dee2e6'
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    })
+
+    //Doughnut Chart
+    var xValues = ["Engine", "Wheels", "Battery", "Windows", "Body"];
+    var yValues = [55, 49, 44, 24, 15];
+    var barColors = "#dee2e6";
+
+    new Chart("doughnut", {
+      type: "doughnut",
+      data: {
+        labels: xValues,
+        datasets: [{
+          backgroundColor: barColors,
+          data: yValues
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        
+        title: {
+          display: true,
+          text: "Vehicle Parts in stock."
+        }
+      }
+    });
+</script>

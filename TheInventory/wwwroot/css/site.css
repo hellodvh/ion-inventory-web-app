@@ -25,23 +25,24 @@
 
 /* Works on Firefox */
 * {
-    scrollbar-width: auto;
-    scrollbar-color: white black;
+    scrollbar-width: thin;
+    scrollbar-color: black white;
 }
 
 /* Works on Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
-    width: 12px;
+    width: 6px;
+    height: auto;
 }
 
 *::-webkit-scrollbar-track {
-    background: black;
+    background: white;
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: white;
-    border-radius: 10px;
-    border: 2px solid black;
+    background-color: black;
+    border-radius: 3px;
+    border: 3px solid black;
 }
 
 /*
@@ -131,3 +132,38 @@ ul {
         background-color: #000000;
         transition: background-color .7s, transform .7s;
     }
+
+/*
+    | Cards - Horizontal |
+*/
+.scroll-card {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    opacity: 1
+}
+
+.counter {
+    padding-right: 10px;
+}
+
+.hover-effect {
+    transition: all 0.25s ease-in-out;
+    cursor: pointer;
+}
+.hover-effect:hover {
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    transform: scale(1.045);
+}
+
+
+/*
+    | Charts |
+*/
+.chart-canvas {
+    width: 100%;
+    height: 35vh;
+    overflow: hidden;
+}
