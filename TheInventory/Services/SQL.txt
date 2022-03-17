@@ -1,0 +1,65 @@
+﻿CREATE TABLE materials (
+    name VARCHAR(50) NOT NULL,
+    materialtype VARCHAR(50),
+    image VARCHAR(255),
+    count INT(11),
+    PRIMARY KEY (name)
+);
+
+INSERT INTO `materials`(`name`, `materialtype`, `image`, `count`) VALUES ('iron','basic','/','55');
+
+INSERT INTO `materials`(`name`, `materialtype`, `image`, `count`) VALUES ('copper','basic','/','55');
+
+INSERT INTO `materials`(`name`, `materialtype`, `image`, `count`) VALUES ('lithium','basic','/','55');
+
+INSERT INTO `materials`(`name`, `materialtype`, `image`, `count`) VALUES ('rubber','basic','/','55');
+
+INSERT INTO `materials`(`name`, `materialtype`, `image`, `count`) VALUES ('aluminum','basic','/','55');
+
+INSERT INTO `materials`(`name`, `materialtype`, `image`, `count`) VALUES ('steel','basic','/','55');
+
+INSERT INTO `materials`(`name`, `materialtype`, `image`, `count`) VALUES ('titanium','basic','/','55');
+
+INSERT INTO `materials`(`name`, `materialtype`, `image`, `count`) VALUES ('cobalt','basic','/','55');
+
+INSERT INTO `materials`(`name`, `materialtype`, `image`, `count`) VALUES ('nickel','basic','/','55');
+
+INSERT INTO `materials`(`name`, `materialtype`, `image`, `count`) VALUES ('bauxite','basic','/','55');
+
+INSERT INTO `materials`(`name`, `materialtype`, `image`, `count`) VALUES ('plastic','basic','/','55');
+
+INSERT INTO `materials`(`name`, `materialtype`, `image`, `count`) VALUES ('leather','basic','/','55');
+
+INSERT INTO `materials`(`name`, `materialtype`, `image`, `count`) VALUES ('silicon','basic','/','55');
+
+INSERT INTO `materials`(`name`, `materialtype`, `image`, `count`) VALUES ('carbonFiber','basic','/','55');
+
+INSERT INTO `materials`(`name`, `materialtype`, `image`, `count`) VALUES ('magnet','basic','/','55');
+
+
+
+SELECT * FROM `materials` WHERE 1;
+SELECT * FROM `materials` WHERE count > 1; 
+SELECT name FROM `materials` WHERE count > 0;
+SELECT SUM(count) FROM `materials`;
+
+
+
+UPDATE `materials` SET `name`='[value-1]',`materialtype`='[value-2]',`image`='[value-3]',`count`='[value-4]' WHERE 1;
+UPDATE `materials` SET `count`= 25 WHERE `name` = 'iron';
+
+
+CREATE TABLE recipes (
+    name VARCHAR(50) NOT NULL,
+    type VARCHAR(50),
+    count INT(11),
+    ingredient1 VARCHAR(50),
+    ingredient2 VARCHAR(50),
+    ingredient3 VARCHAR(50),
+    ingredient4 VARCHAR(50),
+    ingredient5 VARCHAR(50),
+    ingredient6 VARCHAR(50),
+    ingredient7 VARCHAR(50),
+    ingredient8 VARCHAR(50),
+	PRIMARY KEY (name)
+);
