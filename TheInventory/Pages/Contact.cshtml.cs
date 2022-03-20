@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace TheInventory.Pages
 {
-    public class ChartModel : PageModel
+    public class ContactModel : PageModel
     {
         public void OnGet()
         {
