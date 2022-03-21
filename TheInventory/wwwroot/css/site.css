@@ -137,6 +137,7 @@ ul {
     | Cards - Horizontal |
 */
 .scroll-card {
+    min-height: 499px;
     max-height: 500px;
     overflow-y: auto;
 }

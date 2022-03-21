@@ -4,13 +4,11 @@
     {
 
         //Fields
-        public int ID { get; set; }
         public string Name { get; set; } = string.Empty;
-
-        private int count;
-
+        public string MaterialType { get; set; } = string.Empty;
         public string ImageUrl { get; set; } = string.Empty;
-
+        
+        private int count;
         public int Count
         {
             get 
@@ -21,7 +19,7 @@
             set
             {
                 //Function
-                if (value < 0)
+                if (value > 0)
                     count = value;
                 else
                     count = 0;
@@ -35,7 +33,7 @@
         }
 
         //Methods
-        public void place()
+        public virtual void place()
         {
             Console.WriteLine($"{Name} has been placed.");
         }
