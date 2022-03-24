@@ -1,0 +1,45 @@
+﻿@page
+@model TheInventory.Pages.NewTicketModel
+@{
+    ViewData["Title"] = "New Ticket Form";
+}
+
+<!--Top Navbar-->
+  <nav class="navbar navbar-expand-lg bg-light sticky-top rounded-3">
+      <img class="rounded-lg-3" src="images/ticket.png" alt="New Ticket" width="32" style="margin:10px">
+    <h4>@ViewData["Title"]</h4>
+  </nav>
+
+  <div class="container">
+    <div class="row m-3">
+        <h2>Add a new Ticket</h2>
+        
+         <form method="post" asp-page-handler="add">
+            <label for="title">Title</label>
+            <input class="form-control rounded-1" id="title" type="text" name="title" placeholder="Ticket title..">
+
+            <label for="department">Department</label>
+            <select class="form-control rounded-1" id="department" type="text" name="Department">
+                <option value="warehouse">Warehouse</option>
+                <option value="manufacturing">Manufacturing</option>
+                <option value="assembly">Assembly</option>
+                <option value="sales">Sales</option>     
+            </select>
+
+            <label for="description">Description</label>
+            <textarea class="form-control rounded-1" id="description" name="description" placeholder="Ticket description.." style="height:100px"></textarea>
+
+            <label for="status">Status</label>
+            <select class="form-control rounded-1" id="status" type="text"  name="Status">
+                <option value="open">Open</option>
+                <option value="pending">Pending</option>
+                <option value="closed">Closed</option>
+            </select>
+
+            <button class="btn btn-cta" type="submit" value="Add">Add</button>
+         
+        </form>
+    </div>
+</div>
+
+

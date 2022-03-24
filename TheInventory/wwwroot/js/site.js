@@ -14,4 +14,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 })
 
+//Toast for verification code info
+$(document).ready(function () {
+    $("#myBtnToast1").click(function () {
+        $('.toast1').toast('show');
+    });
+});
+
+$(document).ready(function () {
+    $("#myBtnToast2").click(function () {
+        $('.toast2').toast('show');
+    });
+});
+
+$(document).ready(function () {
+    $("#myBtnToast3").click(function () {
+        $('.toast3').toast('show');
+    });
+});
 

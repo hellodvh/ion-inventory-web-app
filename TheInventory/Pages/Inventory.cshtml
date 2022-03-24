@@ -2,6 +2,9 @@
 @model TheInventory.Pages.InventoryModel
 @{
     ViewData["Title"] = "Inventory";
+    var MaterialTotal = 330;
+    var PartTotal = 128;
+    var VehicleTotal = 32;
 }
 
 <!--Top Navbar-->
@@ -20,7 +23,7 @@
                 <div class="row h-100 no-gutters">
                     <div class="col-6 p-3">
                         <h5 class="text-center">Materials</h5>
-                        <h2 class="text-center">330</h2>
+                        <h2 class="text-center">@MaterialTotal</h2>
                     </div>
                     <div class="col d-flex rounded-3">
                         <div class="mx-auto align-self-center">
@@ -36,10 +39,8 @@
                 <div class="row h-100 no-gutters">
                     <div class="col-6 p-3">
                         <h5 class="text-center">Parts</h5>
-                        <h2 class="text-center">128</h2>
-                        @*<div class="col-auto">
-                            <a asp-page="/Manufacturing" class="btn btn-cta btn-sm" role="button" aria-pressed="true">View</a>
-                        </div>*@
+                        <h2 class="text-center">@PartTotal</h2>
+                        
                     </div>
                     <div class="col d-flex rounded-3">
                         <div class="mx-auto align-self-center">
@@ -56,8 +57,8 @@
                 <div class="row h-100 no-gutters">
                     <div class="col-6 p-3">
                         <h5 class="text-center">Vehicles</h5>
-                        <h2 class="text-center">64</h2>
-                            @*<a asp-page="/Assembly" class="btn btn-cta btn-sm" role="button" aria-pressed="true">View</a>*@
+                        <h2 class="text-center">@VehicleTotal</h2>
+                            
                     </div>
                     <div class="col d-flex rounded-3">
                         <div class="mx-auto align-self-center">
@@ -114,11 +115,9 @@
                     Materials
                 </div>
                 <div class="card-body scroll-card">
-                    <!--1-->
                     <!--Foreach Loop-->
                     @foreach(var material in Model.allMaterials)
                     {
-                    <!--Foreach Loop-->
                     <div class="card mb-2 shadow-sm hover-effect">
                         <div class="row g-0">
                             <div class="col-md-2 align-self-center bg-light">
@@ -154,28 +153,36 @@
                     Vehicle Parts
                 </div>
                 <div class="card-body scroll-card">
-                    <!--1-->
+                    <!--Foreach Loop-->
+                    @foreach(var part in Model.allParts)
+                    {
                     <div class="card mb-2 shadow-sm hover-effect">
                         <div class="row g-0">
                             <div class="col-md-2 align-self-center bg-light">
                                 <img src="./images/motor.png" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
                             </div>
-                            <div class="col-md-6">
-                                <div class="card-body">
-                                    <h5 class="card-title">Electric Motor</h5>
-                                    <p class="card-text">Parts</p>
-                                </div>
+                            <div class="col-md-4 align-self-center">  
+                                <h5 class="card-title">@part.Name</h5>
+                                <p class="card-text">@part.PartType</p>
+                            </div>
+                            <div class="col-md-2 align-self-center">
+                                <p class="card-text">@part.Count</p>   
                             </div>
                             <div class="col-md-4 align-self-center counter">
+                                <form method="post" asp-page-handler="update">
                                 <div class="input-group">
-                                    <input type="number" class="form-control">
-                                    <button class="btn btn-sm btn-outline-success" type="button" id="button-update">Update</button>
+                                    <input class="form-control" name="count" value="@part.Count" type="number" min="0" step="1"/>
+                                    <input type="hidden" name="name" value="@part.Name"/>
+                                    <button class="btn btn-sm btn-outline-success">Update</button>
                                 </div>
+                                </form>
                             </div>
                         </div>
                     </div>
+                    }
+                    <!--Foreach Loop-->
                     <!--2-->
-                    <div class="card mb-2 shadow-sm hover-effect">
+                    @*<div class="card mb-2 shadow-sm hover-effect">
                         <div class="row g-0">
                             <div class="col-md-2 align-self-center bg-light">
                                 <img src="./images/motor.png" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
@@ -193,108 +200,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!--3-->
-                    <div class="card mb-2 shadow-sm hover-effect">
-                        <div class="row g-0">
-                            <div class="col-md-2 align-self-center bg-light">
-                                <img src="./images/motor.png" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card-body">
-                                    <h5 class="card-title">Electric Motor</h5>
-                                    <p class="card-text">Parts</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4 align-self-center counter">
-                                <div class="input-group">
-                                    <input type="number" class="form-control">
-                                    <button class="btn btn-sm btn-outline-success" type="button" id="button-update">Update</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--4-->
-                    <div class="card mb-2 shadow-sm hover-effect">
-                        <div class="row g-0">
-                            <div class="col-md-2 align-self-center bg-light">
-                                <img src="./images/motor.png" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card-body">
-                                    <h5 class="card-title">Electric Motor</h5>
-                                    <p class="card-text">Parts</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4 align-self-center counter">
-                                <div class="input-group">
-                                    <input type="number" class="form-control">
-                                    <button class="btn btn-sm btn-outline-success" type="button" id="button-update">Update</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--5-->
-                    <div class="card mb-2 shadow-sm hover-effect">
-                        <div class="row g-0">
-                            <div class="col-md-2 align-self-center bg-light">
-                                <img src="./images/motor.png" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card-body">
-                                    <h5 class="card-title">Electric Motor</h5>
-                                    <p class="card-text">Parts</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4 align-self-center counter">
-                                <div class="input-group">
-                                    <input type="number" class="form-control">
-                                    <button class="btn btn-sm btn-outline-success" type="button" id="button-update">Update</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--6-->
-                    <div class="card mb-2 shadow-sm hover-effect">
-                        <div class="row g-0">
-                            <div class="col-md-2 align-self-center bg-light">
-                                <img src="./images/motor.png" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card-body">
-                                    <h5 class="card-title">Electric Motor</h5>
-                                    <p class="card-text">Parts</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4 align-self-center counter">
-                                <div class="input-group">
-                                    <input type="number" class="form-control">
-                                    <button class="btn btn-sm btn-outline-success" type="button" id="button-update">Update</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--7-->
-                    <div class="card mb-2 shadow-sm hover-effect">
-                        <div class="row g-0">
-                            <div class="col-md-2 align-self-center bg-light">
-                                <img src="./images/motor.png" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card-body">
-                                    <h5 class="card-title">Electric Motor</h5>
-                                    <p class="card-text">Parts</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4 align-self-center counter">
-                                <div class="input-group">
-                                    <input type="number" class="form-control">
-                                    <button class="btn btn-sm btn-outline-success" type="button" id="button-update">Update</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!---->
+                    </div>*@
                 </div>  
             </div>
         </div>

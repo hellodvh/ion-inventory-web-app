@@ -10,3 +10,7 @@ namespace TheInventory.Pages
         }
     }
 }
+
+/*
+ *TODO: Add email contact functionality.
+ */
