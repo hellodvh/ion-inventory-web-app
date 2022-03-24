@@ -154,32 +154,32 @@
                 </div>
                 <div class="card-body scroll-card">
                     <!--Foreach Loop-->
-                    @foreach(var part in Model.allParts)
-                    {
+                    @*@foreach(var part in Model.allParts)
+                    {*@
                     <div class="card mb-2 shadow-sm hover-effect">
                         <div class="row g-0">
                             <div class="col-md-2 align-self-center bg-light">
                                 <img src="./images/motor.png" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
                             </div>
                             <div class="col-md-4 align-self-center">  
-                                <h5 class="card-title">@part.Name</h5>
-                                <p class="card-text">@part.PartType</p>
+                                <h5 class="card-title">Name</h5>
+                                <p class="card-text">PartType</p>
                             </div>
                             <div class="col-md-2 align-self-center">
-                                <p class="card-text">@part.Count</p>   
+                                <p class="card-text">Count</p>   
                             </div>
                             <div class="col-md-4 align-self-center counter">
                                 <form method="post" asp-page-handler="update">
                                 <div class="input-group">
-                                    <input class="form-control" name="count" value="@part.Count" type="number" min="0" step="1"/>
-                                    <input type="hidden" name="name" value="@part.Name"/>
+                                    <input class="form-control" name="count" value="Count" type="number" min="0" step="1"/>
+                                    <input type="hidden" name="name" value="Name"/>
                                     <button class="btn btn-sm btn-outline-success">Update</button>
                                 </div>
                                 </form>
                             </div>
                         </div>
                     </div>
-                    }
+                    @*}*@
                     <!--Foreach Loop-->
                     <!--2-->
                     @*<div class="card mb-2 shadow-sm hover-effect">

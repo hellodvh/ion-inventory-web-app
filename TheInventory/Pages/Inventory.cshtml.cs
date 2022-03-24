@@ -8,14 +8,10 @@ namespace TheInventory.Pages
     {
         public List<Material> allMaterials = new List<Material>();
 
-        public List<Part> allParts = new List<Part>();
         public void OnGet()
         {
             //Create an instance of our Inventory Class for the Materials
             allMaterials = new Inventory().Materials;
-
-            //Create an instance of our Inventory Class for the Materials
-            allParts = new Inventory().Parts;
         }
 
         //On Post Update function to update the database.

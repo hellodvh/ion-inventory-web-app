@@ -13,11 +13,11 @@ namespace TheInventory.Models
             Recipes = Database.GetAllRecipes();
         }
 
-        public void CraftRecipe(string name, int count, List<string> ingredient)
+        public bool CraftRecipe(string name, int count, List<string> ingredient, string verify)
         {
             Console.WriteLine(ingredient[0]);
             //Call the database function
-            Database.CraftRecipe(name, count, ingredient);
+            return Database.CraftRecipe(name, count, ingredient, verify);
         }
     }
 }

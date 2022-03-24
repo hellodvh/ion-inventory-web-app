@@ -26,14 +26,14 @@
                     <h5 class="card-title">@ticket.Title</h5>
                     <h6 class="card-title text-secondary">@ticket.Department</h6>
                     <p class="card-text text-truncate">@ticket.Description</p>
-                    
+
                         <!--Delete Form Button-->
                         <form class="float-end mx-1" method="post" asp-page-handler="delete" asp-route-id="ticket.id">
                             <input class="btn-cta"type="hidden" name="id" value="@ticket.Id" />
                             <button class="btn btn-cta btn-sm" type="submit" value="Delete" placeholder="Delete">Delete</button>
                         </form> 
-                        <button class="float-end btn btn-cta btn-sm mx-1" type="submit" value="View">View</button>
-                        <button class="float-end btn btn-cta btn-sm mx-1" type="submit" value="Edit">Edit</button>
+                        @*<button class="float-end btn btn-cta btn-sm mx-1" type="submit" value="View">View</button>
+                        <button class="float-end btn btn-cta btn-sm mx-1" type="submit" value="Edit">Edit</button>*@
                   </div>
                 </div>
               </div>

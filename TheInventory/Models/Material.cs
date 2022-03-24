@@ -32,7 +32,7 @@
         }
 
         //Methods
-        public virtual void place()
+        /*public virtual void place()
         {
             Console.WriteLine($"{Name} has been placed.");
         }
@@ -41,6 +41,6 @@
         {
             count = 0;
             Console.WriteLine("Material has been destroyed");
-        }
+        }*/
     }
 }
