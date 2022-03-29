@@ -1,4 +1,4 @@
-﻿@page
+﻿ @page
 @model TheInventory.Pages.ManufacturingModel
 @{
     ViewData["Title"] = "Manufacturing";
@@ -9,75 +9,35 @@
     {
         if(Model.MessageSuccess)
         {
-            <div class="alert alert-success">@Model.Message</div>
+            <div class="alert alert-sm alert-success">@Model.Message</div>
         }
         else
         {
             <div class="alert alert-danger">@Model.Message</div>
         }
-
     }
 }
 
-<!--Top Navbar-->
-  <nav class="navbar navbar-expand-lg bg-light sticky-top rounded-3">
-      <img class="rounded-lg-3" src="images/factory-machine.png" alt="Manufacturing" width="32" style="margin:10px">
-    <h4>@ViewData["Title"]</h4>
-  </nav>
+
 
 <!--Manufacturing Container-->
 <div class="container-fluid">
-    <!--Alert Functionality-->
-    @*<div class="alert alert-success text-success text-center" role="alert">Vehicle part has been crafted!</div>*@
-    <div class="row mt-1">
-        <div class="col-xl col-md-12 pb-3">
-            <div class="card rounded-3 shadow-lg">
-                <div class="card-header text-center">
-                    Materials
-                </div>
-                <div class="card-body"> 
-                    
-                    @foreach(var material in Model.allMaterials)
-                    {
 
-                    <div class="card mb-2 shadow-sm hover-effect">
-                        <div class="row g-0">
-                            <div class="col-md-2 align-self-center bg-light">
-                                <img src="./images/raw-materials.png" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">@material.Name</h5>
-                                    <p class="card-text">@material.MaterialType</p>
-                                </div>
-                            </div>
-                            <div class="col-md-2 align-self-center counter">
-                                <div class="">
-                                    <h3>@material.Count</h3>
-                                </div>
-                            </div>
+    <!--Top Navbar-->
+  <nav class="navbar navbar-expand-lg bg-light sticky-top rounded-3 mb-3">
+      <img class="rounded-lg-3" src="images/factory-machine-white.png" alt="Manufacturing" width="32" style="margin:10px">
+    <h4>@ViewData["Title"]</h4>
+  </nav>
 
-                            <form method="post" asp-page-handler="update">
-                <input class="form-controller" name="count" value="@material.Count" type="number" min="0" step="1"/>
-                <input type="hidden" name="name" value="@material.Name" />
-                <button class="btn btn-outline-primary" style="margin-top: 20px">Update</button>
-            </form>
-                        </div>
-                    </div>
-                    }
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="row">    
+    <!--Parts Recipes-->
+    <div class="row mt-1">    
         <div class="col-xl col-md-12 pb-3">
             <div class="card rounded-3 shadow-lg">
                 <div class="card-header text-center">
                     Craftable Parts (Crafting)
                 </div>
                 <div class="card-body">
-                    
                     @foreach(var recipe in Model.allRecipes)
                     {
                     <div class="col-6">
@@ -97,15 +57,10 @@
                                         <p style="padding:0px;margin:0px;margin-left:20px">@ingredient</p>
                                     }
                                 }
-
                                 @{
                                     if(recipe.IsCraftable())
                                     {
-                                        <form method="post" 
-                                        asp-page-handler="craft" 
-                                        asp-route-name="@recipe.Name"
-                                        asp-route-count="@recipe.Count"
-                                        >
+                                        <form method="post" asp-page-handler="craft" asp-route-name="@recipe.Name" asp-route-count="@recipe.Count">
                                         <!--Add a input field for each ingredient-->
                                             @{
                                                 foreach(var ingredient in recipe.Ingredients)
@@ -113,7 +68,6 @@
                                                     <input type="hidden" name="ingredient[]" value="@ingredient"/>
                                                 }
                                             }
-
                                             <input type="text" class="form-control" name="verify" placeholder="Verification Code" style="width:40%; float:left;"/>
 
                                             <input class="btn btn-dark" type="submit" value="Craft Recipe" style="width:40%; float:left;"/>
@@ -128,4 +82,45 @@
             </div>
         </div>
     </div>
-</div>
+    <!--Parts Recipes-->
+
+    <!--Materials-->
+    <div class="row mt-1">
+        <div class="col-xl col-md-12 pb-3">
+            <div class="card rounded-3 shadow-lg">
+                <div class="card-header text-center">
+                    Materials
+                </div>
+                <div class="card-body">
+                    @foreach(var material in Model.allMaterials)
+                    {
+                    <div class="card mb-2 shadow-sm hover-effect">
+                        <div class="row g-0">
+                            <div class="col-md-2 align-self-center bg-light">
+                                <img src="./images/raw-materials.png" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">@material.Name</h5>
+                                    <p class="card-text">@material.MaterialType</p>
+                                </div>
+                            </div>
+                            <div class="col-md-2 align-self-center counter">
+                                <div class="">
+                                    <h3>@material.Count</h3>
+                                </div>
+                            </div>
+                            <form method="post" asp-page-handler="update">
+                                <input class="form-controller" name="count" value="@material.Count" type="number" min="0" step="1"/>
+                                <input type="hidden" name="name" value="@material.Name" />
+                                <button class="btn btn-outline-primary" style="margin-top: 20px">Update</button>
+                            </form>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Materials-->
+</div><!--Manufacturing Container-->

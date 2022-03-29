@@ -30,17 +30,5 @@
         {
             count = newCount;
         }
-
-        //Methods
-        /*public virtual void place()
-        {
-            Console.WriteLine($"{Name} has been placed.");
-        }
-
-        public void destroy()
-        {
-            count = 0;
-            Console.WriteLine("Material has been destroyed");
-        }*/
     }
 }

@@ -4,9 +4,13 @@
     ViewData["Title"] = "About";
 }
 
-<!--Top Navbar-->
+
+
+  <div class="container-fluid">
+
+      <!--Top Navbar-->
   <nav class="navbar navbar-expand-lg bg-light sticky-top rounded-3">
-      <img class="rounded-lg-3" src="images/information.png" alt="information" width="32" style="margin:10px">
+      <img class="rounded-lg-3" src="images/information-white.png" alt="information" width="32" style="margin:10px">
     <h4>@ViewData["Title"]</h4>
   </nav>
 
@@ -16,7 +20,7 @@
     <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
       <div class="col d-flex align-items-start">
         <div class="icon-square flex-shrink-0 me-3">
-          <img class="rounded-lg-3" src="images/pallet.png" alt="vehicle manufacturing" width="32">
+          <img class="rounded-lg-3" src="images/pallet-primary.png" alt="vehicle manufacturing" width="32">
         </div>
         <div>
           <h2>Manage Inventory</h2>
@@ -25,7 +29,7 @@
       </div>
       <div class="col d-flex align-items-start">
         <div class="icon-square flex-shrink-0 me-3">
-          <img class="rounded-lg-3" src="images/factory-machine.png" alt="vehicle manufacturing" width="32">
+          <img class="rounded-lg-3" src="images/factory-machine-primary.png" alt="vehicle manufacturing" width="32">
         </div>
         <div>
           <h2>Manufacture Parts</h2>
@@ -34,7 +38,7 @@
       </div>
       <div class="col d-flex align-items-start">
         <div class="icon-square flex-shrink-0 me-3">
-          <img class="rounded-lg-3" src="images/car-manufacturing.png" alt="vehicle manufacturing" width="32">
+          <img class="rounded-lg-3" src="images/car-manufacturing-primary.png" alt="vehicle manufacturing" width="32">
         </div>
         <div>
           <h2>Assemble Vehicles</h2>
@@ -49,7 +53,7 @@
       
         <div class="col d-flex align-items-start">
             <div class="card" >
-                <img class="card-img-top  shadow-sm" src="./images/people/pexels-andrea-piacquadio-3846390.jpg" alt="Card image cap">
+                <img class="card-img-top rounded-1  shadow-sm" src="./images/people/pexels-andrea-piacquadio-3846390.jpg" alt="Card image cap">
                     <div class="card-body">
                     <h5 class="card-title">Andre Richardo</h5>
                     <p class="card-text text-secondary" style="min-block-size: 70px">Andre is the Inventory Manager for ION. He oversees all of the inventory stock of materials and parts.</p>
@@ -75,7 +79,7 @@
 
         <div class="col d-flex align-items-start">
             <div class="card">
-            <img class="card-img-top shadow-sm" src="./images/people/pexels-thisisengineering-3862627.jpg" alt="Card image cap">
+            <img class="card-img-top rounded-1 shadow-sm" src="./images/people/pexels-thisisengineering-3862627.jpg" alt="Card image cap">
                 <div class="card-body">
                 <h5 class="card-title">Alexis Montblanc</h5>
                 <p class="card-text text-secondary" style="min-block-size: 70px">Alex is the Production Manager for ION. She oversees all of the manufacturing and assembly of parts and vehicles. </p>
@@ -91,6 +95,7 @@
                     </div>
                     <div class="toast-body">
                         <span>Code: 'letmein5678'</span>
+                        <p>Use this code to make new parts</p>
                     </div>
                     </div>
                     <!--Toast-->
@@ -100,10 +105,10 @@
 
         <div class="col d-flex align-items-start">
             <div class="card">
-            <img class="card-img-top shadow-sm" src="./images/people/pexels-christina-morillo-1181534.jpg" alt="Card image cap">
+            <img class="card-img-top rounded-1 shadow-sm" src="./images/people/pexels-christina-morillo-1181534.jpg" alt="Card image cap">
                 <div class="card-body">
                 <h5 class="card-title">Robyn Bird</h5>
-                <p class="card-text text-secondary" style="min-block-size: 70px">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text text-secondary" style="min-block-size: 70px"></p>
                 </div>
             <div class="card-body">
                 <a href="mailto:someone@example.com" class="card-link text-decoration-none text-black">Email</a>
@@ -128,4 +133,5 @@
     <p style="color:lightgrey">MySql Server Version: @Model.Message</p>
 
     <!--TODO: Add detailed project information section -->
+  </div>
   </div>

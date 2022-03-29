@@ -45,13 +45,14 @@ namespace TheInventory.Models
             //default response is that it is craftable
             bool result = true;
             //go create our inventory that we check our values in
+
             //STEP 2: check if we have the required amount of each ingredient.
             var inventory = new Inventory();
 
             //loop through our ingredient dictionary
-            foreach(var pair in map)
+            foreach (var pair in map)
             {
-                if(pair.Value > inventory.GetCount(pair.Key))//if the amount that we need is less than the amount we have
+                if (pair.Value > inventory.GetCount(pair.Key))//if the amount that we need is less than the amount we have
                 {
                     return false;//set craftable to false.
                 }

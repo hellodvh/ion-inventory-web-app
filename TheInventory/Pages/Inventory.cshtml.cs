@@ -15,13 +15,13 @@ namespace TheInventory.Pages
         }
 
         //On Post Update function to update the database.
-        public IActionResult OnPostUpdate(string name, int count)
+        /*public IActionResult OnPostUpdate(string name, int count)
         {
             Console.WriteLine($"{name} should change to {count}");
             new Inventory().UpdateCount(name, count);
 
             //Redirect back to normal get
             return RedirectToPage("./Inventory");
-        }    
+        }*/    
     }
 }

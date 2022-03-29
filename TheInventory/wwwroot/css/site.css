@@ -12,27 +12,34 @@
 */
 
 :root {
-    --primary: #0e0e0e;
-    --light: #f3f3f3;
-    --grey: #efefef;
-    --scrollbarBG: #CFD8DC;
-    --thumbBG: #ff0000;
+    --grey-1: #383838;
+    --grey-2: #353535;
+    --grey-3: #323232;
+    --grey-4: #2C2C2C;
+    --grey-5: #272727;
+    --grey-6: #252525;
+    --grey-7: #232323;
+    --grey-8: #1F1F1F;
+    --grey-bg: #121212;
+    --white: #FFFFFF;
+    --black: #000000;
+    --primary: #69f0ae;
 }
 
 /*
     | Scrollbar |
 */
 
-/* Works on Firefox */
+/* Firefox */
 * {
     scrollbar-width: thin;
-    scrollbar-color: black white;
+    scrollbar-color: #69f0ae #1F1F1F;
 }
 
-/* Works on Chrome, Edge, and Safari */
+/* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
     width: 6px;
-    height: auto;
+    height: 25px;
 }
 
 *::-webkit-scrollbar-track {
@@ -78,8 +85,8 @@ body {
     left: 0;
     overflow-x: hidden;
     overflow-y: auto;
-    background: #f3f3f3;
-    color: #fff;
+    border: 1px solid var(--grey-bg);
+    padding-right: 5px;
 }
 
 .sidebar-logo .logo {
@@ -92,17 +99,30 @@ body {
 
 ul {
     list-style-type: none;
-    color: black;
+    color: #69f0ae;
 }
 
 .nav-link {
-    color: black;
+    color: lightgrey;
 }
 
+    .nav-link:hover {
+        color: var(--primary) !important;
+  
+    }
+
+
 .active-link {
+    
     color: var(--primary) !important;
-    border-right: 5px solid black;
+    border: 2px solid #69f0ae;
+    background-color: var(--grey-7);
     font-weight: 600;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+   
 }
 
 /*
@@ -120,16 +140,17 @@ ul {
     font-family: 'Archivo', sans-serif;
     font-weight: bold;
     font-size: large;
-    color: #000000;
-    border: 2px solid #000000;
+    color: var(--primary);
+    border: 2px solid var(--primary);
 }
 
     .btn-cta:hover {
         font-family: 'Archivo', sans-serif;
         font-weight: bold;
         font-size: large;
-        color: #f3f3f3;
-        background-color: #000000;
+        color: var(--grey-7);
+        background-color: var(--primary);
+        border-color: var(--grey-2);
         transition: background-color .7s, transform .7s;
     }
 
@@ -191,7 +212,7 @@ input[type=text], select, textarea {
 }
 
 input[type=submit] {
-    background-color: #04AA6D;
+    /*background-color: #04AA6D;*/
     color: white;
     padding: 12px 20px;
     border: none;
@@ -199,5 +220,10 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-    background-color: #45a049;
+    /*background-color: #45a049;*/
+}
+
+
+.sticky-top {
+    background-color: #232323;
 }

@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.ComponentModel.DataAnnotations;
 using TheInventory.Models;
 
 namespace TheInventory.Pages
@@ -10,6 +11,8 @@ namespace TheInventory.Pages
         public List<Recipe> allRecipes = new List<Recipe>();
         public string Message { get; set; } = string.Empty;
         public bool MessageSuccess { get; set; } = false;
+        [Required, StringLength(10)]
+        public string Verify { get; set; }
         public void OnGet(string message = "", bool success = true)
         {
             allMaterials = new Inventory().Materials;
@@ -40,7 +43,6 @@ namespace TheInventory.Pages
         {
             Console.WriteLine($"{name} should change to {count}");
             new Inventory().UpdateCount(name, count);
-
 
             //redirect back to normal get
             return RedirectToPage("./Manufacturing");

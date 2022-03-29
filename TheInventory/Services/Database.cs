@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System.Text;
 using TheInventory.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace TheInventory.Services
 {
@@ -117,14 +118,14 @@ namespace TheInventory.Services
 
                 results.Add(recipe);
             }
-
             //return the final results after adding each readable row
             return results;
         }
 
         /*-------------------------------------------------------------------------------------
         //Craft Recipe
-        -------------------------------------------------------------------------------------*/
+        -------------------------------------------------------------------------------------*/ 
+
         public static bool CraftRecipe(string nameId, int newCount, List<string> ingredients, string verify)
         {
 
@@ -177,7 +178,8 @@ namespace TheInventory.Services
                 databaseVerifyCode = reader.GetString(0);
             }
             con.Close();
-            //2.
+
+            
             var data = Encoding.ASCII.GetBytes(verifyInput);
             var hashData = new XSystem.Security.Cryptography.SHA1Managed().ComputeHash(data);
 
@@ -187,11 +189,9 @@ namespace TheInventory.Services
             {
                 userInputHashCode += key.ToString("X2");
             }
-
             Console.WriteLine($"--------Database Verify Code: {databaseVerifyCode}");
             Console.WriteLine($"--------Input Verify Code: {userInputHashCode}");
 
-            //CONTINUE HERE
             if (databaseVerifyCode.ToUpper() == userInputHashCode)
             {
                 Console.WriteLine("Correct");
@@ -266,6 +266,37 @@ namespace TheInventory.Services
         }
 
 
+        /*public static int TotalMaterialCount()
+        {
+            //establich connection to db
+            using var con = new MySqlConnection(serverConfiguration);
+            con.Open();
+
+            //Setup Query
+            string sql = "SELECT SUM(count) FROM `materials`";
+            using var cmd = new MySqlCommand(sql, con);
+
+            cmd.Parameters.AddWithValue("@name", name);
+
+            //creates a instance of our command result that can be read in C#.
+            using MySqlDataReader reader = cmd.ExecuteReader();
+
+            int count = 0;
+
+            //go through the readbale data and do this for each entry
+            while (reader.Read())
+            {
+                count = reader.GetInt32(0);
+            }
+            //close the connection
+            con.Close();
+
+            Console.WriteLine("Current Count of " + name + ": " + count);
+            //return the final results after adding each readable row
+            return count;
+        }*/
+
+
         /*-------------------------------------------------------------------------------------
         //Ticket List
         -------------------------------------------------------------------------------------*/
@@ -327,16 +358,13 @@ namespace TheInventory.Services
         {
             using var con = new MySqlConnection(serverConfiguration);
             con.Open();
-
             string sql = "INSERT INTO `tickets`(`title`, `department`, `description`, `status`) VALUES(@title, @department, @description, @status);";
             Console.WriteLine(sql);
             using var cmd = new MySqlCommand(sql, con);
-
             cmd.Parameters.AddWithValue("@title", title);
             cmd.Parameters.AddWithValue("@department", department);
             cmd.Parameters.AddWithValue("@description", description);
             cmd.Parameters.AddWithValue("@status", status);
-
             cmd.Prepare();
             cmd.ExecuteNonQuery();
         }*/
