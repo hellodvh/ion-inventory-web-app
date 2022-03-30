@@ -18,8 +18,6 @@
     }
 }
 
-
-
 <!--Manufacturing Container-->
 <div class="container-fluid">
 
@@ -29,7 +27,6 @@
     <h4>@ViewData["Title"]</h4>
   </nav>
 
-
     <!--Parts Recipes-->
     <div class="row mt-1">    
         <div class="col-xl col-md-12 pb-3">
@@ -37,16 +34,17 @@
                 <div class="card-header text-center">
                     Craftable Parts (Crafting)
                 </div>
+
                 <div class="card-body">
                     @foreach(var recipe in Model.allRecipes)
                     {
-                    <div class="col-6">
-                        <div class="card @(recipe.IsCraftable() ? "boreder-success" : "bg-light")">
-                            @*<img class="card-img-top" src="@block.ImageUrl" alt="Card image">*@
+                    <div class="col-4">
+                        <div class="card shadow-lg mb-3 @(recipe.IsCraftable() ? "boreder-success" : "bg-light")">
+                            <img class="card-img-top" src="@recipe.Name" alt="Card image">
                             <div class="card-body">
-                                <span>@recipe.Name</span>
-                                <span style="float:right;">@recipe.Count</span>
-                                @*<h5 class="card-title">@block.Name</h5>*@
+                                <h3>@recipe.Name</h3>
+                                <h2 style="float:right;">@recipe.Count</h2>
+                                @*<h5 class="card-title">@recipe.Description</h5>*@
                                 <h6 class="card-title">@recipe.RecipeType</h6>
 
                                 <p>Ingredients</p>
@@ -54,7 +52,8 @@
                                 {
                                     if(ingredient != "")
                                     {
-                                        <p style="padding:0px;margin:0px;margin-left:20px">@ingredient</p>
+                                      
+                                        <span class="badge mb-3">@ingredient</span>
                                     }
                                 }
                                 @{
@@ -68,9 +67,10 @@
                                                     <input type="hidden" name="ingredient[]" value="@ingredient"/>
                                                 }
                                             }
-                                            <input type="text" class="form-control" name="verify" placeholder="Verification Code" style="width:40%; float:left;"/>
-
-                                            <input class="btn btn-dark" type="submit" value="Craft Recipe" style="width:40%; float:left;"/>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" name="verify" placeholder="Verification Code">
+                                                <button class="btn btn-cta" type="submit" value="Craft Recipe">Craft</button>
+                                            </div>
                                         </form>
                                     }
                                 }

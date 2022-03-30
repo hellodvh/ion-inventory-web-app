@@ -128,7 +128,6 @@ namespace TheInventory.Services
 
         public static bool CraftRecipe(string nameId, int newCount, List<string> ingredients, string verify)
         {
-
             if(CheckVerifyCode(nameId, verify))
             {
                 //Remove the ingredients
@@ -153,7 +152,6 @@ namespace TheInventory.Services
             {
                 return false;
             }
-            
         }
 
         /*-------------------------------------------------------------------------------------

@@ -190,26 +190,34 @@ input[type=number]::-webkit-inner-spin-button {
     overflow: hidden;
 }
 
-
-
 /*
-    | Toggle Switch |
+    | Badges |
 */
-
-
+.badge {
+    background-color: var(--primary);
+    color: var(--black);
+    font: 600;
+    font-family: 'Archivo', sans-serif;
+    border-radius: 10px 10px 10px 10px;
+}
+.badge-circle-count {
+    color: var(--white);
+    font: 600;
+    font-family: 'Archivo', sans-serif;
+    text-align: center;
+}
 /*
     | Contact Page |
 */
-
 /* Style inputs */
-input[type=text], select, textarea {
+/*input[type=text], select, textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
     margin-top: 6px;
     margin-bottom: 16px;
     resize: vertical;
-}
+}*/
 
 input[type=submit] {
     /*background-color: #04AA6D;*/
