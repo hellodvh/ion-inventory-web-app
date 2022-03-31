@@ -41,7 +41,7 @@
     <!--Sidebar Container-->
     <div class ="sidebar-container bg-black" >
         <div class="sidebar-logo">
-            <img class="logo" src="./images/logo-white.png"/>
+            <img class="logo" src="./images/logo-primary.png"/>
         </div>
         <h4 class="pb-2 text-center">The Inventory</h4>
         <ul class="sidebar-navigation">
@@ -66,13 +66,9 @@
             <li>
                 <a class="nav-link" asp-area="" asp-page="/About"><i class="fa fa-info-circle" aria-hidden="true" style="padding-right:10px"></i>About</a>
             </li>      
-            
         </ul>
-        @*<div>
-                DateTime: <input class="form-control" asp-for="DateTime" />
-        </div>*@
     </div>
-    <!--Sidebar Container-->
+    <!--Sidebar Container End-->
 
     <!--Content Container-->
     <div class="content-container container-fluid" style="background-color: var(--grey-bg)">
@@ -80,19 +76,13 @@
            @RenderBody() 
         </main>
     </div>
-    <!--Content Container-->
-    @*<div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>*@
     <!--Footer-->
     <footer class="footer text-muted text-center" style="background-color: var(--grey-bg)">
         <div class="container-fluid">
             &copy; 2022 - TheInventory
         </div>
     </footer>
-    <!--Footer-->
+    <!--Footer End-->
     <!--Scripts-->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     @*<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>*@

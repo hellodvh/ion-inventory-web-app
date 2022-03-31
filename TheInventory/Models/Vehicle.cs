@@ -1,21 +1,22 @@
 ﻿namespace TheInventory.Models
 {
-    public class Material
+    public class Vehicle
     {
         //Fields
         public string Name { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
-        public string MaterialCategory { get; set; } = string.Empty;
-        public string MaterialType { get; set; } = string.Empty;
+        public string PartCategory { get; set; } = string.Empty;
+        public string PartType { get; set; } = string.Empty;
         public string ImageUrl { get; set; } = string.Empty;
-        
+        public string Verify { get; set; } = string.Empty;
+
         private int count;
         public int Count
         {
-            get 
-            { 
+            get
+            {
                 //Function
-                return count; 
+                return count;
             }
             set
             {
@@ -28,7 +29,7 @@
         }
 
         //Constructor
-        public Material(int newCount)
+        public Vehicle(int newCount)
         {
             count = newCount;
         }

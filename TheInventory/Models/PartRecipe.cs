@@ -1,16 +1,14 @@
-﻿using TheInventory.Interfaces;
-
-namespace TheInventory.Models
+﻿namespace TheInventory.Models
 {
-    public class Recipe : Craftable
+    public class PartRecipe
     {
-        public Recipe(int newCount)
+        public PartRecipe(int newCount)
         {
             count = newCount;
         }
 
         public string Name { get; set; } = string.Empty;
-        public string RecipeType { get; set; } = string.Empty;
+        public string PartType { get; set; } = string.Empty;
         private int count;
         public int Count { get { return count; } }
         public List<string> Ingredients { get; set; } = new List<string>();
@@ -18,18 +16,18 @@ namespace TheInventory.Models
         {
             var map = new Dictionary<string, int>();
 
-            foreach (var material in Ingredients)
+            foreach (var part in Ingredients)
             {
-                if (material != "")
+                if (part != "")
                 {
                     int count;
-                    if (map.TryGetValue(material, out count))
-                    {  
-                        map[material] += 1;
+                    if (map.TryGetValue(part, out count))
+                    {
+                        map[part] += 1;
                     }
                     else
-                    { 
-                        map.Add(material, 1);
+                    {
+                        map.Add(part, 1);
                     }
                 }
             }

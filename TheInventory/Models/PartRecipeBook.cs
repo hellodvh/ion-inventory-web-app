@@ -2,13 +2,13 @@
 
 namespace TheInventory.Models
 {
-    public class VehicleRecipeBook
+    public class PartRecipeBook
     {
-        public List<Recipe> Recipes = new List<Recipe>();
+        public List<Part> Parts = new List<Part>();
 
-        public VehicleRecipeBook()
+        public PartRecipeBook()
         {
-            Recipes = Database.GetAllRecipes();
+            /*Parts = Database.GetAllPartRecipes();*/
         }
 
         public bool CraftRecipe(string name, int count, List<string> ingredient, string verify)

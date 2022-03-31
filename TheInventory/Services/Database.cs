@@ -7,13 +7,9 @@ namespace TheInventory.Services
 {
     public class Database
     {
-        //Configuration to connect to our localhost database.
         private static string serverConfiguration = @"server=localhost;userid=root;password=;database=ioninventorydb;";
-
-        //Test our database connection is working by returning the version of the database.
         public static string GetVersion()
         {
-            //Create and open a new connection the database using the Config and NuGet Package.
             using var con = new MySqlConnection(serverConfiguration);
             con.Open();
 
@@ -21,35 +17,29 @@ namespace TheInventory.Services
         }
 
         /*-------------------------------------------------------------------------------------
-        //Get All the Materials (blocks)
+        //Get All the Materials
         -------------------------------------------------------------------------------------*/
         public static List<Material> GetAllMaterials()
         {
-            //Create & Open the Database Connection
             using var con = new MySqlConnection(serverConfiguration);
             con.Open();
 
-            //Setup Query
             string sql = "SELECT * FROM materials";
-            using var cmd = new MySqlCommand(sql, con);//Perform this command when connection is established.
+            using var cmd = new MySqlCommand(sql, con);
 
-            //Create an instance of our command result that can be read in C#.
             using MySqlDataReader reader = cmd.ExecuteReader();
-            //Initiat the return list
             var results = new List<Material>();
 
-            //While-loop: Go through the readable data and do this for each entry.
             while(reader.Read())
             {
                 var material = new Material(reader.GetInt32(3))
                 {
-                    Name = reader.GetString(0), // index of column order
+                    Name = reader.GetString(0),
                     MaterialType = reader.GetString(1),
                     ImageUrl = reader.GetString(2),
                 };
                 results.Add(material);
             }
-            //Return the final result after adding each readable row.
             return results;
         }
 
@@ -58,20 +48,16 @@ namespace TheInventory.Services
         -------------------------------------------------------------------------------------*/
         public static void UpdateMaterialCount(string name, int newCount)
         {
-            //Establish a connection to the database.
             using var con = new MySqlConnection(serverConfiguration);
             con.Open();
 
-            //Sql query
             string sql = "UPDATE `materials` SET `count`= @count WHERE `name` = @name";
             using var cmd = new MySqlCommand(sql, con);
 
-            //Add the actual values by replacing the @placeholders
             cmd.Parameters.AddWithValue("@name", name);
             cmd.Parameters.AddWithValue("@count", newCount);
-            //Prepare the Command.
+
             cmd.Prepare();
-            //Execute
             cmd.ExecuteNonQuery();
         }
 
@@ -81,26 +67,21 @@ namespace TheInventory.Services
 
         public static List<Recipe> GetAllRecipes()
         {
-            //create & open the db connection
             using var con = new MySqlConnection(serverConfiguration);
             con.Open();
 
-            //setup query
             string sql = "SELECT * FROM recipes";
-            using var cmd = new MySqlCommand(sql, con); //perform this new command which is sql and do it in the connnect established.
+            using var cmd = new MySqlCommand(sql, con); 
 
-            //creates a instance of our command result that can be read in C#.
             using MySqlDataReader reader = cmd.ExecuteReader();
 
-            //init our return list
             var results = new List<Recipe>();
 
-            //go through the readable data and do this for each entry
             while (reader.Read())
             {
                 var recipe = new Recipe(reader.GetInt32(2))
                 {
-                    Name = reader.GetString(0), //0 = index of our column order
+                    Name = reader.GetString(0),
                     RecipeType = reader.GetString(1),
                 };
 
@@ -118,7 +99,6 @@ namespace TheInventory.Services
 
                 results.Add(recipe);
             }
-            //return the final results after adding each readable row
             return results;
         }
 
@@ -130,20 +110,17 @@ namespace TheInventory.Services
         {
             if(CheckVerifyCode(nameId, verify))
             {
-                //Remove the ingredients
                 UpdateMaterialCountAfterCraft(ingredients);
-                //establich connection to db
                 using var con = new MySqlConnection(serverConfiguration);
                 con.Open();
-                //sql query
+
                 string sql = "UPDATE `recipes` SET `count`= @count WHERE `name` = @name";
                 using var cmd = new MySqlCommand(sql, con);
-                //addming the actual values by replacing the @placeholders
+
                 cmd.Parameters.AddWithValue("@name", nameId);
                 cmd.Parameters.AddWithValue("@count", newCount);
-                //Prepare Command
+
                 cmd.Prepare();
-                //Execute
                 cmd.ExecuteNonQuery();
 
                 return true;
@@ -207,7 +184,6 @@ namespace TheInventory.Services
         -------------------------------------------------------------------------------------*/
         public static void UpdateMaterialCountAfterCraft(List<string> ingredients)
         {
-            //establich connection to db
             using var con = new MySqlConnection(serverConfiguration);
             con.Open();
 
@@ -218,15 +194,13 @@ namespace TheInventory.Services
                     Console.WriteLine("Current Ingredient Loop: " + material);
                     int currentCount = GetCountOfMaterial(material);
 
-                    //sql query
                     string sql = "UPDATE `materials` SET `count`= @count WHERE `name` = @name";
                     using var cmd = new MySqlCommand(sql, con);
 
                     cmd.Parameters.AddWithValue("@name", material);
                     cmd.Parameters.AddWithValue("@count", currentCount - 1);
-                    //Prepare Command
+
                     cmd.Prepare();
-                    //Execute
                     cmd.ExecuteNonQuery();
                 }
             }
@@ -236,30 +210,26 @@ namespace TheInventory.Services
         -------------------------------------------------------------------------------------*/
         public static int GetCountOfMaterial(string name)
         {
-            //establich connection to db
+
             using var con = new MySqlConnection(serverConfiguration);
             con.Open();
 
             string sql = "SELECT count FROM materials WHERE name = @name";
-            using var cmd = new MySqlCommand(sql, con); //perform this new command which is sql and do it in the connnect established.
+            using var cmd = new MySqlCommand(sql, con);
 
             cmd.Parameters.AddWithValue("@name", name);
 
-            //creates a instance of our command result that can be read in C#.
             using MySqlDataReader reader = cmd.ExecuteReader();
 
             int count = 0;
 
-            //go through the readbale data and do this for each entry
             while (reader.Read())
             {
                 count = reader.GetInt32(0);
             }
-            //close the connection
             con.Close();
 
             Console.WriteLine("Current Count of " + name + ": " + count);
-            //return the final results after adding each readable row
             return count;
         }
 

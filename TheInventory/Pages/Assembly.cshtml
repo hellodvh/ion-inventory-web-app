@@ -26,21 +26,50 @@
                 <div class="card-header text-center">
                     Vehicle Parts
                 </div>
-                <div class="card-body">      
+                <div class="card-body">    
+                    
                 </div>  
             </div>
         </div>
     </div>
 
-    <div class="row">    
+    <!--Materials-->
+    <div class="row mt-1 ">
         <div class="col-xl col-md-12 pb-3">
             <div class="card rounded-3 shadow-lg">
                 <div class="card-header text-center">
-                    Craftable Vehicles
+                    Materials
                 </div>
-                <div class="card-body">     
-                </div>   
+                <div class="card-body">
+                    @*@foreach(var material in Model.allMaterials)
+                    {*@
+                    <div class="card mb-2 shadow-sm hover-effect">
+                        <div class="row g-0">
+                            <div class="col-md-2 align-self-center bg-light">
+                                <img src="./images/raw-materials.png" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">@*@material.Name*@</h5>
+                                    <p class="card-text">@*@material.MaterialType*@</p>
+                                </div>
+                            </div>
+                            <div class="col-md-2 align-self-center counter">
+                                <div class="">
+                                    <h3>@*@material.Count*@</h3>
+                                </div>
+                            </div>
+                            <form method="post" asp-page-handler="update">
+                                <input class="form-controller" name="count" value="@*@material.Count*@" type="number" min="0" step="1"/>
+                                <input type="hidden" name="name" value="@*@material.Name*@" />
+                                <button class="btn btn-outline-primary" style="margin-top: 20px">Update</button>
+                            </form>
+                        </div>
+                    </div>
+                    @*}*@
+                </div>
             </div>
         </div>
     </div>
+    <!--Materials-->
 </div>

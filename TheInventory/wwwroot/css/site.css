@@ -24,6 +24,7 @@
     --white: #FFFFFF;
     --black: #000000;
     --primary: #69f0ae;
+    --seconday: #ffa01c;
 }
 
 /*
@@ -57,6 +58,7 @@
 */
 html {
     font-size: 14px;
+    font-family: font-family: 'Archivo', sans-serif;
     position: relative;
     min-height: 100%;
 }
@@ -100,15 +102,17 @@ body {
 ul {
     list-style-type: none;
     color: #69f0ae;
+    font-family: 'Archivo', sans-serif;
 }
 
 .nav-link {
     color: lightgrey;
+    font-family: 'Archivo', sans-serif;
 }
 
     .nav-link:hover {
         color: var(--primary) !important;
-  
+        font-family: 'Archivo', sans-serif;
     }
 
 
@@ -194,43 +198,20 @@ input[type=number]::-webkit-inner-spin-button {
     | Badges |
 */
 .badge {
-    background-color: var(--primary);
-    color: var(--black);
+    /*background-color: var(--primary);*/
+    color: var(--primary);
     font: 600;
     font-family: 'Archivo', sans-serif;
     border-radius: 10px 10px 10px 10px;
+    border: 1px solid var(--primary);
 }
 .badge-circle-count {
     color: var(--white);
     font: 600;
+    font-size: 60px;
     font-family: 'Archivo', sans-serif;
     text-align: center;
 }
-/*
-    | Contact Page |
-*/
-/* Style inputs */
-/*input[type=text], select, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-}*/
-
-input[type=submit] {
-    /*background-color: #04AA6D;*/
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    cursor: pointer;
-}
-
-input[type=submit]:hover {
-    /*background-color: #45a049;*/
-}
-
 
 .sticky-top {
     background-color: #232323;

@@ -1,0 +1,133 @@
+﻿/* TABLE CREATE (Materials)*/
+
+CREATE TABLE materials ( 
+	name VARCHAR(50) NOT NULL, 
+	description VARCHAR(255), 
+	materialcategory VARCHAR(50), 
+	materialtype VARCHAR(50), 
+	count INT(11), 
+	image VARCHAR(255), 
+	PRIMARY KEY (name) 
+); 
+
+
+/* DATA INSERT (Materials)*/
+
+INSERT INTO `materials`(`name`, `description`, `materialcategory`, `materialtype`, `count`, `image`) VALUES ('Aluminum','Aluminum Material','','Raw Material','10','/images/material/raw-materials-white.png');
+
+INSERT INTO `materials`(`name`, `description`, `materialcategory`, `materialtype`, `count`, `image`) VALUES ('Baron','Baron Material','','Raw Material','10','/images/material/raw-materials-white.png');
+
+INSERT INTO `materials`(`name`, `description`, `materialcategory`, `materialtype`, `count`, `image`) VALUES ('Bauxite','Bauxite Material','','Raw Material','10','/images/material/raw-materials-white.png');
+
+INSERT INTO `materials`(`name`, `description`, `materialcategory`, `materialtype`, `count`, `image`) VALUES ('Cobalt','Cobalt Material','','Raw Material','10','/images/material/raw-materials-white.png');
+
+INSERT INTO `materials`(`name`, `description`, `materialcategory`, `materialtype`, `count`, `image`) VALUES ('Copper','Copper Material','','Raw Material','10','/images/material/raw-materials-white.png');
+
+INSERT INTO `materials`(`name`, `description`, `materialcategory`, `materialtype`, `count`, `image`) VALUES ('Iron','Iron Material','','Raw Material','10','/images/material/raw-materials-white.png');
+
+INSERT INTO `materials`(`name`, `description`, `materialcategory`, `materialtype`, `count`, `image`) VALUES ('Leather','Leather Material','','Raw Material','10','/images/material/raw-materials-white.png');
+
+INSERT INTO `materials`(`name`, `description`, `materialcategory`, `materialtype`, `count`, `image`) VALUES ('Lithium','Lithium Material','','Raw Material','10','/images/material/raw-materials-white.png');
+
+INSERT INTO `materials`(`name`, `description`, `materialcategory`, `materialtype`, `count`, `image`) VALUES ('Magnet','Magnet Material','','Raw Material','10','/images/material/raw-materials-white.png');
+
+INSERT INTO `materials`(`name`, `description`, `materialcategory`, `materialtype`, `count`, `image`) VALUES ('Nickel','Nickel Material','','Raw Material','10','/images/material/raw-materials-white.png');
+
+INSERT INTO `materials`(`name`, `description`, `materialcategory`, `materialtype`, `count`, `image`) VALUES ('Plastic','Plastic Material','','Raw Material','10','/images/material/raw-materials-white.png');
+
+INSERT INTO `materials`(`name`, `description`, `materialcategory`, `materialtype`, `count`, `image`) VALUES ('Rubber','Rubber Material','','Raw Material','10','/images/material/raw-materials-white.png');
+
+INSERT INTO `materials`(`name`, `description`, `materialcategory`, `materialtype`, `count`, `image`) VALUES ('Silicon','Silicon Material','','Raw Material','10','/images/material/raw-materials-white.png');
+
+INSERT INTO `materials`(`name`, `description`, `materialcategory`, `materialtype`, `count`, `image`) VALUES ('Steel','Steel Material','','Raw Material','10','/images/material/raw-materials-white.png');
+
+INSERT INTO `materials`(`name`, `description`, `materialcategory`, `materialtype`, `count`, `image`) VALUES ('Titanium','Titanium Material','','Raw Material','10','/images/material/raw-materials-white.png');
+
+
+/* TABLE CREATE (Parts)*/
+
+CREATE TABLE parts (
+    name VARCHAR(50) NOT NULL,
+    description VARCHAR(255),
+    partcategory VARCHAR(50),
+    parttype VARCHAR(50),
+    count INT(11),
+    image VARCHAR(255),
+    material1 VARCHAR(50),
+    material2 VARCHAR(50),
+    material3 VARCHAR(50),
+    material4 VARCHAR(50),
+    material5 VARCHAR(50),
+    material6 VARCHAR(50),
+    material7 VARCHAR(50),
+    material8 VARCHAR(50),
+    material9 VARCHAR(50),
+    material10 VARCHAR(50),
+	verifycode VARCHAR(255),
+	PRIMARY KEY (name)
+);
+
+/* DATA INSERT (Parts)*/
+
+INSERT INTO `parts`(`name`, `description`, `partcategory`, `parttype`, `count`, `image`, `material1`, `material2`, `material3`, `material4`, `material5`, `material6`, `material7`, `material8`, `material9`, `material10`, `verifycode`) VALUES ('Wheels','Tesla Model S Wheels','Model S','Vehicle Part','1','/images/part/motor-white.png','Bauxite','Rubber','Rubber','Rubber','Rubber','Steel','','','','','password12345');
+
+INSERT INTO `parts`(`name`, `description`, `partcategory`, `parttype`, `count`, `image`, `material1`, `material2`, `material3`, `material4`, `material5`, `material6`, `material7`, `material8`, `material9`, `material10`, `verifycode`) VALUES ('Chassis Frame','Tesla Model S Chassis','Model S','Vehicle Part','1','/images/part/motor-white.png','Aluminum','Baron','Baron','Steel','Steel','Titanium','Titanium','','','','password12345');
+
+INSERT INTO `parts`(`name`, `description`, `partcategory`, `parttype`, `count`, `image`, `material1`, `material2`, `material3`, `material4`, `material5`, `material6`, `material7`, `material8`, `material9`, `material10`, `verifycode`) VALUES ('Body Panels','Tesla Model S Body','Model S','Vehicle Part','1','/images/part/motor-white.png','Aluminum','Baron','','Steel','','Titanium','','Silicon','','','password12345');
+
+INSERT INTO `parts`(`name`, `description`, `partcategory`, `parttype`, `count`, `image`, `material1`, `material2`, `material3`, `material4`, `material5`, `material6`, `material7`, `material8`, `material9`, `material10`, `verifycode`) VALUES ('Battery Cells','Tesla Model S Battery','Model S','Vehicle Part','1','/images/part/motor-white.png','Aluminum','Cobalt','Copper','Lithium','Lithium','Nickel','Nickel','','','','password12345');
+
+INSERT INTO `parts`(`name`, `description`, `partcategory`, `parttype`, `count`, `image`, `material1`, `material2`, `material3`, `material4`, `material5`, `material6`, `material7`, `material8`, `material9`, `material10`, `verifycode`) VALUES ('Motor','Tesla Model S Motor','Model S','Vehicle Part','1','/images/part/motor-white.png','Copper','Iron','Iron','Magnet','Steel','','','','','','password12345');
+
+INSERT INTO `parts`(`name`, `description`, `partcategory`, `parttype`, `count`, `image`, `material1`, `material2`, `material3`, `material4`, `material5`, `material6`, `material7`, `material8`, `material9`, `material10`, `verifycode`) VALUES ('Interior','Tesla Model S Interior','Model S','Vehicle Part','1','/images/part/motor-white.png','Leather','Leather','','Plastic','Silicon','','','','','','password12345');
+
+INSERT INTO `parts`(`name`, `description`, `partcategory`, `parttype`, `count`, `image`, `material1`, `material2`, `material3`, `material4`, `material5`, `material6`, `material7`, `material8`, `material9`, `material10`, `verifycode`) VALUES ('Electronics System','Tesla Model S Electronics System','Model S','Vehicle Part','1','/images/part/motor-white.png','Aluminum','Aluminum','Copper','Copper','Plastic','','','','','','password12345');
+
+INSERT INTO `parts`(`name`, `description`, `partcategory`, `parttype`, `count`, `image`, `material1`, `material2`, `material3`, `material4`, `material5`, `material6`, `material7`, `material8`, `material9`, `material10`, `verifycode`) VALUES ('Charging Port','Tesla Model S Charging Port','Model S','Vehicle Part','1','/images/part/motor-white.png','','','Copper','','Magnet','','Plastic','','Steel','','password12345');
+
+INSERT INTO `parts`(`name`, `description`, `partcategory`, `parttype`, `count`, `image`, `material1`, `material2`, `material3`, `material4`, `material5`, `material6`, `material7`, `material8`, `material9`, `material10`, `verifycode`) VALUES ('Breaks','Tesla Model S Breaks','Model S','Vehicle Part','1','/images/part/motor-white.png','Bauxite','Steel','Titanium','','','','','','','','password12345');
+
+/* TABLE CREATE (Vehicles)*/
+
+CREATE TABLE vehicles (
+    name VARCHAR(50) NOT NULL,
+    description VARCHAR(255),
+    vehiclecategory VARCHAR(50),
+    vehicletype VARCHAR(50),
+    count INT(11),
+    image VARCHAR(255),
+    part1 VARCHAR(50),
+    part2 VARCHAR(50),
+    part3 VARCHAR(50),
+    part4 VARCHAR(50),
+    part5 VARCHAR(50),
+    part6 VARCHAR(50),
+    part7 VARCHAR(50),
+    part8 VARCHAR(50),
+    part9 VARCHAR(50),
+    part10 VARCHAR(50),
+	verifycode VARCHAR(255),
+	PRIMARY KEY (name)
+);
+
+/* DATA INSERT (Vehicle)*/
+
+INSERT INTO `vehicles`(`name`, `description`, `vehiclecategory`, `vehicletype`, `count`, `image`, `part1`, `part2`, `part3`, `part4`, `part5`, `part6`, `part7`, `part8`, `part9`, `part10`, `verifycode`) VALUES ('Tesla Model S','Model S - 
+Range: 396mi, 0-60mph: 1.99s, Top Speed: 200mph, Peak Power: 1,020hp.','Model S','Electric Vehicle',1,'/images/vehicle/car-white.png','Wheels','Chassis Frame','Body Panels','Battery Cells','Motor','Interior','Electronics System','Charging Port','Breaks','','secret12345');
+
+/* TABLE CREATE (Tickets)*/
+
+CREATE TABLE tickets (
+    id INT NOT NULL AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    department VARCHAR(255),
+    description VARCHAR(255),
+    status VARCHAR(50),
+    PRIMARY KEY(id)
+);
+
+/* DATA INSERT (Tickets)*/
+
+INSERT INTO `tickets`(`id`, `title`, `department`, `description`, `status`) VALUES (1, 'Manufacture electric motor.','Manufacturing','Please manufacture 20 electric motors for Tesla model S.','Open');
+
+
