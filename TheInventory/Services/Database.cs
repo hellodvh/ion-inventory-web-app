@@ -132,7 +132,7 @@ namespace TheInventory.Services
         }
 
         /*-------------------------------------------------------------------------------------
-        //Check Verify Code
+        //Check Verify Code - Recipes
         -------------------------------------------------------------------------------------*/
         private static bool CheckVerifyCode(string nameId, string verifyInput)
         {
@@ -154,8 +154,8 @@ namespace TheInventory.Services
             }
             con.Close();
 
-            
-            var data = Encoding.ASCII.GetBytes(verifyInput);
+
+            byte[]? data = Encoding.ASCII.GetBytes(verifyInput);
             var hashData = new XSystem.Security.Cryptography.SHA1Managed().ComputeHash(data);
 
             var userInputHashCode = string.Empty;

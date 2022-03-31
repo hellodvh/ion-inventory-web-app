@@ -162,13 +162,15 @@ ul {
     | Cards - Horizontal |
 */
 .scroll-card {
-    min-height: 499px;
-    max-height: 500px;
+    min-height: 49vh;
+    max-height: 50vh;
     overflow-y: auto;
 }
 
-input[type=number]::-webkit-inner-spin-button {
-    opacity: 1
+input[type=password] {
+    opacity: 1;
+    color: var(--seconday);
+    background: transparent;
 }
 
 .counter {
