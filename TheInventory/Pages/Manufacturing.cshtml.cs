@@ -10,7 +10,7 @@ namespace TheInventory.Pages
     public class ManufacturingModel : PageModel
     {
         public List<Material> allMaterials = new List<Material>(); 
-        public List<Recipe> allRecipes = new List<Recipe>();
+        public List<PartRecipe> allParts = new List<PartRecipe>();
         public string Message { get; set; } = string.Empty;
         public bool MessageSuccess { get; set; } = false;
 
@@ -22,7 +22,7 @@ namespace TheInventory.Pages
         public void OnGet(string message = "", bool success = true)
         {
             allMaterials = new Inventory().Materials;
-            allRecipes = new RecipeBook().Recipes;
+            allParts = new PartRecipeBook().Parts;
             
 
             Message = message;
@@ -32,7 +32,7 @@ namespace TheInventory.Pages
         public IActionResult OnPostCraft(string name, int count, List<string> ingredient, string verify)
         {
             //Call the function nd pass the name, updated count and ingredient
-            var success = new RecipeBook().CraftRecipe(name, count + 1, ingredient, verify);
+            var success = new PartRecipeBook().CraftPartRecipe(name, count + 1, ingredient, verify);
 
             if (success)
             {

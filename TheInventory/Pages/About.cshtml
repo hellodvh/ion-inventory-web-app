@@ -10,8 +10,8 @@
 
       <!--Top Navbar-->
   <nav class="navbar navbar-expand-lg bg-light sticky-top rounded-3">
-      <img class="rounded-lg-3" src="images/information-white.png" alt="information" width="32" style="margin:10px">
-    <h4>@ViewData["Title"]</h4>
+      <img class="opacity-25" src="images/information-white.png" alt="information" width="32" style="margin:10px">
+    <h4 class="opacity-50">@ViewData["Title"]</h4>
   </nav>
 
   <!--Features Section-->
@@ -59,8 +59,8 @@
                     <p class="card-text text-secondary" style="min-block-size: 70px">Andre is the Inventory Manager for ION. He oversees all of the inventory stock of materials and parts.</p>
                     </div>
                 <div class="card-body">
-                    <a href="mailto:someone@example.com" class="card-link text-decoration-none text-black">Email</a>
-                    <a href="http://www.linkedin.com/" class="card-link text-decoration-none text-black">LinkedIn</a>
+                    <a href="mailto:someone@example.com" class="card-link text-decoration-none text-muted">Email</a>
+                    <a href="http://www.linkedin.com/" class="card-link text-decoration-none text-muted">LinkedIn</a>
                     <!--Toast-->
                     <button type="button" class="btn text-decoration-none text-secondary float-end p-0 m-0" id="myBtnToast1">Show Secret</button>
                     <div class="toast toast1 mt-3">
@@ -68,7 +68,8 @@
                         Verification
                     </div>
                     <div class="toast-body">
-                        <span>Code: '#$%!#0123'</span>
+                        <p>Demo: use this code for verification:</p>
+                        <span class="glow">Code: 'password12345'</span>
                     </div>
                     </div>
                     <!--Toast-->
@@ -85,8 +86,8 @@
                 <p class="card-text text-secondary" style="min-block-size: 70px">Alex is the Production Manager for ION. She oversees all of the manufacturing and assembly of parts and vehicles. </p>
                 </div>
             <div class="card-body">
-                <a href="mailto:someone@example.com" class="card-link text-decoration-none text-black">Email</a>
-                <a href="http://www.linkedin.com/" class="card-link text-decoration-none text-black">LinkedIn</a>
+                <a href="mailto:someone@example.com" class="card-link text-decoration-none text-muted">Email</a>
+                <a href="http://www.linkedin.com/" class="card-link text-decoration-none text-muted">LinkedIn</a>
                 <!--Toast-->
                     <button type="button" class="btn text-decoration-none text-secondary float-end p-0 m-0" id="myBtnToast2">Show Secret</button>
                     <div class="toast toast2 mt-3">
@@ -94,8 +95,8 @@
                         Verification
                     </div>
                     <div class="toast-body">
-                        <span>Code: 'letmein5678'</span>
-                        <p>Use this code to make new parts</p>
+                        <p>Demo: use this code for verification:</p>
+                        <span class="glow">Code: 'password12345'</span>   
                     </div>
                     </div>
                     <!--Toast-->
@@ -111,8 +112,8 @@
                 <p class="card-text text-secondary" style="min-block-size: 70px"></p>
                 </div>
             <div class="card-body">
-                <a href="mailto:someone@example.com" class="card-link text-decoration-none text-black">Email</a>
-                <a href="http://www.linkedin.com/" class="card-link text-decoration-none text-black">LinkedIn</a>
+                <a href="mailto:someone@example.com" class="card-link text-decoration-none text-muted">Email</a>
+                <a href="http://www.linkedin.com/" class="card-link text-decoration-none text-muted">LinkedIn</a>
                 <!--Toast-->
                     <button type="button" class="btn text-decoration-none text-secondary float-end p-0 m-0" id="myBtnToast3">Show Secret</button>
                     <div class="toast toast3 mt-3">
@@ -120,7 +121,8 @@
                         Verification
                     </div>
                     <div class="toast-body">
-                        <span>Code: '123456'</span>
+                        <p>Demo: use this code for verification:</p>
+                        <span class="glow">Code: 'password12345'</span>
                     </div>
                     </div>
                     <!--Toast-->
@@ -130,7 +132,7 @@
     </div>
     <!--Team Section`End-->
     <!--Database Version / Connection Test-->
-    <p style="color:lightgrey">MySql Server Version: @Model.Message</p>
+    <p class="text-muted">MySql Server Version: @Model.Message</p>
 
     <!--TODO: Add detailed project information section -->
   </div>

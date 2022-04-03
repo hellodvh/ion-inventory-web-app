@@ -11,11 +11,10 @@
 
 <!--Inventory Container-->
 <div class="container-fluid">
-
-    <!--Top Navbar-->
+   <!--Top Navbar-->
   <nav class="navbar navbar-expand-lg sticky-top rounded-3 mb-3">
-      <img class="rounded-lg-3" src="images/pallet-white.png" alt="Inventory stock" width="32" style="margin:10px">
-    <h4>@ViewData["Title"]</h4>
+      <img class="opacity-25" src="images/pallet-white.png" alt="Inventory stock" width="32" style="margin:10px;">
+    <h4 class="opacity-50">@ViewData["Title"]</h4>
   </nav>
 
     <!--Iventory Stats Section-->
@@ -161,8 +160,8 @@
                 </div>
                 <div class="card-body scroll-card">
                     <!--Foreach Loop-->
-                    @*@foreach(var part in Model.allParts)
-                    {*@
+                    @foreach(var part in Model.allParts)
+                    {
 
                     <div class="card mb-2 shadow-sm hover-effect">
                         <div class="row g-0">
@@ -171,12 +170,12 @@
                             </div>
                             <div class="col-md-6 align-self-center">  
                                 <div class="row align-content-center">
-                                    <h5 class="card-title" style="color: ">Name</h5>
+                                    <h5 class="card-title" style="color: ">@part.Name</h5>
                                     <p class="card-text" style="color: ">PartType</p>
                                 </div>                  
                             </div>
                             <div class="col-md-2 align-self-center float-end">
-                                <h2 class="card-text text-secondary" style="color: #69f0ae">25</h2>   
+                                <h2 class="card-text text-secondary" style="color: #69f0ae">@part.Count</h2>   
                             </div>
                             @*<div class="col-md-4 align-self-center counter">
                                 <form method="post" asp-page-handler="update">
@@ -189,6 +188,7 @@
                             </div>*@
                         </div>
                     </div>
+                    }
                 </div>  
             </div>
         </div>
@@ -238,11 +238,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
 <script type="text/javascript">
 
+    //forloop
+
     //Bar Chart
     var barchart = document.getElementById('bar').getContext('2d');
     var mybarchart = new Chart(barchart, {
         type: 'bar',
-        data: {
+        data: { 
             labels: ['Steel', 'Copper', 'Iron', 'Glass', 'Rubber', 'Aluminum', 'Plastic', 'Titanium', 'Magnet', 'Silicon', 'Lithium'],
             datasets: [{
                 label: 'Bar Chart',

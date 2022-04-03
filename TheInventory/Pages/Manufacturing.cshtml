@@ -36,8 +36,8 @@
 
     <!--Top Navbar-->
   <nav class="navbar navbar-expand-lg bg-light sticky-top rounded-3 mb-3">
-      <img class="rounded-lg-3" src="images/factory-machine-white.png" alt="Manufacturing" width="32" style="margin:10px">
-    <h4>@ViewData["Title"]</h4>
+      <img class="opacity-25" src="images/factory-machine-white.png" alt="Manufacturing" width="32" style="margin:10px">
+    <h4 class="opacity-50">@ViewData["Title"]</h4>
   </nav>
 
     <!--Parts Recipes-->
@@ -50,9 +50,9 @@
                 </div>
                 <div class="card-body scroll-card">
                     <!--Foreach Loop-->
-                    @foreach(var recipe in Model.allRecipes)
+                    @foreach(var part in Model.allParts)
                     {
-                    <div class="card mb-2 shadow-sm hover-effect @(recipe.IsCraftable() ? "boreder-success" : "bg-light")">
+                    <div class="card mb-2 shadow-sm hover-effect @(part.IsCraftable() ? "boreder-success" : "bg-light")">
                         <div class="row g-0">
                             
                             <div class="col-md-4 align-self-center">
@@ -62,16 +62,16 @@
                             <div class="col-md-4 align-self-center">
 
                                 <div class="row align-content-center">
-                                    <h3>@recipe.Name</h3>
-                                    <h2 style="float:right;">@recipe.Count</h2>
-                                    @*<h5 class="card-title">@recipe.Description</h5>*@
-                                    <h6 class="card-title">@recipe.RecipeType</h6>
+                                    <h3>@part.Name</h3>
+                                    <h2 style="float:right;">@part.Count</h2>
+                                    <h5 class="card-title">@part.Description</h5>
+                                    <h6 class="card-title">@part.RecipeType</h6>
                                 </div>
                             </div>
 
                             <div class="col-md-4 align-self-center float-end">
                                 <p>Ingredients</p>
-                                @foreach(var ingredient in recipe.Ingredients)
+                                @foreach(var ingredient in part.Ingredients)
                                 {
                                     if(ingredient != "")
                                     {
@@ -80,12 +80,12 @@
                                     }
                                 }
                                 @{
-                                    if(recipe.IsCraftable())
+                                    if(part.IsCraftable())
                                     {
-                                        <form method="post" asp-page-handler="craft" asp-route-name="@recipe.Name" asp-route-count="@recipe.Count">
+                                        <form method="post" asp-page-handler="craft" asp-route-name="@part.Name" asp-route-count="@part.Count">
                                         <!--Add a input field for each ingredient-->
                                             @{
-                                                foreach(var ingredient in recipe.Ingredients)
+                                                foreach(var ingredient in part.Ingredients)
                                                 {
                                                     <input type="hidden" name="ingredient[]" value="@ingredient"/>
                                                 }

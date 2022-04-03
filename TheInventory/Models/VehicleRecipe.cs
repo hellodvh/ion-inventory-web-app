@@ -20,18 +20,18 @@ namespace TheInventory.Models
         {
             var map = new Dictionary<string, int>();
 
-            foreach (var vehicle in Ingredients)
+            foreach (var part in Ingredients)
             {
-                if (vehicle != "")
+                if (part != "")
                 {
                     int count;
-                    if (map.TryGetValue(vehicle, out count))
+                    if (map.TryGetValue(part, out count))
                     {
-                        map[vehicle] += 1;
+                        map[part] += 1;
                     }
                     else
                     {
-                        map.Add(vehicle, 1);
+                        map.Add(part, 1);
                     }
                 }
             }
@@ -41,7 +41,7 @@ namespace TheInventory.Models
 
             foreach (var pair in map)
             {
-                if (pair.Value > inventory.GetCount(pair.Key))
+                if (pair.Value > inventory.GetPartCount(pair.Key))
                 {
                     return false;
                 }

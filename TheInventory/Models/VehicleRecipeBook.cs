@@ -4,17 +4,17 @@ namespace TheInventory.Models
 {
     public class VehicleRecipeBook
     {
-        public List<Recipe> Recipes = new List<Recipe>();
+        public List<VehicleRecipe> Vehicles = new List<VehicleRecipe>();
 
         public VehicleRecipeBook()
         {
-            Recipes = Database.GetAllRecipes();
+            Vehicles = Database.GetAllVehicleRecipes();
         }
 
-        public bool CraftRecipe(string name, int count, List<string> ingredient, string verify)
+        public bool CraftVehicleRecipe(string name, int count, List<string> ingredient, string verify)
         {
             Console.WriteLine(ingredient[0]);
-            return Database.CraftRecipe(name, count, ingredient, verify);
+            return Database.CraftVehicleRecipe(name, count, ingredient, verify);
         }
     }
 }

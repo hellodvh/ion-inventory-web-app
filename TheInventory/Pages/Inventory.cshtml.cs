@@ -1,6 +1,7 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Newtonsoft.Json;
 using TheInventory.Models;
+
 
 namespace TheInventory.Pages
 {
@@ -8,10 +9,19 @@ namespace TheInventory.Pages
     {
         public List<Material> allMaterials = new List<Material>();
 
+        public List<Part> allParts = new List<Part>();
+
+        public string MaterialData = ""; //graphs
+        public string PartData = "";
+
         public void OnGet()
         {
             //Create an instance of our Inventory Class for the Materials
             allMaterials = new Inventory().Materials;
+            allParts = new Inventory().Parts;
+
+            MaterialData = JsonConvert.SerializeObject(allMaterials); //graphs
+            PartData = JsonConvert.SerializeObject(allParts);
         }
 
         //On Post Update function to update the database.
@@ -22,6 +32,6 @@ namespace TheInventory.Pages
 
             //Redirect back to normal get
             return RedirectToPage("./Inventory");
-        }*/    
+        }*/
     }
 }

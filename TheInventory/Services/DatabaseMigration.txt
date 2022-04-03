@@ -130,4 +130,15 @@ CREATE TABLE tickets (
 
 INSERT INTO `tickets`(`id`, `title`, `department`, `description`, `status`) VALUES (1, 'Manufacture electric motor.','Manufacturing','Please manufacture 20 electric motors for Tesla model S.','Open');
 
+http://aspsolution.net/Code/1/5131/Convert-List-Object-to-JSON-String-in-ASPNet-using-C
+When removing part count:
+Select * from parts WHERE name = @name AND partcategory = "Model S";
 
+
+
+string MaterialGraphData = ""
+
+OnGet (){
+//get the recipe book list
+//use it to convert to string
+MaterialGraphData = JSON(recibe book object(

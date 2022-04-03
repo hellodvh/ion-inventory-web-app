@@ -218,3 +218,23 @@ input[type=password] {
 .sticky-top {
     background-color: #232323;
 }
+
+
+/*
+    | Text Glow Effect |
+*/
+.glow {
+    -webkit-animation: glow 2s ease-in-out infinite alternate;
+    -moz-animation: glow 2s ease-in-out infinite alternate;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+    from {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px var(--primary), 0 0 20px var(--primary), 0 0 25px var(--primary), 0 0 30px var(--primary), 0 0 35px var(--primary);
+    }
+
+    to {
+        text-shadow: 0 0 10px #fff, 0 0 15px #69f0ae76, 0 0 45px #69f0ae76, 0 0 30px #69f0ae76, 0 0 35px #69f0ae76, 0 0 40px #69f0ae76, 0 0 45px #69f0ae76;
+    }
+}
