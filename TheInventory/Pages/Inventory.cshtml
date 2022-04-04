@@ -124,7 +124,7 @@
                         <div class="row g-0">
 
                             <div class="col-md-4 align-self-center">
-                                <img src="./images/raw-materials-white.png" class="img-fluid rounded-start" alt="..." width="48" style="margin:10px">
+                                <img src="@material.ImageUrl" class="img-fluid rounded-start" alt="..." width="48" style="margin:10px">
                             </div>
                             <div class="col-md-6 align-self-center"> 
                                 
@@ -166,12 +166,13 @@
                     <div class="card mb-2 shadow-sm hover-effect">
                         <div class="row g-0">
                             <div class="col-md-4 align-self-center">
-                                <img src="./images/motor-white.png" class="img-fluid rounded-start" alt="..." width="48" style="margin:10px">
+                                <img src="@part.ImageUrl" class="img-fluid rounded-start" alt="..." width="48" style="margin:10px">
                             </div>
                             <div class="col-md-6 align-self-center">  
                                 <div class="row align-content-center">
-                                    <h5 class="card-title" style="color: ">@part.Name</h5>
-                                    <p class="card-text" style="color: ">PartType</p>
+                                    <h5 class="card-title">@part.Name</h5>
+                                    @*<p class="card-text" >@part.PartType</p>*@
+                                    <p class="card-text" >@part.PartCategory</p>
                                 </div>                  
                             </div>
                             <div class="col-md-2 align-self-center float-end">
@@ -201,7 +202,7 @@
                 </div>
                 <div class="card-body scroll-card">
                     <!--Foreach Loop-->
-                    @*@foreach(var part in Model.allParts)
+                    @*@foreach(var vehicle in Model.allVehicles)
                     {*@
 
                     <div class="card mb-2 shadow-sm hover-effect">
@@ -211,8 +212,8 @@
                             </div>
                             <div class="col-md-6 align-self-center">  
                                 <div class="row align-content-center">
-                                    <h5 class="card-title" style="color: ">Name</h5>
-                                    <p class="card-text" style="color: ">PartType</p>
+                                    <h5 class="card-title"></h5>
+                                    <p class="card-text">PartType</p>
                                 </div>                  
                             </div>
                             <div class="col-md-2 align-self-center float-end">
@@ -229,6 +230,7 @@
                             </div>*@
                         </div>
                     </div>
+                    @*}*@
                 </div>
             </div>
         </div>

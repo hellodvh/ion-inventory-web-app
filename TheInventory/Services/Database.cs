@@ -44,6 +44,7 @@ namespace TheInventory.Services
             }
             return results;
         }
+
         /*-------------------------------------------------------------------------------------
         //Get All the PARTS
         -------------------------------------------------------------------------------------*/
@@ -103,8 +104,6 @@ namespace TheInventory.Services
             }
             return results;
         }
-
-
 
         /*-------------------------------------------------------------------------------------
         //Update the count of materials
@@ -169,7 +168,6 @@ namespace TheInventory.Services
         /*-------------------------------------------------------------------------------------
         //Get List of All PART Recipes
         -------------------------------------------------------------------------------------*/
-
         public static List<PartRecipe> GetAllPartRecipes()
         {
             using var con = new MySqlConnection(serverConfiguration);
@@ -184,21 +182,25 @@ namespace TheInventory.Services
 
             while (reader.Read())
             {
-                var partrecipe = new PartRecipe(reader.GetInt32(2))
+                var partrecipe = new PartRecipe(reader.GetInt32(4))
                 {
                     Name = reader.GetString(0),
-                    RecipeType = reader.GetString(1),
+                    Description = reader.GetString(1),
+                    PartCategory = reader.GetString(2),
+                    PartType = reader.GetString(3),
                 };
 
                 var ingredients = new List<string>();
-                ingredients.Add(reader.GetString(3)); // ingredient 1
-                ingredients.Add(reader.GetString(4)); // ingredient 2
-                ingredients.Add(reader.GetString(5)); // ingredient 3
-                ingredients.Add(reader.GetString(6)); // ingredient 4
-                ingredients.Add(reader.GetString(7)); // ingredient 5
-                ingredients.Add(reader.GetString(8)); // ingredient 6
-                ingredients.Add(reader.GetString(9)); // ingredient 7
-                ingredients.Add(reader.GetString(10)); // ingredient 8
+                ingredients.Add(reader.GetString(6)); // ingredient 1
+                ingredients.Add(reader.GetString(7)); // ingredient 2
+                ingredients.Add(reader.GetString(8)); // ingredient 3
+                ingredients.Add(reader.GetString(9)); // ingredient 4
+                ingredients.Add(reader.GetString(10)); // ingredient 5
+                ingredients.Add(reader.GetString(11)); // ingredient 6
+                ingredients.Add(reader.GetString(12)); // ingredient 7
+                ingredients.Add(reader.GetString(13)); // ingredient 8
+                ingredients.Add(reader.GetString(14)); // ingredient 8
+                ingredients.Add(reader.GetString(15)); // ingredient 8
 
                 partrecipe.Ingredients = ingredients;
 
@@ -211,7 +213,6 @@ namespace TheInventory.Services
         /*-------------------------------------------------------------------------------------
         //Get List of All Vehicle Recipes
         -------------------------------------------------------------------------------------*/
-
         public static List<VehicleRecipe> GetAllVehicleRecipes()
         {
             using var con = new MySqlConnection(serverConfiguration);
@@ -253,7 +254,6 @@ namespace TheInventory.Services
         /*-------------------------------------------------------------------------------------
         //Craft PART Recipe
         -------------------------------------------------------------------------------------*/
-
         public static bool CraftPartRecipe(string nameId, int newCount, List<string> ingredients, string verify)
         {
             if(CheckVerifyCode(nameId, verify))
@@ -262,7 +262,7 @@ namespace TheInventory.Services
                 using var con = new MySqlConnection(serverConfiguration);
                 con.Open();
 
-                string sql = "UPDATE `recipes` SET `count`= @count WHERE `name` = @name";
+                string sql = "UPDATE `parts` SET `count`= @count WHERE `name` = @name";
                 using var cmd = new MySqlCommand(sql, con);
 
                 cmd.Parameters.AddWithValue("@name", nameId);
@@ -276,19 +276,16 @@ namespace TheInventory.Services
             }
             else
             {
-                return false;
-          
-            }
-            
+                return false;      
+            }  
         }
 
         /*-------------------------------------------------------------------------------------
         //Craft VEHICLE Recipe
         -------------------------------------------------------------------------------------*/
-
         public static bool CraftVehicleRecipe(string nameId, int newCount, List<string> ingredients, string verify)
         {
-            if (CheckVerifyCode(nameId, verify))
+            if (CheckVehicleVerifyCode(nameId, verify))
             {
                 UpdatePartCountAfterCraft(ingredients);
                 using var con = new MySqlConnection(serverConfiguration);
@@ -309,20 +306,18 @@ namespace TheInventory.Services
             else
             {
                 return false;
-
             }
-
         }
 
         /*-------------------------------------------------------------------------------------
-        //Check Verify Code - Recipes
+        //Check Verify Code - PARTS
         -------------------------------------------------------------------------------------*/
         private static bool CheckVerifyCode(string nameId, string verifyInput)
         {
             using var con = new MySqlConnection(serverConfiguration);
             con.Open();
 
-            var sql = "SELECT verifycode FROM recipes WHERE name = @name";
+            var sql = "SELECT verifycode FROM parts WHERE name = @name";
             using var cmd = new MySqlCommand(sql, con);
 
             cmd.Parameters.AddWithValue("@name", nameId);
@@ -365,7 +360,7 @@ namespace TheInventory.Services
         /*-------------------------------------------------------------------------------------
         //Check Verify Code - VEHICLES
         -------------------------------------------------------------------------------------*/
-        private static bool CheckVehileVerifyCode(string nameId, string verifyInput)
+        private static bool CheckVehicleVerifyCode(string nameId, string verifyInput)
         {
             using var con = new MySqlConnection(serverConfiguration);
             con.Open();
@@ -433,16 +428,15 @@ namespace TheInventory.Services
 
                     cmd.Prepare();
                     cmd.ExecuteNonQuery();
-                    con.Close();
                 }
             }
         }
+
         /*-------------------------------------------------------------------------------------
         //Get Count Of Material
         -------------------------------------------------------------------------------------*/
         public static int GetCountOfMaterial(string name)
         {
-
             using var con = new MySqlConnection(serverConfiguration);
             con.Open();
 
@@ -466,7 +460,7 @@ namespace TheInventory.Services
         }
 
         /*-------------------------------------------------------------------------------------
-        //Update Part Count After Crating
+        //Update PART Count After Crating
         -------------------------------------------------------------------------------------*/
         public static void UpdatePartCountAfterCraft(List<string> ingredients)
         {
@@ -493,11 +487,10 @@ namespace TheInventory.Services
             }
         }
         /*-------------------------------------------------------------------------------------
-        //Get Count Of Part
+        //Get COUNT of PART
         -------------------------------------------------------------------------------------*/
         public static int GetCountOfPart(string name)
         {
-
             using var con = new MySqlConnection(serverConfiguration);
             con.Open();
 
@@ -519,10 +512,9 @@ namespace TheInventory.Services
             Console.WriteLine("Current Count of " + name + ": " + count);
             return count;
         }
-
-
-
-
+        /*-------------------------------------------------------------------------------------
+        //Get Count Of TOTAL MATERIAL
+        -------------------------------------------------------------------------------------*/
         /*public static int TotalMaterialCount()
         {
             //establich connection to db
@@ -552,7 +544,6 @@ namespace TheInventory.Services
             //return the final results after adding each readable row
             return count;
         }*/
-
 
         /*-------------------------------------------------------------------------------------
         //Ticket List
@@ -587,6 +578,7 @@ namespace TheInventory.Services
             con.Close();
             return results;
         }
+
         /*-------------------------------------------------------------------------------------
         //Add New Ticket
         -------------------------------------------------------------------------------------*/
@@ -612,7 +604,6 @@ namespace TheInventory.Services
         /*-------------------------------------------------------------------------------------
         //Edit Ticket
         -------------------------------------------------------------------------------------*/
-
         /*public static void EditTicket(string title, string department, string description, string status)
         {
             using var con = new MySqlConnection(serverConfiguration);
@@ -627,7 +618,6 @@ namespace TheInventory.Services
             cmd.Prepare();
             cmd.ExecuteNonQuery();
         }*/
-
 
         /*-------------------------------------------------------------------------------------
         //Delete Ticket

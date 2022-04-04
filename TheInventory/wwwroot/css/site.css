@@ -162,8 +162,7 @@ ul {
     | Cards - Horizontal |
 */
 .scroll-card {
-    min-height: 49vh;
-    max-height: 50vh;
+    max-height: 80vh;
     overflow-y: auto;
 }
 
@@ -224,9 +223,9 @@ input[type=password] {
     | Text Glow Effect |
 */
 .glow {
-    -webkit-animation: glow 2s ease-in-out infinite alternate;
-    -moz-animation: glow 2s ease-in-out infinite alternate;
-    animation: glow 2s ease-in-out infinite alternate;
+    -webkit-animation: glow 2.3s ease-in-out infinite alternate;
+    -moz-animation: glow 2.3s ease-in-out infinite alternate;
+    animation: glow 2.3s ease-in-out infinite alternate;
 }
 
 @-webkit-keyframes glow {
@@ -237,4 +236,15 @@ input[type=password] {
     to {
         text-shadow: 0 0 10px #fff, 0 0 15px #69f0ae76, 0 0 45px #69f0ae76, 0 0 30px #69f0ae76, 0 0 35px #69f0ae76, 0 0 40px #69f0ae76, 0 0 45px #69f0ae76;
     }
+}
+
+/*
+    | Image Glow Effect |
+*/
+.glow-img:hover {
+    box-shadow: 0 0 77px var(--primary);
+}
+
+.badge:hover {
+    box-shadow: 0 0 9px var(--primary);
 }
