@@ -5,8 +5,8 @@
         //Fields
         public string Name { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
-        public string PartCategory { get; set; } = string.Empty;
-        public string PartType { get; set; } = string.Empty;
+        public string VehicleCategory { get; set; } = string.Empty;
+        public string VehicleType { get; set; } = string.Empty;
         public string ImageUrl { get; set; } = string.Empty;
         public string Verify { get; set; } = string.Empty;
 

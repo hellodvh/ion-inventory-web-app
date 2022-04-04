@@ -24,6 +24,7 @@ namespace TheInventory.Models
 
             //VEHICLES
             Vehicles = Database.GetAllVehicles();
+
         }
 
         public void UpdateCount(string name, int count)

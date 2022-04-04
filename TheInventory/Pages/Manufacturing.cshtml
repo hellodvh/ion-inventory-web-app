@@ -15,7 +15,7 @@
         {
             <div class="container-fluid alert alert-success alert-dismissible fade show text-center" role="alert">
                 <i class="fa fa-check px-2" aria-hidden="true"></i>
-                <strong>Success! </strong>@Model.Message
+                <strong>Success!</strong>@Model.Message
                     <button type="button" class="btn" data-bs-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true"><i class="fa fa-times" aria-hidden="true"></i></span> 
                     </button>
@@ -44,6 +44,7 @@
     <div class="row mt-1">    
         <!-- Craftable Recipes-->
         <div class="col-xl col-md-12 pb-3">
+            <h3>Craft Parts with available materials</h3>
             <div class="card rounded-3 shadow-lg">
                 <div class="card-header text-center sticky-top">
                     Craftable Parts
@@ -82,7 +83,6 @@
                                     if(part.IsCraftable())
                                     {
                                         <form method="post" asp-page-handler="craft" asp-route-name="@part.Name" asp-route-count="@part.Count">
-                                        <!--Add a input field for each ingredient-->
                                             @{
                                                 foreach(var ingredient in part.Ingredients)
                                                 {
@@ -106,6 +106,7 @@
 
         <!--Materials-->
         <div class="col-xl col-md-12 pb-3">
+        <h3>Update Material Stock Count</h3>
             <div class="card rounded-3 shadow-lg scroll-card">
                 <div class="card-header text-center sticky-top">
                     Materials

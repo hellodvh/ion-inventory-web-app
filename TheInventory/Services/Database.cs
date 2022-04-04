@@ -45,6 +45,11 @@ namespace TheInventory.Services
             return results;
         }
 
+        /*internal static string TotalMaterialCount()
+        {
+            throw new NotImplementedException();
+        }*/
+
         /*-------------------------------------------------------------------------------------
         //Get All the PARTS
         -------------------------------------------------------------------------------------*/
@@ -95,8 +100,8 @@ namespace TheInventory.Services
                 {
                     Name = reader.GetString(0),
                     Description = reader.GetString(1),
-                    PartCategory = reader.GetString(2),
-                    PartType = reader.GetString(3),
+                    VehicleCategory = reader.GetString(2),
+                    VehicleType = reader.GetString(3),
                     Count = reader.GetInt32(4),
                     ImageUrl = reader.GetString(5)
                 };
@@ -121,8 +126,6 @@ namespace TheInventory.Services
 
             cmd.Prepare();
             cmd.ExecuteNonQuery();
-
-            con.Close();
         }
 
         /*-------------------------------------------------------------------------------------
@@ -141,8 +144,6 @@ namespace TheInventory.Services
 
             cmd.Prepare();
             cmd.ExecuteNonQuery();
-
-            con.Close();
         }
 
         /*-------------------------------------------------------------------------------------
@@ -161,8 +162,6 @@ namespace TheInventory.Services
 
             cmd.Prepare();
             cmd.ExecuteNonQuery();
-
-            con.Close();
         }
 
         /*-------------------------------------------------------------------------------------
@@ -512,10 +511,71 @@ namespace TheInventory.Services
             Console.WriteLine("Current Count of " + name + ": " + count);
             return count;
         }
+
+
+        //8888
+
+        /*-------------------------------------------------------------------------------------
+        //Update VEHICLE Count After Crating
+        -------------------------------------------------------------------------------------*/
+        public static void UpdateVehicleCountAfterCraft(List<string> ingredients)
+        {
+            using var con = new MySqlConnection(serverConfiguration);
+            con.Open();
+
+            foreach (string vehicle in ingredients)
+            {
+                if (vehicle != "")
+                {
+                    Console.WriteLine("Current Ingredient Loop: " + vehicle);
+                    int currentCount = GetCountOfVehicle(vehicle);
+
+                    string sql = "UPDATE `vehicles` SET `count`= @count WHERE `name` = @name";
+                    using var cmd = new MySqlCommand(sql, con);
+
+                    cmd.Parameters.AddWithValue("@name", vehicle);
+                    cmd.Parameters.AddWithValue("@count", currentCount - 1);
+
+                    cmd.Prepare();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
+        }
+        /*-------------------------------------------------------------------------------------
+        //Get COUNT of VEHICLE
+        -------------------------------------------------------------------------------------*/
+        public static int GetCountOfVehicle(string name)
+        {
+            using var con = new MySqlConnection(serverConfiguration);
+            con.Open();
+
+            string sql = "SELECT count FROM vehicles WHERE name = @name";
+            using var cmd = new MySqlCommand(sql, con);
+
+            cmd.Parameters.AddWithValue("@name", name);
+
+            using MySqlDataReader reader = cmd.ExecuteReader();
+
+            int count = 0;
+
+            while (reader.Read())
+            {
+                count = reader.GetInt32(0);
+            }
+            con.Close();
+
+            Console.WriteLine("Current Count of " + name + ": " + count);
+            return count;
+        }
+
+        //8888
+
+
         /*-------------------------------------------------------------------------------------
         //Get Count Of TOTAL MATERIAL
         -------------------------------------------------------------------------------------*/
-        /*public static int TotalMaterialCount()
+        public static int TotalMaterialCount(string name)
         {
             //establich connection to db
             using var con = new MySqlConnection(serverConfiguration);
@@ -530,20 +590,19 @@ namespace TheInventory.Services
             //creates a instance of our command result that can be read in C#.
             using MySqlDataReader reader = cmd.ExecuteReader();
 
-            int count = 0;
+            int totalMaterials = 0;
 
             //go through the readbale data and do this for each entry
             while (reader.Read())
             {
-                count = reader.GetInt32(0);
+                totalMaterials = reader.GetInt32(0);
             }
-            //close the connection
+            
             con.Close();
 
-            Console.WriteLine("Current Count of " + name + ": " + count);
-            //return the final results after adding each readable row
-            return count;
-        }*/
+            Console.WriteLine("Current Total Count of " + totalMaterials);
+            return totalMaterials;
+        }
 
         /*-------------------------------------------------------------------------------------
         //Ticket List
@@ -635,8 +694,6 @@ namespace TheInventory.Services
             cmd.Prepare();
             cmd.ExecuteNonQuery();
             con.Close();
-
         }
-
     }
 }
