@@ -13,9 +13,9 @@
 [![Behance][behance-shield]][behance-url]
 
 <!-- HEADER SECTION -->
-<h5 align="center" style="padding:0;margin:0;">Your Name & Surname</h5>
-<h5 align="center" style="padding:0;margin:0;">Student Number</h5>
-<h6 align="center">Subject Name & Year</h6>
+<h5 align="center" style="padding:0;margin:0;">Dylan Vanhout</h5>
+<h5 align="center" style="padding:0;margin:0;">190160</h5>
+<h6 align="center">IDV300 2022</h6>
 </br>
 <p align="center">
 
@@ -27,14 +27,14 @@
 
   <p align="center">
     Short Project Slogan / Description <br>
-      <a href="https://github.com/username/projectname"><strong>Explore the docs »</strong></a>
+      <a href="https://github.com/hellodvh/TheInventory"><strong>Explore the docs »</strong></a>
    <br />
    <br />
    <a href="path/to/demonstration/video">View Demo</a>
     ·
-    <a href="https://github.com/username/projectname/issues">Report Bug</a>
+    <a href="https://github.com/hellodvh/TheInventory/issues">Report Bug</a>
     ·
-    <a href="https://github.com/username/projectname/issues">Request Feature</a>
+    <a href="https://github.com/hellodvh/TheInventory/issues">Request Feature</a>
 </p>
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
@@ -79,9 +79,12 @@ A nice introduction to this amazing project of mine.
 
 ### Built With
 
-* [Technology Name](path/to/technology/website)
-* [Technology Name](path/to/technology/website)
-* [Technology Name](path/to/technology/website)
+* [C#](https://docs.microsoft.com/en-us/dotnet/csharp/)
+* [ASP.net Core](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-6.0)
+* [Razor Pages](https://docs.microsoft.com/en-us/aspnet/core/razor-pages/?view=aspnetcore-6.0&tabs=visual-studio)
+* [WAMP Server](https://www.wampserver.com/en/)
+* [phpMyAdmin](https://www.phpmyadmin.net/)
+* [MySQL](https://dev.mysql.com/doc/)
 
 <!-- GETTING STARTED -->
 <!-- Make sure to add appropriate information about what prerequesite technologies the user would need and also the steps to install your project on their own mashines -->
@@ -91,7 +94,7 @@ The following instructions will get you a copy of the project up and running on 
 
 ### Prerequisites
 
-Ensure that you have the latest version of [Software](path/to/where/they/can/download/software) installed on your machine. The [Plugin](path/to/where/they/can/download/plugin) plugin will also be required.
+Ensure that you have the latest version of [.NET 6.0](https://dotnet.microsoft.com/en-us/downloade), [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/), and [WAMP localhost](https://sourceforge.net/projects/wampserver/) installed on your machine. The [Plugin](path/to/where/they/can/download/plugin) plugin will also be required.
 
 ### How to install
 
