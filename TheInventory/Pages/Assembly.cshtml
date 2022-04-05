@@ -4,80 +4,145 @@
     ViewData["Title"] = "Assembly";
 }
 
-@*@{
-    if(Model.Message != "")
-    {
-        if(Model.MessageSuccess)
+<!--Assembly Container-->
+<div class="container-fluid vh-100">
+
+    @{
+        if(Model.Message != "")
         {
-            <div class="alert alert-sm alert-success text-center"><i class="fa fa-check px-2" aria-hidden="true"></i>@Model.Message</div>
-        }
-        else
-        {
-            <div class="alert alert-danger text-center"><i class="fa fa-exclamation-triangle px-2" aria-hidden="true"></i>@Model.Message</div>
+            if(Model.MessageSuccess)
+            {
+                <div class="container-fluid alert alert-success alert-dismissible fade show text-center" role="alert">
+                    <i class="fa fa-check px-2" aria-hidden="true"></i>
+                    <strong>Success!</strong>@Model.Message
+                        <button type="button" class="btn" data-bs-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true"><i class="fa fa-times" aria-hidden="true"></i></span> 
+                        </button>
+                </div>
+            }
+            else
+            {
+                <div class="container-fluid alert alert-warning alert-dismissible fade show text-center" role="alert">
+                    <i class="fa fa-exclamation-triangle px-2" aria-hidden="true"></i>
+                    <strong>Error! </strong>@Model.Message
+                        <button type="button" class="btn" data-bs-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true"><i class="fa fa-times" aria-hidden="true"></i></span> 
+                        </button>
+                </div>
+            }
         }
     }
-}*@
 
-<!--Assembly Container-->
-<div class="container-fluid" style="height: 100vh">
+      <!--Top Navbar-->
+    <nav class="navbar navbar-expand-lg sticky-top rounded-3 mb-3">
+        <img class="opacity-25" src="images/car-manufacturing-white.png" alt="Vehicle manufacturing" width="32" style="margin:10px">
+        <h4 class="opacity-50">@ViewData["Title"]</h4>
+    </nav>
 
-    <!--Top Navbar-->
-  <nav class="navbar navbar-expand-lg sticky-top rounded-3">
-      <img class="opacity-25" src="images/car-manufacturing-white.png" alt="Vehicle manufacturing" width="32" style="margin:10px">
-    <h4 class="opacity-50">@ViewData["Title"]</h4>
-  </nav>
-    <!--Alert Functionality-->
-    <div class="alert alert-success text-success text-center" role="alert">Electric Vehicle has been crafted!</div>
-    <div class="row mt-1">
+    <!--Vehicles Recipes-->
+    <div class="row mt-1">    
+        <!-- Craftable Recipes-->
         <div class="col-xl col-md-12 pb-3">
+            <h3>Craft Parts with available materials</h3>
             <div class="card rounded-3 shadow-lg">
-                <div class="card-header text-center">
-                    Vehicle Parts
+                <div class="card-header text-center sticky-top">
+                    Craftable Parts
                 </div>
-                <div class="card-body">    
-                    
-                </div>  
+                <div class="card-body scroll-card">
+                    <!--Foreach Loop-->
+                    @foreach(var vehicle in Model.allVehicles)
+                    {
+                    <div class="card m-2 shadow-sm hover-effect @(vehicle.IsCraftable() ? "boreder-success" : "bg-light")">
+                        <div class="row g-0">
+                            
+                            <div class="col-md-4 align-self-center">
+                                <img class="" src="@vehicle.Name" alt="Card image" style="width:100px">
+                            </div>
+
+                            <div class="col-md-4 align-self-center">
+
+                                <div class="row align-content-center">
+                                    <h4>@vehicle.Name</h4>
+                                    <h5 style="float:right;">@vehicle.Count</h5>
+                                    <p class="card-title">@vehicle.Description</p>
+                                    <p class="card-title">@vehicle.VehicleType</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 align-self-center float-end p-2">
+                                @foreach(var ingredient in vehicle.Ingredients)
+                                {
+                                    if(ingredient != "")
+                                    {
+                                      
+                                        <span class="badge mb-3">@ingredient</span>
+                                    }
+                                }
+                                @{
+                                    if(vehicle.IsCraftable())
+                                    {
+                                        <form method="post" asp-page-handler="craft" asp-route-name="@vehicle.Name" asp-route-count="@vehicle.Count">
+                                            @{
+                                                foreach(var ingredient in vehicle.Ingredients)
+                                                {
+                                                    <input type="hidden" name="ingredient[]" value="@ingredient"/>
+                                                }
+                                            }
+                                            <div class="input-group">
+                                                <input required type="password" class="form-control" name="verify" placeholder="Verification Code">
+                                                <button class="btn btn-cta" type="submit" value="Craft Recipe">Craft</button>
+                                            </div>
+                                        </form>
+                                    }
+                                }
+                            </div> 
+                        </div>
+                    </div>
+                    }
+                </div>   
             </div>
         </div>
-    </div>
 
-    <!--Materials-->
-    <div class="row mt-1 ">
+        <!--Parts-->
         <div class="col-xl col-md-12 pb-3">
-            <div class="card rounded-3 shadow-lg">
-                <div class="card-header text-center">
+        <h3>Update Material Stock Count</h3>
+            <div class="card rounded-3 shadow-lg scroll-card">
+                <div class="card-header text-center sticky-top">
                     Materials
                 </div>
                 <div class="card-body">
-                    @*@foreach(var material in Model.allMaterials)
-                    {*@
+                    @foreach(var part in Model.allParts)
+                    {
                     <div class="card mb-2 shadow-sm hover-effect">
                         <div class="row g-0">
                             <div class="col-md-2 align-self-center bg-light">
-                                <img src="./images/raw-materials.png" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
+                                <img src="@part.ImageUrl" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
-                                    <h5 class="card-title">@*@material.Name*@</h5>
-                                    <p class="card-text">@*@material.MaterialType*@</p>
+                                    <h5 class="card-title">@part.Name</h5>
+                                    <p class="card-text">@part.PartType</p>
                                 </div>
                             </div>
                             <div class="col-md-2 align-self-center counter">
                                 <div class="">
-                                    <h3>@*@material.Count*@</h3>
+                                    <h3>@part.Count</h3>
                                 </div>
                             </div>
                             <form method="post" asp-page-handler="update">
-                                <input class="form-controller" name="count" value="@*@material.Count*@" type="number" min="0" step="1"/>
-                                <input type="hidden" name="name" value="@*@material.Name*@" />
-                                <button class="btn btn-outline-primary" style="margin-top: 20px">Update</button>
+                            <div class="input-group">
+                                <input class="form-controller" name="count" value="@part.Count" type="number" min="0" step="1"/>
+                                <input type="hidden" name="name" value="@part.Name" />
+                                <button class="btn btn-cta">Update</button>
+                            </div>
                             </form>
                         </div>
                     </div>
-                    @*}*@
+                    }
                 </div>
             </div>
         </div>
+    <!--Parts-->
     </div>
-    <!--Materials-->
+    <!--Vehicle Recipes-->
 </div>

@@ -4,7 +4,7 @@ namespace TheInventory.Models
 {
     public class Inventory
     {
-        //material variable that is called from the frontend.
+        //MATERIALS
         public List<Material> Materials = new List<Material>();
 
         //PARTS
@@ -12,6 +12,8 @@ namespace TheInventory.Models
 
         //VEHICLES
         public List<Vehicle> Vehicles = new List<Vehicle>();
+
+        /*public string TotalMaterials = string.Empty;*/
 
         //constructor: fetch the database
         public Inventory()
@@ -25,6 +27,7 @@ namespace TheInventory.Models
             //VEHICLES
             Vehicles = Database.GetAllVehicles();
 
+            /*TotalMaterials = Database.TotalMaterialCount();*/
         }
 
         public void UpdateCount(string name, int count)
@@ -50,9 +53,7 @@ namespace TheInventory.Models
                     return material.Count;//return the count of that material   
                 } 
             }
-            return -1;
-
-            
+            return -1; 
         }
 
         public int GetPartCount(string name)
@@ -66,12 +67,11 @@ namespace TheInventory.Models
                 }
             }
             return -1;
-
         }
 
         public int GetVehicleCount(string name)
         {
-            //PARTS
+            //VEHICLES
             foreach (var vehicle in Vehicles)
             {
                 if (vehicle.Name == name)
@@ -80,7 +80,6 @@ namespace TheInventory.Models
                 }
             }
             return -1;
-
         }
     }
 }

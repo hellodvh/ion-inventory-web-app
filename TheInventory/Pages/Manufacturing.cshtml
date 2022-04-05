@@ -9,33 +9,33 @@
 <div class="container-fluid vh-100">
 
     @{
-    if(Model.Message != "")
-    {
-        if(Model.MessageSuccess)
+        if(Model.Message != "")
         {
-            <div class="container-fluid alert alert-success alert-dismissible fade show text-center" role="alert">
-                <i class="fa fa-check px-2" aria-hidden="true"></i>
-                <strong>Success!</strong>@Model.Message
-                    <button type="button" class="btn" data-bs-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true"><i class="fa fa-times" aria-hidden="true"></i></span> 
-                    </button>
-            </div>
-        }
-        else
-        {
-            <div class="container-fluid alert alert-warning alert-dismissible fade show text-center" role="alert">
-                <i class="fa fa-exclamation-triangle px-2" aria-hidden="true"></i>
-                <strong>Error! </strong>@Model.Message
-                    <button type="button" class="btn" data-bs-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true"><i class="fa fa-times" aria-hidden="true"></i></span> 
-                    </button>
-            </div>
+            if(Model.MessageSuccess)
+            {
+                <div class="container-fluid alert alert-success alert-dismissible fade show text-center" role="alert">
+                    <i class="fa fa-check px-2" aria-hidden="true"></i>
+                    <strong>Success!</strong>@Model.Message
+                        <button type="button" class="btn" data-bs-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true"><i class="fa fa-times" aria-hidden="true"></i></span> 
+                        </button>
+                </div>
+            }
+            else
+            {
+                <div class="container-fluid alert alert-warning alert-dismissible fade show text-center" role="alert">
+                    <i class="fa fa-exclamation-triangle px-2" aria-hidden="true"></i>
+                    <strong>Error! </strong>@Model.Message
+                        <button type="button" class="btn" data-bs-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true"><i class="fa fa-times" aria-hidden="true"></i></span> 
+                        </button>
+                </div>
+            }
         }
     }
-}
 
     <!--Top Navbar-->
-  <nav class="navbar navbar-expand-lg bg-light sticky-top rounded-3 mb-3">
+  <nav class="navbar navbar-expand-lg sticky-top rounded-3 mb-3">
       <img class="opacity-25" src="images/factory-machine-white.png" alt="Manufacturing" width="32" style="margin:10px">
     <h4 class="opacity-50">@ViewData["Title"]</h4>
   </nav>
@@ -66,7 +66,7 @@
                                     <h4>@part.Name</h4>
                                     <h5 style="float:right;">@part.Count</h5>
                                     <p class="card-title">@part.Description</p>
-                                    <p class="card-title">@part.RecipeType</p>
+                                    <p class="card-title">@part.PartType</p>
                                 </div>
                             </div>
 

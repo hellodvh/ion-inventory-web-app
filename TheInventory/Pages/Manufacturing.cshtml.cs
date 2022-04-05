@@ -14,16 +14,14 @@ namespace TheInventory.Pages
         public string Message { get; set; } = string.Empty;
         public bool MessageSuccess { get; set; } = false;
 
-
         [RegularExpression(@"^[A-Z]+[a-zA-Z0-9""'\s-]*$")]
         [StringLength(60, MinimumLength = 3)]
         [Required]
-        public string Verify { get; set; }
+        public string Verify { get; set; } = "";
         public void OnGet(string message = "", bool success = true)
         {
             allMaterials = new Inventory().Materials;
             allParts = new PartRecipeBook().Parts;
-            
 
             Message = message;
             MessageSuccess = success;
@@ -31,7 +29,6 @@ namespace TheInventory.Pages
 
         public IActionResult OnPostCraft(string name, int count, List<string> ingredient, string verify)
         {
-            //Call the function nd pass the name, updated count and ingredient
             var success = new PartRecipeBook().CraftPartRecipe(name, count + 1, ingredient, verify);
 
             if (success)
@@ -41,16 +38,12 @@ namespace TheInventory.Pages
             else
             {
                 return Redirect($"./Manufacturing?success=false&message=Code incorrect!");
-            }
-            
+            }   
         }
-
         public IActionResult OnPostUpdate(string name, int count)
         {
-            Console.WriteLine($"{name} should change to {count}");
             new Inventory().UpdateCount(name, count);
 
-            //redirect back to normal get
             return RedirectToPage("./Manufacturing");
         }
     }

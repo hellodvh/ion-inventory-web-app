@@ -5,7 +5,6 @@ namespace TheInventory.Models
     public class TicketBook
     {
         public List<Ticket> Tickets = new List<Ticket>();
-
         public TicketBook()
         {
             Tickets = Database.GetAllTickets();
@@ -13,7 +12,6 @@ namespace TheInventory.Models
 
         public void OnPostDelete(int id)
         {
-
         }
     }
 }

@@ -15,6 +15,11 @@ namespace TheInventory.Services
             return con.ServerVersion;
         }
 
+        internal static object TotalMaterialCount()
+        {
+            throw new NotImplementedException();
+        }
+
         /*-------------------------------------------------------------------------------------
         //Get All the Materials
         -------------------------------------------------------------------------------------*/
@@ -45,11 +50,6 @@ namespace TheInventory.Services
             return results;
         }
 
-        /*internal static string TotalMaterialCount()
-        {
-            throw new NotImplementedException();
-        }*/
-
         /*-------------------------------------------------------------------------------------
         //Get All the PARTS
         -------------------------------------------------------------------------------------*/
@@ -72,7 +72,7 @@ namespace TheInventory.Services
                     Description = reader.GetString(1),
                     PartCategory = reader.GetString(2),
                     PartType = reader.GetString(3),
-                    Count=reader.GetInt32(4),
+                    Count = reader.GetInt32(4),
                     ImageUrl = reader.GetString(5)
                 };
                 results.Add(part);
@@ -198,8 +198,8 @@ namespace TheInventory.Services
                 ingredients.Add(reader.GetString(11)); // ingredient 6
                 ingredients.Add(reader.GetString(12)); // ingredient 7
                 ingredients.Add(reader.GetString(13)); // ingredient 8
-                ingredients.Add(reader.GetString(14)); // ingredient 8
-                ingredients.Add(reader.GetString(15)); // ingredient 8
+                ingredients.Add(reader.GetString(14)); // ingredient 9
+                ingredients.Add(reader.GetString(15)); // ingredient 10
 
                 partrecipe.Ingredients = ingredients;
 
@@ -233,21 +233,25 @@ namespace TheInventory.Services
                 };
 
                 var ingredients = new List<string>();
-                ingredients.Add(reader.GetString(3)); // ingredient 1
-                ingredients.Add(reader.GetString(4)); // ingredient 2
-                ingredients.Add(reader.GetString(5)); // ingredient 3
-                ingredients.Add(reader.GetString(6)); // ingredient 4
-                ingredients.Add(reader.GetString(7)); // ingredient 5
-                ingredients.Add(reader.GetString(8)); // ingredient 6
-                ingredients.Add(reader.GetString(9)); // ingredient 7
-                ingredients.Add(reader.GetString(10)); // ingredient 8
+                ingredients.Add(reader.GetString(6)); // ingredient 1
+                ingredients.Add(reader.GetString(7)); // ingredient 2
+                ingredients.Add(reader.GetString(8)); // ingredient 3
+                ingredients.Add(reader.GetString(9)); // ingredient 4
+                ingredients.Add(reader.GetString(10)); // ingredient 5
+                ingredients.Add(reader.GetString(11)); // ingredient 6
+                ingredients.Add(reader.GetString(12)); // ingredient 7
+                ingredients.Add(reader.GetString(13)); // ingredient 8
+                ingredients.Add(reader.GetString(14)); // ingredient 9
+                ingredients.Add(reader.GetString(15)); // ingredient 10
 
                 vehiclerecipe.Ingredients = ingredients;
 
                 results.Add(vehiclerecipe);
             }
+
             con.Close();
-            ; return results;
+
+            return results;
         }
 
         /*-------------------------------------------------------------------------------------
@@ -258,10 +262,12 @@ namespace TheInventory.Services
             if(CheckVerifyCode(nameId, verify))
             {
                 UpdateMaterialCountAfterCraft(ingredients);
+
                 using var con = new MySqlConnection(serverConfiguration);
                 con.Open();
 
                 string sql = "UPDATE `parts` SET `count`= @count WHERE `name` = @name";
+
                 using var cmd = new MySqlCommand(sql, con);
 
                 cmd.Parameters.AddWithValue("@name", nameId);
@@ -269,7 +275,6 @@ namespace TheInventory.Services
 
                 cmd.Prepare();
                 cmd.ExecuteNonQuery();
-                con.Close();
 
                 return true;
             }
@@ -298,7 +303,6 @@ namespace TheInventory.Services
 
                 cmd.Prepare();
                 cmd.ExecuteNonQuery();
-                con.Close();
 
                 return true;
             }
@@ -330,7 +334,6 @@ namespace TheInventory.Services
                 databaseVerifyCode = reader.GetString(0);
             }
             con.Close();
-
 
             byte[]? data = Encoding.ASCII.GetBytes(verifyInput);
             var hashData = new XSystem.Security.Cryptography.SHA1Managed().ComputeHash(data);
@@ -378,7 +381,6 @@ namespace TheInventory.Services
                 databaseVerifyCode = reader.GetString(0);
             }
             con.Close();
-
 
             byte[]? data = Encoding.ASCII.GetBytes(verifyInput);
             var hashData = new XSystem.Security.Cryptography.SHA1Managed().ComputeHash(data);
@@ -432,7 +434,7 @@ namespace TheInventory.Services
         }
 
         /*-------------------------------------------------------------------------------------
-        //Get Count Of Material
+        //Get COUNT Of Material
         -------------------------------------------------------------------------------------*/
         public static int GetCountOfMaterial(string name)
         {
@@ -481,10 +483,10 @@ namespace TheInventory.Services
 
                     cmd.Prepare();
                     cmd.ExecuteNonQuery();
-                    con.Close();
                 }
             }
         }
+
         /*-------------------------------------------------------------------------------------
         //Get COUNT of PART
         -------------------------------------------------------------------------------------*/
@@ -511,9 +513,6 @@ namespace TheInventory.Services
             Console.WriteLine("Current Count of " + name + ": " + count);
             return count;
         }
-
-
-        //8888
 
         /*-------------------------------------------------------------------------------------
         //Update VEHICLE Count After Crating
@@ -569,18 +568,18 @@ namespace TheInventory.Services
             return count;
         }
 
-        //8888
-
-
         /*-------------------------------------------------------------------------------------
-        //Get Count Of TOTAL MATERIAL
+        //Get Count Of TOTAL MATERIAL ////
+        
+        "SELECT SUM(count) AS TotalMaterialCount FROM `materials`"; 
+        "SELECT SUM(count) FROM `materials`";
         -------------------------------------------------------------------------------------*/
-        public static int TotalMaterialCount(string name)
+        /*public static int TotalMaterialCount(string name)
         {
             //establich connection to db
             using var con = new MySqlConnection(serverConfiguration);
             con.Open();
-
+       
             //Setup Query
             string sql = "SELECT SUM(count) FROM `materials`";
             using var cmd = new MySqlCommand(sql, con);
@@ -590,19 +589,18 @@ namespace TheInventory.Services
             //creates a instance of our command result that can be read in C#.
             using MySqlDataReader reader = cmd.ExecuteReader();
 
-            int totalMaterials = 0;
+            string? totalMaterials = "";
 
             //go through the readbale data and do this for each entry
             while (reader.Read())
             {
-                totalMaterials = reader.GetInt32(0);
+                totalMaterials = reader.GetString(0);
             }
-            
             con.Close();
 
             Console.WriteLine("Current Total Count of " + totalMaterials);
-            return totalMaterials;
-        }
+            return;
+        }*/
 
         /*-------------------------------------------------------------------------------------
         //Ticket List

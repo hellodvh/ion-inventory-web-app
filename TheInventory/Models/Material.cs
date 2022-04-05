@@ -9,6 +9,8 @@
         public string MaterialType { get; set; } = string.Empty;
         public string ImageUrl { get; set; } = string.Empty;
         
+        /*public string TotalMaterials*/
+        
         private int count;
         public int Count
         {

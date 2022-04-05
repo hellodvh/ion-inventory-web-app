@@ -5,7 +5,6 @@ namespace TheInventory.Models
     public class VehicleRecipeBook
     {
         public List<VehicleRecipe> Vehicles = new List<VehicleRecipe>();
-
         public VehicleRecipeBook()
         {
             Vehicles = Database.GetAllVehicleRecipes();

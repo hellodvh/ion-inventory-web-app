@@ -14,7 +14,8 @@ namespace TheInventory.Pages
 
         public List<Vehicle> allVehicles = new List<Vehicle>();
 
-        public string totalMaterials = string.Empty;
+        /*public string MaterialTotal = "";*/
+
         public string MaterialData = ""; //graphs
         public string PartData = "";
 
@@ -24,6 +25,8 @@ namespace TheInventory.Pages
             allMaterials = new Inventory().Materials;
             allParts = new Inventory().Parts;
             allVehicles = new Inventory().Vehicles;
+
+            /*MaterialTotal = MaterialTotal.ToString();*/
 
             MaterialData = JsonConvert.SerializeObject(allMaterials); //graphs
             PartData = JsonConvert.SerializeObject(allParts); //graphs

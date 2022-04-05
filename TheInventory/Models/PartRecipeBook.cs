@@ -6,7 +6,6 @@ namespace TheInventory.Models
     {
         //recipe variable that is called from the frontend
         public List<PartRecipe> Parts = new List<PartRecipe>();
-
         //constructor
         public PartRecipeBook()
         {

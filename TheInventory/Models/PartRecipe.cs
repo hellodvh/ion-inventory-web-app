@@ -12,12 +12,12 @@ namespace TheInventory.Models
         public string Description { get; set; } = string.Empty;
         public string PartCategory { get; set; } = string.Empty;
         public string PartType { get; set; } = string.Empty;
-        public string RecipeType { get; set; } = string.Empty;
+        public string ImageUrl { get; set; } = string.Empty;
+        /*public string RecipeType { get; set; } = string.Empty;*/
         private int count;
         public int Count { get { return count; } }
-
         public List<string> Ingredients { get; set; } = new List<string>();
-
+        
         public bool IsCraftable()
         {
             var map = new Dictionary<string, int>();
@@ -39,7 +39,6 @@ namespace TheInventory.Models
             }
 
             bool result = true;
-
             var inventory = new Inventory();
 
             foreach (var pair in map)
