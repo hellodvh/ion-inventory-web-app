@@ -225,18 +225,30 @@ var MaterialTotal = 134;
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
 <script type="text/javascript">
 
-    //forloop
-        
-    
+    /*-------------------------------------------------------------------------------------
+    //Bar Chart : Materials
+    -------------------------------------------------------------------------------------*/
+    var materialLable = [];
+    var materialCount = []
+
+    @foreach(var material in Model.allMaterials)
+    {
+        <text>materialLable.push("@material.Name.ToString()");</text>
+
+        <text>materialCount.push(@material.Count);</text>
+    }
+    console.log(materialLable);
+    console.log(materialCount);
+
     //Bar Chart
     var barchart = document.getElementById('bar').getContext('2d');
     var mybarchart = new Chart(barchart, {
         type: 'bar',
         data: { 
-            labels: ['Steel', 'Copper', 'Iron', 'Glass', 'Rubber', 'Aluminum', 'Plastic', 'Titanium', 'Magnet', 'Silicon', 'Lithium'],
+            labels: materialLable,
             datasets: [{
                 label: 'Bar Chart',
-                data: [100, 200, 300, 100, 250, 150, 200, 300, 100, 150, 90],
+                data: materialCount,
                 backgroundColor: '#dee2e6',
             }]
         },
@@ -253,15 +265,72 @@ var MaterialTotal = 134;
             }
         }
     })
+
+    /*-------------------------------------------------------------------------------------
+    //Doughnut Chart : Vehicles
+    -------------------------------------------------------------------------------------*/
+    var partLable = [];
+    var partCount = []
+
+    @foreach(var part in Model.allParts)
+    {
+        <text>partLable.push("@part.Name.ToString()");</text>
+
+        <text>partCount.push(@part.Count);</text>
+    }
+    console.log(partLable);
+    console.log(partCount);
+    //Doughnut Chart
+    var xValues = partLable;
+    var yValues = partCount;
+    var barColors = "#dee2e6";
+
+    new Chart("doughnut", {
+          type: "doughnut",
+          data: {
+            labels: xValues,
+            datasets: [{
+              backgroundColor: barColors,
+              data: yValues
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+        
+            title: {
+              display: true,
+              text: "Vehicle Parts in stock."
+            }
+          }
+        }
+    );
+
+
+    /*-------------------------------------------------------------------------------------
+    //Pie Chart : Vehicles
+    -------------------------------------------------------------------------------------*/
+    var vehicleLable = [];
+    var vehicleCount = []
+
+    @foreach(var vehicle in Model.allVehicles)
+    {
+        <text>vehicleLable.push("@vehicle.Name.ToString()");</text>
+
+        <text>vehicleCount.push(@vehicle.Count);</text>
+    }
+    console.log(vehicleLable);
+    console.log(vehicleCount);
+
     //Pie Chart
     var piechart = document.getElementById('pie').getContext('2d');
     var mypiechart = new Chart(piechart, {
         type: 'pie',
         data: {
-            labels: ['Model S', 'Model 3', 'Model X', 'Model Y', 'CyberTruck'],
+            labels: vehicleLable,
             datasets: [{
                 label: 'Pie Chart',
-                data: [100, 150, 300, 50, 25, 15],
+                data: vehicleCount,
                 backgroundColor: '#dee2e6'
             }]
         },
@@ -276,30 +345,6 @@ var MaterialTotal = 134;
                 }]
             }
         }
-    })
-
-    //Doughnut Chart
-    var xValues = ["Engine", "Wheels", "Battery", "Windows", "Body"];
-    var yValues = [55, 49, 44, 24, 15];
-    var barColors = "#dee2e6";
-
-    new Chart("doughnut", {
-      type: "doughnut",
-      data: {
-        labels: xValues,
-        datasets: [{
-          backgroundColor: barColors,
-          data: yValues
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        
-        title: {
-          display: true,
-          text: "Vehicle Parts in stock."
-        }
-      }
-    });
+    }
+    );
 </script>

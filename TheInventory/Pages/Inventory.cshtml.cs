@@ -31,9 +31,6 @@ namespace TheInventory.Pages
             MaterialTotal = Services.Database.TotalSumMaterialCount(); //total materials
             PartTotal = Services.Database.TotalSumPartCount(); //total parts
             VehicleTotal = Services.Database.TotalSumVehicleCount(); //total vehicles
-
-            MaterialData = JsonConvert.SerializeObject(allMaterials); //graphs
-            PartData = JsonConvert.SerializeObject(allParts); //graphs
         }
 
         /*//On Post Update function to update the database.

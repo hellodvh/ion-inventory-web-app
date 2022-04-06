@@ -248,7 +248,6 @@ namespace TheInventory.Services
 
                 results.Add(vehiclerecipe);
             }
-
             con.Close();
 
             return results;
@@ -698,7 +697,6 @@ namespace TheInventory.Services
 
             cmd.Prepare();
             cmd.ExecuteNonQuery();
-            con.Close();
         }
 
         /*-------------------------------------------------------------------------------------
@@ -734,7 +732,6 @@ namespace TheInventory.Services
 
             cmd.Prepare();
             cmd.ExecuteNonQuery();
-            con.Close();
         }
     }
 }

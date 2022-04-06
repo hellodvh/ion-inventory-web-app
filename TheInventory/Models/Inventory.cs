@@ -13,9 +13,6 @@ namespace TheInventory.Models
         //VEHICLES
         public List<Vehicle> Vehicles = new List<Vehicle>();
 
-        /*public string TotalMaterials = string.Empty;*/
-
-        //constructor: fetch the database
         public Inventory()
         {
             //MATERIALS
@@ -26,8 +23,6 @@ namespace TheInventory.Models
 
             //VEHICLES
             Vehicles = Database.GetAllVehicles();
-
-            /*TotalMaterials = Database.TotalMaterialCount();*/
         }
 
         public void UpdateCount(string name, int count)
@@ -46,11 +41,11 @@ namespace TheInventory.Models
         public int GetMaterialCount(string name)
         {
             //MATERIAL
-            foreach(var material in Materials)//Searching for specific material
+            foreach(var material in Materials)
             {
                 if (material.Name == name)
                 {
-                    return material.Count;//return the count of that material   
+                    return material.Count;  
                 } 
             }
             return -1; 
