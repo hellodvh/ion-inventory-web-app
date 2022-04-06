@@ -5,9 +5,7 @@
 <br />
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/hellodvh/ion-inventory-web-app?color=69f0ae&style=for-the-badge)
-![GitHub watchers](https://img.shields.io/github/watchers/username/projectname?color=%000000)
 ![GitHub language count](https://img.shields.io/github/languages/count/hellodvh/ion-inventory-web-app?color=69f0ae&logoColor=ffa01c&style=for-the-badge)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/hellodvh/ion-inventory-web-app?color=69f0ae&logo=.net&logoColor=ffa01c&style=for-the-badge)
 ![GitHub last commit](https://img.shields.io/github/last-commit/hellodvh/ion-inventory-web-app?color=69f0ae&style=for-the-badge)
 ![GitHub](https://img.shields.io/github/license/hellodvh/ion-inventory-web-app?color=69f0ae&style=for-the-badge)
 <br/>
