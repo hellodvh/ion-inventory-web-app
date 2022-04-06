@@ -5,7 +5,6 @@
 
 /*
     | Google Fonts CSS rules |
-
     font-family: 'Archivo', sans-serif;
     font-family: 'PT Sans', sans-serif;
     font-family: 'PT Serif', serif;
@@ -31,13 +30,11 @@
     | Scrollbar |
 */
 
-/* Firefox */
 * {
     scrollbar-width: thin;
     scrollbar-color: #69f0ae #1F1F1F;
 }
 
-/* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
     width: 6px;
     height: 25px;
@@ -58,7 +55,7 @@
 */
 html {
     font-size: 14px;
-    font-family: font-family: 'Archivo', sans-serif;
+    font-family:'Archivo', sans-serif;
     position: relative;
     min-height: 100%;
 }
@@ -217,7 +214,6 @@ input[type=password] {
 .sticky-top {
     background-color: #232323;
 }
-
 
 /*
     | Text Glow Effect |
