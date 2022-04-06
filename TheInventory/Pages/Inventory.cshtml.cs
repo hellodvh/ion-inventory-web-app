@@ -14,7 +14,9 @@ namespace TheInventory.Pages
 
         public List<Vehicle> allVehicles = new List<Vehicle>();
 
-        /*public string MaterialTotal = "";*/
+        public int MaterialTotal = 0; // total materials
+        public int PartTotal = 0; // total materials
+        public int VehicleTotal = 0; // total materials
 
         public string MaterialData = ""; //graphs
         public string PartData = "";
@@ -26,7 +28,9 @@ namespace TheInventory.Pages
             allParts = new Inventory().Parts;
             allVehicles = new Inventory().Vehicles;
 
-            /*MaterialTotal = MaterialTotal.ToString();*/
+            MaterialTotal = Services.Database.TotalSumMaterialCount(); //total materials
+            PartTotal = Services.Database.TotalSumPartCount(); //total parts
+            VehicleTotal = Services.Database.TotalSumVehicleCount(); //total vehicles
 
             MaterialData = JsonConvert.SerializeObject(allMaterials); //graphs
             PartData = JsonConvert.SerializeObject(allParts); //graphs

@@ -569,38 +569,81 @@ namespace TheInventory.Services
         }
 
         /*-------------------------------------------------------------------------------------
-        //Get Count Of TOTAL MATERIAL ////
-        
+        //Get Count Of TOTAL MATERIAL       
         "SELECT SUM(count) AS TotalMaterialCount FROM `materials`"; 
         "SELECT SUM(count) FROM `materials`";
         -------------------------------------------------------------------------------------*/
-        /*public static int TotalMaterialCount(string name)
+        public static int TotalSumMaterialCount()
         {
-            //establich connection to db
             using var con = new MySqlConnection(serverConfiguration);
             con.Open();
-       
-            //Setup Query
+
             string sql = "SELECT SUM(count) FROM `materials`";
             using var cmd = new MySqlCommand(sql, con);
 
-            cmd.Parameters.AddWithValue("@name", name);
-
-            //creates a instance of our command result that can be read in C#.
             using MySqlDataReader reader = cmd.ExecuteReader();
 
-            string? totalMaterials = "";
+            int totalMaterials = 0;
 
-            //go through the readbale data and do this for each entry
             while (reader.Read())
             {
-                totalMaterials = reader.GetString(0);
+                totalMaterials = reader.GetInt32(0);
+            }
+            con.Close();
+            
+            Console.WriteLine("Current Total Count of " + totalMaterials);
+            return totalMaterials;
+        }
+
+        /*-------------------------------------------------------------------------------------
+        //Get Count Of TOTAL PART
+        -------------------------------------------------------------------------------------*/
+        public static int TotalSumPartCount()
+        {
+            using var con = new MySqlConnection(serverConfiguration);
+            con.Open();
+
+            string sql = "SELECT SUM(count) FROM `parts`";
+            using var cmd = new MySqlCommand(sql, con);
+
+            using MySqlDataReader reader = cmd.ExecuteReader();
+
+            int totalParts = 0;
+
+            while (reader.Read())
+            {
+                totalParts = reader.GetInt32(0);
             }
             con.Close();
 
-            Console.WriteLine("Current Total Count of " + totalMaterials);
-            return;
-        }*/
+            Console.WriteLine("Current Total Count of " + totalParts);
+            return totalParts;
+        }
+
+        /*-------------------------------------------------------------------------------------
+        //Get Count Of TOTAL PART
+        -------------------------------------------------------------------------------------*/
+        public static int TotalSumVehicleCount()
+        {
+            using var con = new MySqlConnection(serverConfiguration);
+            con.Open();
+
+            string sql = "SELECT SUM(count) FROM `vehicles`";
+            using var cmd = new MySqlCommand(sql, con);
+
+            using MySqlDataReader reader = cmd.ExecuteReader();
+
+            int totalVehicles = 0;
+
+            while (reader.Read())
+            {
+                totalVehicles = reader.GetInt32(0);
+            }
+            con.Close();
+
+            Console.WriteLine("Current Total Count of " + totalVehicles);
+            return totalVehicles;
+        }
 
         /*-------------------------------------------------------------------------------------
         //Ticket List
