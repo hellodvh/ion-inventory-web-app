@@ -1,13 +1,14 @@
-# TheInventory
+## Ion Inventory Web App
 <!-- REPLACE ALL THE [USERNAME] TEXT WITH YOUR GITHUB PROFILE NAME & THE [PROJECTNAME] WITH THE NAME OF YOUR GITHUB PROJECT -->
 
 <!-- Repository Information & Links-->
 <br />
 
-![GitHub repo size](https://img.shields.io/github/repo-size/username/projectname?color=%000000)
-![GitHub watchers](https://img.shields.io/github/watchers/username/projectname?color=%000000)
-![GitHub language count](https://img.shields.io/github/languages/count/username/projectname?color=%000000)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/username/projectname?color=%000000)
+![GitHub repo size](https://img.shields.io/github/repo-size/hellodvh/ion-inventory-web-app?color=69f0ae&style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/hellodvh/ion-inventory-web-app?color=69f0ae&logoColor=ffa01c&style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/hellodvh/ion-inventory-web-app?color=69f0ae&style=for-the-badge)
+![GitHub](https://img.shields.io/github/license/hellodvh/ion-inventory-web-app?color=69f0ae&style=for-the-badge)
+<br/>
 [![LinkedIn][linkedin-shield]][linkedin-url]
 [![Instagram][instagram-shield]][instagram-url]
 [![Behance][behance-shield]][behance-url]
@@ -19,22 +20,23 @@
 </br>
 <p align="center">
 
-  <a href="https://github.com/hellodvh/TheInventory">
+  <a href="https://github.com/hellodvh/ion-inventory-web-app">
     <img src="path/to/logo" alt="Logo" width="140" height="140">
   </a>
   
   <h3 align="center">ION - The Inventory</h3>
+  https://img.shields.io/badge/ion-ION-69f0ae
 
   <p align="center">
     Short Project Slogan / Description <br>
-      <a href="https://github.com/hellodvh/TheInventory"><strong>Explore the docs »</strong></a>
+      <a href="https://github.com/hellodvh/ion-inventory-web-app"><strong>Explore the docs »</strong></a>
    <br />
    <br />
    <a href="path/to/demonstration/video">View Demo</a>
     ·
-    <a href="https://github.com/hellodvh/TheInventory/issues">Report Bug</a>
+    <a href="https://github.com/hellodvh/ion-inventory-web-app/issues">Report Bug</a>
     ·
-    <a href="https://github.com/hellodvh/TheInventory/issues">Request Feature</a>
+    <a href="https://github.com/hellodvh/ion-inventory-web-app/issues">Request Feature</a>
 </p>
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
@@ -231,7 +233,7 @@ To see a run through of the application, click below:
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/username/projectname/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/hellodvh/ion-inventory-web-app/issues) for a list of proposed features (and known issues).
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -247,7 +249,7 @@ Contributions are what makes the open-source community such an amazing place to 
 <!-- AUTHORS -->
 ## Authors
 
-* **Your Name & Surname** - [username](https://github.com/username)
+* **Your Name & Surname** - [username](https://github.com/hellodvh)
 
 <!-- LICENSE -->
 ## License
