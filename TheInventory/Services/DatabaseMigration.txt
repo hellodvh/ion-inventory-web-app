@@ -1,4 +1,4 @@
-﻿/* TABLE CREATE (Materials)*/
+﻿// TABLE CREATE (Materials)
 
 CREATE TABLE materials ( 
 	name VARCHAR(50) NOT NULL, 
@@ -11,7 +11,7 @@ CREATE TABLE materials (
 ); 
 
 
-/* DATA INSERT (Materials)*/
+// DATA INSERT (Materials)
 
 INSERT INTO `materials`(`name`, `description`, `materialcategory`, `materialtype`, `count`, `image`) VALUES ('Aluminum','Aluminum Material','','Raw Material','10','/images/material/raw-materials-white.png');
 
@@ -44,7 +44,7 @@ INSERT INTO `materials`(`name`, `description`, `materialcategory`, `materialtype
 INSERT INTO `materials`(`name`, `description`, `materialcategory`, `materialtype`, `count`, `image`) VALUES ('Titanium','Titanium Material','','Raw Material','10','/images/material/raw-materials-white.png');
 
 
-/* TABLE CREATE (Parts)*/
+// TABLE CREATE (Parts)
 
 CREATE TABLE parts (
     name VARCHAR(50) NOT NULL,
@@ -67,7 +67,10 @@ CREATE TABLE parts (
 	PRIMARY KEY (name)
 );
 
-/* DATA INSERT (Parts)*/
+// DATA INSERT (Parts)
+//**************
+// MODEL 3 PARTS
+//**************
 
 INSERT INTO `parts`(`name`, `description`, `partcategory`, `parttype`, `count`, `image`, `material1`, `material2`, `material3`, `material4`, `material5`, `material6`, `material7`, `material8`, `material9`, `material10`, `verifycode`) VALUES ('Wheels','Tesla Model S Wheels','Model S','Vehicle Part','1','/images/part/motor-white.png','Bauxite','Rubber','Rubber','Rubber','Rubber','Steel','','','','','password12345');
 
@@ -87,7 +90,51 @@ INSERT INTO `parts`(`name`, `description`, `partcategory`, `parttype`, `count`, 
 
 INSERT INTO `parts`(`name`, `description`, `partcategory`, `parttype`, `count`, `image`, `material1`, `material2`, `material3`, `material4`, `material5`, `material6`, `material7`, `material8`, `material9`, `material10`, `verifycode`) VALUES ('Breaks','Tesla Model S Breaks','Model S','Vehicle Part','1','/images/part/motor-white.png','Bauxite','Steel','Titanium','','','','','','','','password12345');
 
-/* TABLE CREATE (Vehicles)*/
+//**************
+// MODEL 3 PARTS
+//**************
+
+INSERT INTO `parts`(`name`, `description`, `partcategory`, `parttype`, `count`, `image`, `material1`, `material2`, `material3`, `material4`, `material5`, `material6`, `material7`, `material8`, `material9`, `material10`, `verifycode`) VALUES ('Wheels 3','Tesla Model 3 Wheels','Model 3','Vehicle Part','1','/images/part/motor-white.png','Bauxite','Rubber','Rubber','Rubber','Rubber','Steel','','','','','password12345');
+
+INSERT INTO `parts`(`name`, `description`, `partcategory`, `parttype`, `count`, `image`, `material1`, `material2`, `material3`, `material4`, `material5`, `material6`, `material7`, `material8`, `material9`, `material10`, `verifycode`) VALUES ('Chassis Frame 3','Tesla Model 3 Chassis','Model 3','Vehicle Part','1','/images/part/motor-white.png','Aluminum','Baron','Baron','Steel','Steel','Titanium','Titanium','','','','password12345');
+
+INSERT INTO `parts`(`name`, `description`, `partcategory`, `parttype`, `count`, `image`, `material1`, `material2`, `material3`, `material4`, `material5`, `material6`, `material7`, `material8`, `material9`, `material10`, `verifycode`) VALUES ('Body Panels 3','Tesla Model 3 Body','Model 3','Vehicle Part','1','/images/part/motor-white.png','Aluminum','Baron','','Steel','','Titanium','','Silicon','','','password12345');
+
+INSERT INTO `parts`(`name`, `description`, `partcategory`, `parttype`, `count`, `image`, `material1`, `material2`, `material3`, `material4`, `material5`, `material6`, `material7`, `material8`, `material9`, `material10`, `verifycode`) VALUES ('Battery Cells 3','Tesla Model 3 Battery','Model 3','Vehicle Part','1','/images/part/motor-white.png','Aluminum','Cobalt','Copper','Lithium','Lithium','Nickel','Nickel','','','','password12345');
+
+INSERT INTO `parts`(`name`, `description`, `partcategory`, `parttype`, `count`, `image`, `material1`, `material2`, `material3`, `material4`, `material5`, `material6`, `material7`, `material8`, `material9`, `material10`, `verifycode`) VALUES ('Motor 3','Tesla Model 3 Motor','Model 3','Vehicle Part','1','/images/part/motor-white.png','Copper','Iron','Iron','Magnet','Steel','','','','','','password12345');
+
+INSERT INTO `parts`(`name`, `description`, `partcategory`, `parttype`, `count`, `image`, `material1`, `material2`, `material3`, `material4`, `material5`, `material6`, `material7`, `material8`, `material9`, `material10`, `verifycode`) VALUES ('Interior 3','Tesla Model 3 Interior','Model 3','Vehicle Part','1','/images/part/motor-white.png','Leather','Leather','','Plastic','Silicon','','','','','','password12345');
+
+INSERT INTO `parts`(`name`, `description`, `partcategory`, `parttype`, `count`, `image`, `material1`, `material2`, `material3`, `material4`, `material5`, `material6`, `material7`, `material8`, `material9`, `material10`, `verifycode`) VALUES ('Electronics System 3','Tesla Model 3 Electronics System','Model 3','Vehicle Part','1','/images/part/motor-white.png','Aluminum','Aluminum','Copper','Copper','Plastic','','','','','','password12345');
+
+INSERT INTO `parts`(`name`, `description`, `partcategory`, `parttype`, `count`, `image`, `material1`, `material2`, `material3`, `material4`, `material5`, `material6`, `material7`, `material8`, `material9`, `material10`, `verifycode`) VALUES ('Charging Port 3','Tesla Model 3 Charging Port','Model 3','Vehicle Part','1','/images/part/motor-white.png','','','Copper','','Magnet','','Plastic','','Steel','','password12345');
+
+INSERT INTO `parts`(`name`, `description`, `partcategory`, `parttype`, `count`, `image`, `material1`, `material2`, `material3`, `material4`, `material5`, `material6`, `material7`, `material8`, `material9`, `material10`, `verifycode`) VALUES ('Breaks 3','Tesla Model 3 Breaks','Model 3','Vehicle Part','1','/images/part/motor-white.png','Bauxite','Steel','Titanium','','','','','','','','password12345');
+
+//**************
+// MODEL X PARTS
+//**************
+
+INSERT INTO `parts`(`name`, `description`, `partcategory`, `parttype`, `count`, `image`, `material1`, `material2`, `material3`, `material4`, `material5`, `material6`, `material7`, `material8`, `material9`, `material10`, `verifycode`) VALUES ('Wheels X','Tesla Model X Wheels','Model X','Vehicle Part','1','/images/part/motor-white.png','Bauxite','Rubber','Rubber','Rubber','Rubber','Steel','','','','','password12345');
+
+INSERT INTO `parts`(`name`, `description`, `partcategory`, `parttype`, `count`, `image`, `material1`, `material2`, `material3`, `material4`, `material5`, `material6`, `material7`, `material8`, `material9`, `material10`, `verifycode`) VALUES ('Chassis Frame X','Tesla Model X Chassis','Model X','Vehicle Part','1','/images/part/motor-white.png','Aluminum','Baron','Baron','Steel','Steel','Titanium','Titanium','','','','password12345');
+
+INSERT INTO `parts`(`name`, `description`, `partcategory`, `parttype`, `count`, `image`, `material1`, `material2`, `material3`, `material4`, `material5`, `material6`, `material7`, `material8`, `material9`, `material10`, `verifycode`) VALUES ('Body Panels X','Tesla Model X Body','Model X','Vehicle Part','1','/images/part/motor-white.png','Aluminum','Baron','','Steel','','Titanium','','Silicon','','','password12345');
+
+INSERT INTO `parts`(`name`, `description`, `partcategory`, `parttype`, `count`, `image`, `material1`, `material2`, `material3`, `material4`, `material5`, `material6`, `material7`, `material8`, `material9`, `material10`, `verifycode`) VALUES ('Battery Cells X','Tesla Model X Battery','Model X','Vehicle Part','1','/images/part/motor-white.png','Aluminum','Cobalt','Copper','Lithium','Lithium','Nickel','Nickel','','','','password12345');
+
+INSERT INTO `parts`(`name`, `description`, `partcategory`, `parttype`, `count`, `image`, `material1`, `material2`, `material3`, `material4`, `material5`, `material6`, `material7`, `material8`, `material9`, `material10`, `verifycode`) VALUES ('Motor X','Tesla Model X Motor','Model X','Vehicle Part','1','/images/part/motor-white.png','Copper','Iron','Iron','Magnet','Steel','','','','','','password12345');
+
+INSERT INTO `parts`(`name`, `description`, `partcategory`, `parttype`, `count`, `image`, `material1`, `material2`, `material3`, `material4`, `material5`, `material6`, `material7`, `material8`, `material9`, `material10`, `verifycode`) VALUES ('Interior X','Tesla Model X Interior','Model X','Vehicle Part','1','/images/part/motor-white.png','Leather','Leather','','Plastic','Silicon','','','','','','password12345');
+
+INSERT INTO `parts`(`name`, `description`, `partcategory`, `parttype`, `count`, `image`, `material1`, `material2`, `material3`, `material4`, `material5`, `material6`, `material7`, `material8`, `material9`, `material10`, `verifycode`) VALUES ('Electronics System X','Tesla Model X Electronics System','Model X','Vehicle Part','1','/images/part/motor-white.png','Aluminum','Aluminum','Copper','Copper','Plastic','','','','','','password12345');
+
+INSERT INTO `parts`(`name`, `description`, `partcategory`, `parttype`, `count`, `image`, `material1`, `material2`, `material3`, `material4`, `material5`, `material6`, `material7`, `material8`, `material9`, `material10`, `verifycode`) VALUES ('Charging Port X','Tesla Model X Charging Port','Model X','Vehicle Part','1','/images/part/motor-white.png','','','Copper','','Magnet','','Plastic','','Steel','','password12345');
+
+INSERT INTO `parts`(`name`, `description`, `partcategory`, `parttype`, `count`, `image`, `material1`, `material2`, `material3`, `material4`, `material5`, `material6`, `material7`, `material8`, `material9`, `material10`, `verifycode`) VALUES ('Breaks X','Tesla Model X Breaks','Model X','Vehicle Part','1','/images/part/motor-white.png','Bauxite','Steel','Titanium','','','','','','','','password12345');
+
+// TABLE CREATE (Vehicles)
 
 CREATE TABLE vehicles (
     name VARCHAR(50) NOT NULL,
@@ -110,12 +157,25 @@ CREATE TABLE vehicles (
 	PRIMARY KEY (name)
 );
 
-/* DATA INSERT (Vehicle)*/
+// DATA INSERT (Vehicle)
+//**************
+// MODEL S
+//**************
 
 INSERT INTO `vehicles`(`name`, `description`, `vehiclecategory`, `vehicletype`, `count`, `image`, `part1`, `part2`, `part3`, `part4`, `part5`, `part6`, `part7`, `part8`, `part9`, `part10`, `verifycode`) VALUES ('Tesla Model S','Model S - 
 Range: 396mi, 0-60mph: 1.99s, Top Speed: 200mph, Peak Power: 1,020hp.','Model S','Electric Vehicle',1,'/images/vehicle/car-white.png','Wheels','Chassis Frame','Body Panels','Battery Cells','Motor','Interior','Electronics System','Charging Port','Breaks','','secret12345');
 
-/* TABLE CREATE (Tickets)*/
+//**************
+// MODEL 3
+//**************
+INSERT INTO `vehicles`(`name`, `description`, `vehiclecategory`, `vehicletype`, `count`, `image`, `part1`, `part2`, `part3`, `part4`, `part5`, `part6`, `part7`, `part8`, `part9`, `part10`, `verifycode`) VALUES ('Tesla Model 3','Model 3 Performance - Range: 315mi, 0-60mph: 3.1s, AWD Dual Motor, 5 Seats','Model 3','Electric Vehicle',1,'/images/vehicle/car-white.png','Wheels 3','Chassis Frame 3','Body Panels 3','Battery Cells 3','Motor 3','Motor 3','Interior 3','Electronics System 3','Charging Port 3','Breaks 3','secret12345');
+
+//**************
+// MODEL X
+//**************
+INSERT INTO `vehicles`(`name`, `description`, `vehiclecategory`, `vehicletype`, `count`, `image`, `part1`, `part2`, `part3`, `part4`, `part5`, `part6`, `part7`, `part8`, `part9`, `part10`, `verifycode`) VALUES ('Tesla Model X','Model X Plaid - Range: 333mi, 0-60mph: 2.5s, 1/4 Mile: 9.9s, Peak Power: 1,020hp.','Model X','Electric Vehicle',1,'/images/vehicle/car-white.png','Wheels','Chassis Frame X','Body Panels X','Battery Cells','','Motor X','Interior X','Electronics System','Charging Port','Breaks X','secret12345');
+
+// TABLE CREATE (Tickets)
 
 CREATE TABLE tickets (
     id INT NOT NULL AUTO_INCREMENT,
@@ -126,19 +186,8 @@ CREATE TABLE tickets (
     PRIMARY KEY(id)
 );
 
-/* DATA INSERT (Tickets)*/
+// DATA INSERT (Tickets)
 
 INSERT INTO `tickets`(`id`, `title`, `department`, `description`, `status`) VALUES (1, 'Manufacture electric motor.','Manufacturing','Please manufacture 20 electric motors for Tesla model S.','Open');
 
-http://aspsolution.net/Code/1/5131/Convert-List-Object-to-JSON-String-in-ASPNet-using-C
-When removing part count:
-Select * from parts WHERE name = @name AND partcategory = "Model S";
 
-
-
-string MaterialGraphData = ""
-
-OnGet (){
-//get the recipe book list
-//use it to convert to string
-MaterialGraphData = JSON(recibe book object(
