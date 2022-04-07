@@ -31,11 +31,11 @@ namespace TheInventory.Pages
 
             if (success)
             {
-                return Redirect($"./Manufacturing?success=true&message={name} has been crafted");
+                return Redirect($"./Assembly?success=true&message=    {name} has been assembled.");
             }
             else
             {
-                return Redirect($"./Manufacturing?success=false&message=Code incorrect!");
+                return Redirect($"./Assembly?success=false&message=    Verification Code is invalid!   Please enter a valid passcode");
             }
         }
 

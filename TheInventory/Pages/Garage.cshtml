@@ -8,21 +8,17 @@
 
   <div class="container-fluid vh-100">
       <!--Top Navbar-->
-  <nav class="navbar navbar-expand-lg bg-light sticky-top rounded-3">
+  <nav class="navbar navbar-expand-lg sticky-top rounded-3 mb-3">
       <img class="opacity-25" src="images/car-white.png" alt="Vehicle garage" width="32" style="margin:10px">
     <h4 class="opacity-50">@ViewData["Title"]</h4>
   </nav>
 
   <!--Vehicles-->
-    <div class="row mt-1">    
-        @*<div class="col-xl col-md-6 pt-3">
-            <div class="card rounded-3 shadow-lg scroll-card">
-                <div class="card-body">
-                </div>
-            </div>
-        </div>*@
+    <div class="row mt-1"> 
+        
+        <div class="col-xl col-md-12 pb-3">
+            <h3>Vehicle Storage and Sales </h3>
 
-        <div class="col-xl col-md-4 pb-3">
             <div class="card rounded-3 shadow-lg">
                 <div class="card-header text-center sticky-top">
                     Electric Vehicles
@@ -33,17 +29,24 @@
                     {
                     <div class="card mb-2 shadow-sm hover-effect">
                         <div class="row g-0">
-                            <div class="col-md-4 align-self-center">
-                                <img src="@vehicle.ImageUrl" class="img-fluid rounded-start" alt="..." width="48" style="margin:10px">
+                            <div class="col-md-2 align-self-center">
+                                <img src="@vehicle.ImageUrl" class="p-3" alt="part" style="max-width: 110px">
                             </div>
                             <div class="col-md-6 align-self-center">  
-                                <div class="row align-content-center">
+                                <div class="row row-cols-2 align-content-center">
                                     <h5 class="card-title">@vehicle.Name</h5>
+                                    <h5 class="card-title">@vehicle.VehicleType</h5>
+                                    <h5 class="card-title"style="color: #ffa01c">@vehicle.VehicleCategory</h5>
                                     <p class="card-text">@vehicle.Description</p>
-                                </div>                  
+                                </div>     
                             </div>
-                            <div class="col-md-2 align-self-center float-end">
-                                <h2 class="card-text text-secondary" style="color: #69f0ae">@vehicle.Count</h2>   
+                            <div class="col-md-3 align-self-center counter text-center">
+                                <div class="col align-content-center">
+                                    <h1 style="color: #69f0ae">@vehicle.Count</h1>
+                                </div>  
+                            </div>
+                            <div class="col-md-1 align-self-center float-end">
+                                   <button class="btn btn-cta" disabled>Sell</button>
                             </div>
                         </div>
                     </div>

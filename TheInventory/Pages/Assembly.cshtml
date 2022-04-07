@@ -14,7 +14,7 @@
             {
                 <div class="container-fluid alert alert-success alert-dismissible fade show text-center" role="alert">
                     <i class="fa fa-check px-2" aria-hidden="true"></i>
-                    <strong>Success!</strong>@Model.Message
+                    <strong>Success!    </strong>@Model.Message
                         <button type="button" class="btn" data-bs-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true"><i class="fa fa-times" aria-hidden="true"></i></span> 
                         </button>
@@ -24,7 +24,7 @@
             {
                 <div class="container-fluid alert alert-warning alert-dismissible fade show text-center" role="alert">
                     <i class="fa fa-exclamation-triangle px-2" aria-hidden="true"></i>
-                    <strong>Error! </strong>@Model.Message
+                    <strong>Warning!    </strong>@Model.Message
                         <button type="button" class="btn" data-bs-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true"><i class="fa fa-times" aria-hidden="true"></i></span> 
                         </button>
@@ -35,7 +35,7 @@
 
       <!--Top Navbar-->
     <nav class="navbar navbar-expand-lg sticky-top rounded-3 mb-3">
-        <img class="opacity-25" src="images/car-manufacturing-white.png" alt="Vehicle manufacturing" width="32" style="margin:10px">
+        <img class="opacity-25" src="images/car-manufacturing-white.png" alt="Vehicle assembly" width="32" style="margin:10px">
         <h4 class="opacity-50">@ViewData["Title"]</h4>
     </nav>
 
@@ -43,10 +43,10 @@
     <div class="row mt-1">    
         <!-- Craftable Recipes-->
         <div class="col-xl col-md-12 pb-3">
-            <h3>Assemble Vehicles</h3>
+            <h3>Assemble New Vehicles</h3>
             <div class="card rounded-3 shadow-lg">
                 <div class="card-header text-center sticky-top">
-                    Craftable Parts
+                    Vehicles
                 </div>
 
                 <div class="card-body scroll-card"> 
@@ -108,7 +108,7 @@
 
         <!--Parts-->
         <div class="col-xl col-md-12 pb-3">
-        <h3>Update Parts</h3>
+        <h3>Parts Instock</h3>
             <div class="card rounded-3 shadow-lg">
                 <div class="card-header text-center sticky-top">
                     Parts
@@ -118,16 +118,16 @@
                     {
                     <div class="card mb-2 shadow-sm hover-effect">
                         <div class="row g-0">
-                            <div class="col-md-2 align-self-center bg-light">
+                            <div class="col-md-4 align-self-center bg-light">
                                 <img src="/images/part/motor-white.png" class="p-3" alt="part" style="max-width: 110px">
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="card-body">
                                     <h5 class="card-title">@part.Name</h5>
                                     <p class="card-text" style="color: #ffa01c">@part.PartType</p>
                                 </div>
                             </div>
-                            <div class="col-md-4 align-self-center counter text-center">
+                            <div class="col-md-2 align-self-center counter text-center">
                                 <div class="col align-content-center">
                                     <h1 style="color: #69f0ae">@part.Count</h1>
                                 </div>

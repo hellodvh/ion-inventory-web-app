@@ -161,7 +161,6 @@ CREATE TABLE vehicles (
 //**************
 // MODEL S
 //**************
-
 INSERT INTO `vehicles`(`name`, `description`, `vehiclecategory`, `vehicletype`, `count`, `image`, `part1`, `part2`, `part3`, `part4`, `part5`, `part6`, `part7`, `part8`, `part9`, `part10`, `verifycode`) VALUES ('Tesla Model S','Model S - 
 Range: 396mi, 0-60mph: 1.99s, Top Speed: 200mph, Peak Power: 1,020hp.','Model S','Electric Vehicle',1,'/images/vehicle/car-white.png','Wheels','Chassis Frame','Body Panels','Battery Cells','Motor','Interior','Electronics System','Charging Port','Breaks','','secret12345');
 
