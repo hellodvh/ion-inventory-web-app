@@ -14,23 +14,23 @@ namespace TheInventory.Pages
 
         public List<Vehicle> allVehicles = new List<Vehicle>();
 
-        public int MaterialTotal = 0; // total materials
-        public int PartTotal = 0; // total materials
-        public int VehicleTotal = 0; // total materials
+        public int MaterialTotal = 0; 
+        public int PartTotal = 0; 
+        public int VehicleTotal = 0;
 
-        public string MaterialData = ""; //graphs
+        public string MaterialData = "";
         public string PartData = "";
+        public string VehicleData = "";
 
         public void OnGet()
         {
-            //Create an instance of our Inventory Class for the Materials
             allMaterials = new Inventory().Materials;
             allParts = new Inventory().Parts;
             allVehicles = new Inventory().Vehicles;
 
-            MaterialTotal = Services.Database.TotalSumMaterialCount(); //total materials
-            PartTotal = Services.Database.TotalSumPartCount(); //total parts
-            VehicleTotal = Services.Database.TotalSumVehicleCount(); //total vehicles
+            MaterialTotal = Services.Database.TotalSumMaterialCount();
+            PartTotal = Services.Database.TotalSumPartCount();
+            VehicleTotal = Services.Database.TotalSumVehicleCount();
         }
 
         /*//On Post Update function to update the database.

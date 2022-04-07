@@ -15,11 +15,6 @@ namespace TheInventory.Services
             return con.ServerVersion;
         }
 
-        internal static object TotalMaterialCount()
-        {
-            throw new NotImplementedException();
-        }
-
         /*-------------------------------------------------------------------------------------
         //Get All the Materials
         -------------------------------------------------------------------------------------*/
@@ -162,6 +157,7 @@ namespace TheInventory.Services
 
             cmd.Prepare();
             cmd.ExecuteNonQuery();
+           
         }
 
         /*-------------------------------------------------------------------------------------
@@ -187,6 +183,7 @@ namespace TheInventory.Services
                     Description = reader.GetString(1),
                     PartCategory = reader.GetString(2),
                     PartType = reader.GetString(3),
+                    ImageUrl = reader.GetString(4)
                 };
 
                 var ingredients = new List<string>();
@@ -206,7 +203,8 @@ namespace TheInventory.Services
                 results.Add(partrecipe);
             }
             con.Close();
-;            return results;
+
+;           return results;
         }
 
         /*-------------------------------------------------------------------------------------
@@ -230,6 +228,9 @@ namespace TheInventory.Services
                 {
                     Name = reader.GetString(0),
                     Description = reader.GetString(1),
+                    VehicleCategory = reader.GetString(2),
+                    VehicleType = reader.GetString(3),
+                    ImageUrl = reader.GetString(4)
                 };
 
                 var ingredients = new List<string>();
@@ -675,6 +676,7 @@ namespace TheInventory.Services
                 results.Add(ticket);
             }
             con.Close();
+
             return results;
         }
 
@@ -697,6 +699,7 @@ namespace TheInventory.Services
 
             cmd.Prepare();
             cmd.ExecuteNonQuery();
+
         }
 
         /*-------------------------------------------------------------------------------------

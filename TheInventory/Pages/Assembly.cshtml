@@ -55,21 +55,21 @@
                     <div class="card m-2 shadow-sm hover-effect @(vehicle.IsCraftable() ? "boreder-success" : "bg-light")">
                         <div class="row g-0">
                             
-                            <div class="col-md-4 align-self-center">
-                                <img class="" src="@vehicle.Name" alt="Card image" style="width:100px">
+                            <div class="col-md-2 align-self-center">
+                                <img src="/images/vehicle/car-white.png" alt="" style="width:100px">
                             </div>
 
-                            <div class="col-md-4 align-self-center">
-
+                            <div class="col-md-2 align-self-center">
                                 <div class="row align-content-center">
+                                    
                                     <h4>@vehicle.Name</h4>
                                     <h5 style="float:right;">@vehicle.Count</h5>
-                                    <p class="card-title">@vehicle.Description</p>
+                                    @*<p class="card-title">@vehicle.VehicleCategory</p>*@
                                     <p class="card-title">@vehicle.VehicleType</p>
                                 </div>
                             </div>
 
-                            <div class="col-md-4 align-self-center float-end p-2">
+                            <div class="col-md-8 align-self-center float-end p-2">
                                 @foreach(var ingredient in vehicle.Ingredients)
                                 {
                                     if(ingredient != "")
@@ -116,7 +116,7 @@
                     <div class="card mb-2 shadow-sm hover-effect">
                         <div class="row g-0">
                             <div class="col-md-2 align-self-center bg-light">
-                                <img src="@part.ImageUrl" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
+                                <img src="/images/material/raw-materials-white.png" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">

@@ -169,10 +169,6 @@ input[type=password] {
     background: transparent;
 }
 
-.counter {
-    padding-right: 10px;
-}
-
 .hover-effect {
     transition: all 0.25s ease-in-out;
     cursor: pointer;
@@ -211,8 +207,21 @@ input[type=password] {
     text-align: center;
 }
 
+/*
+    | Count Box |
+*/
+.count-box {
+    opacity: 1;
+    color: var(--seconday);
+    background: transparent;
+    border: 1px solid var(--grey-1);
+    text-align: center;
+    font-family: 'Archivo', sans-serif;
+    font-size: large;
+}
 .sticky-top {
     background-color: #232323;
+    /*border: 1px solid var(--grey-1);*/
 }
 
 /*

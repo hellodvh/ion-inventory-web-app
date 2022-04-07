@@ -12,6 +12,8 @@ namespace TheInventory.Models
         public string Description { get; set; } = string.Empty;
         public string VehicleCategory { get; set; } = string.Empty;
         public string VehicleType { get; set; } = string.Empty;
+        public string ImageUrl { get; set; } = string.Empty;
+
         private int count;
         public int Count { get { return count; } }
         public List<string> Ingredients { get; set; } = new List<string>();

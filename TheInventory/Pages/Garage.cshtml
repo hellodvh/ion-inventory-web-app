@@ -15,15 +15,39 @@
 
   <!--Vehicles-->
     <div class="row mt-1">    
-        <div class="col-xl col-md-6 pt-3">
+        @*<div class="col-xl col-md-6 pt-3">
             <div class="card rounded-3 shadow-lg scroll-card">
                 <div class="card-body">
                 </div>
             </div>
-        </div>
-        <div class="col-xl col-md-6 pt-3">
-            <div class="card rounded-3 shadow-lg scroll-card">
-                <div class="card-body">
+        </div>*@
+
+        <div class="col-xl col-md-4 pb-3">
+            <div class="card rounded-3 shadow-lg">
+                <div class="card-header text-center sticky-top">
+                    Electric Vehicles
+                </div>
+                <div class="card-body scroll-card">
+                    <!--Foreach Loop-->
+                    @foreach(var vehicle in Model.allVehicles)
+                    {
+                    <div class="card mb-2 shadow-sm hover-effect">
+                        <div class="row g-0">
+                            <div class="col-md-4 align-self-center">
+                                <img src="@vehicle.ImageUrl" class="img-fluid rounded-start" alt="..." width="48" style="margin:10px">
+                            </div>
+                            <div class="col-md-6 align-self-center">  
+                                <div class="row align-content-center">
+                                    <h5 class="card-title">@vehicle.Name</h5>
+                                    <p class="card-text">@vehicle.Description</p>
+                                </div>                  
+                            </div>
+                            <div class="col-md-2 align-self-center float-end">
+                                <h2 class="card-text text-secondary" style="color: #69f0ae">@vehicle.Count</h2>   
+                            </div>
+                        </div>
+                    </div>
+                    }
                 </div>
             </div>
         </div>

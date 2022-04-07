@@ -44,38 +44,39 @@
     <div class="row mt-1">    
         <!-- Craftable Recipes-->
         <div class="col-xl col-md-12 pb-3">
-            <h3>Craft Parts with available materials</h3>
+            <h3>Manufacture Parts</h3>
             <div class="card rounded-3 shadow-lg">
                 <div class="card-header text-center sticky-top">
-                    Craftable Parts
+                    Parts
                 </div>
+
                 <div class="card-body scroll-card">
-                    <!--Foreach Loop-->
                     @foreach(var part in Model.allParts)
                     {
-                    <div class="card m-2 shadow-sm hover-effect @(part.IsCraftable() ? "boreder-success" : "bg-light")">
+                    <div class="card m-2 shadow-sm hover-effect @(part.IsCraftable())">
                         <div class="row g-0">
-                            
-                            <div class="col-md-4 align-self-center">
-                                <img class="" src="@part.Name" alt="Card image" style="width:100px">
+
+                            <div class="col-md-2 align-self-center">
+                                <img class="p-3" src="/images/part/motor-white.png" alt="Card image" style="max-width: 100px">
                             </div>
-
-                            <div class="col-md-4 align-self-center">
-
-                                <div class="row align-content-center">
-                                    <h4>@part.Name</h4>
-                                    <h5 style="float:right;">@part.Count</h5>
-                                    <p class="card-title">@part.Description</p>
-                                    <p class="card-title">@part.PartType</p>
+                            <div class="col-md-2 align-self-center">
+                                <div class="col align-content-center">
+                                    <h5>@part.Name</h5>
+                                    @*<h2 style="">@part.Count</h2>*@
+                                    @*<p class="card-title">@part.Description</p>*@
+                                    <p class="card-title" style="color: #ffa01c">@part.PartType</p>
                                 </div>
                             </div>
-
-                            <div class="col-md-4 align-self-center float-end p-2">
+                            <div class="col-md-2 align-self-center text-center">
+                                <div class="col align-content-center">
+                                    <h1 style="color: #69f0ae">@part.Count</h1>
+                                </div>
+                            </div>
+                            <div class="col-md-6 align-self-center float-end p-2">
                                 @foreach(var ingredient in part.Ingredients)
                                 {
                                     if(ingredient != "")
                                     {
-                                      
                                         <span class="badge mb-3">@ingredient</span>
                                     }
                                 }
@@ -106,37 +107,42 @@
 
         <!--Materials-->
         <div class="col-xl col-md-12 pb-3">
-        <h3>Update Material Stock Count</h3>
-            <div class="card rounded-3 shadow-lg scroll-card">
+        <h3>Update Materials</h3>
+            <div class="card rounded-3 shadow-lg">
                 <div class="card-header text-center sticky-top">
                     Materials
                 </div>
-                <div class="card-body">
+                <div class="card-body scroll-card">
                     @foreach(var material in Model.allMaterials)
                     {
                     <div class="card mb-2 shadow-sm hover-effect">
                         <div class="row g-0">
-                            <div class="col-md-2 align-self-center bg-light">
-                                <img src="@material.ImageUrl" class="img-fluid rounded-start" alt="..." width="50" style="margin:10px">
+                            <div class="col-md-2 align-self-center">
+                                <img src="@material.ImageUrl" class="p-3" alt="" style="max-width: 100px">
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-2">
                                 <div class="card-body">
                                     <h5 class="card-title">@material.Name</h5>
-                                    <p class="card-text">@material.MaterialType</p>
+                                    <p class="card-text" style="color: #ffa01c">@material.MaterialType</p>
                                 </div>
                             </div>
-                            <div class="col-md-2 align-self-center counter">
-                                <div class="">
-                                    <h3>@material.Count</h3>
+                            <div class="col-md-2 align-self-center counter text-center">
+                                <div class="col align-content-center">
+                                    <h1 style="color: #69f0ae">@material.Count</h1>
                                 </div>
                             </div>
-                            <form method="post" asp-page-handler="update">
-                            <div class="input-group">
-                                <input class="form-controller" name="count" value="@material.Count" type="number" min="0" step="1"/>
-                                <input type="hidden" name="name" value="@material.Name" />
-                                <button class="btn btn-cta">Update</button>
-                            </div>
-                            </form>
+
+                            <div class="col-md-6 align-self-center counter">
+                                <div class="float-end p-2">
+                                    <form method="post" asp-page-handler="update">
+                                    <div class="input-group">
+                                    <input class="form-controller count-box rounded-3" name="count" value="@material.Count" type="number" min="0" step="1"/>
+                                    <input type="hidden" name="name" value="@material.Name" />
+                                    <button class="btn btn-cta">Update</button>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>   
                         </div>
                     </div>
                     }
