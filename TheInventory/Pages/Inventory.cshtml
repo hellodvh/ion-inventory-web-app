@@ -216,6 +216,10 @@ var MaterialTotal = 134;
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
 <script type="text/javascript">
 
+    Chart.defaults.font.size = 10;
+    Chart.defaults.font.family = "'Archivo', sans-serif;";
+
+
     /*-------------------------------------------------------------------------------------
     //Bar Chart : Materials
     -------------------------------------------------------------------------------------*/
@@ -238,15 +242,24 @@ var MaterialTotal = 134;
         data: { 
             labels: materialLable,
             datasets: [{
-                label: 'Bar Chart',
+                label: 'Material Quantity',
                 data: materialCount,
-                backgroundColor: '#dee2e6',
+                backgroundColor: [
+          '#D8F3DC',
+          '#B7E4C7',
+          '#95D5B2',
+          '#74C69D',
+          '#52B788',
+          '#40916C',
+          '#2D6A4F',
+          '#1B4332'
+    ],
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            indexAxis: 'y',
+            indexAxis: 'x',
             scales: {
                 yAxes: [{
                     ticks: {
@@ -274,7 +287,16 @@ var MaterialTotal = 134;
     //Doughnut Chart
     var xValues = partLable;
     var yValues = partCount;
-    var barColors = "#dee2e6";
+    var barColors = [
+        '#D8F3DC',
+          '#B7E4C7',
+          '#95D5B2',
+          '#74C69D',
+          '#52B788',
+          '#40916C',
+          '#2D6A4F',
+          '#1B4332'
+    ];
 
     new Chart("doughnut", {
           type: "doughnut",
@@ -291,7 +313,7 @@ var MaterialTotal = 134;
         
             title: {
               display: true,
-              text: "Vehicle Parts in stock."
+              text: "Parts Quantity"
             }
           }
         }
@@ -322,7 +344,16 @@ var MaterialTotal = 134;
             datasets: [{
                 label: 'Pie Chart',
                 data: vehicleCount,
-                backgroundColor: '#dee2e6'
+                backgroundColor: [
+            '#D8F3DC',
+          '#B7E4C7',
+          '#95D5B2',
+          '#74C69D',
+          '#52B788',
+          '#40916C',
+          '#2D6A4F',
+          '#1B4332'
+    ],
             }]
         },
         options: {
