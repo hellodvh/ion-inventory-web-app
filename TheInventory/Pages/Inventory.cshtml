@@ -135,21 +135,12 @@ var MaterialTotal = 134;
                                 
                                 <div class="row align-content-center">
                                     <h5 class="card-title">@material.Name</h5>
-                                    <p class="card-text text-secondary">@material.MaterialType</p>
+                                    <p class="card-text" style="color: #ffa01c">@material.MaterialType</p>
                                 </div>                  
                             </div>
                             <div class="col-md-2 align-self-center float-end">
                                 <h2 class="card-text" style="color: #69f0ae">@material.Count</h2>   
                             </div>
-                            @*<div class="col-md-4 align-self-center counter">
-                                <form method="post" asp-page-handler="update">
-                                <div class="input-group">
-                                    <input class="form-control" name="count" value="@material.Count" type="number" min="0" step="1"/>
-                                    <input type="hidden" name="name" value="@material.Name"/>
-                                    <button class="btn btn-sm btn-outline-success">Update</button>
-                                </div>
-                                </form>
-                            </div>*@
                         </div>
                     </div>
                     }
@@ -176,11 +167,11 @@ var MaterialTotal = 134;
                                 <div class="row align-content-center">
                                     <h5 class="card-title">@part.Name</h5>
                                     @*<p class="card-text" >@part.PartType</p>*@
-                                    <p class="card-text" >@part.PartCategory</p>
+                                    <p class="card-text" style="color: #ffa01c" >@part.PartCategory</p>
                                 </div>                  
                             </div>
                             <div class="col-md-2 align-self-center float-end">
-                                <h2 class="card-text text-secondary" style="color: #69f0ae">@part.Count</h2>   
+                                <h2 class="card-text " style="color: #69f0ae">@part.Count</h2>   
                             </div>
                         </div>
                     </div>
@@ -207,7 +198,7 @@ var MaterialTotal = 134;
                             <div class="col-md-6 align-self-center">  
                                 <div class="row align-content-center">
                                     <h5 class="card-title">@vehicle.Name</h5>
-                                    <p class="card-text">@vehicle.Description</p>
+                                    <p class="card-text" style="color: #ffa01c">@vehicle.VehicleCategory</p>
                                 </div>                  
                             </div>
                             <div class="col-md-2 align-self-center float-end">

@@ -194,7 +194,7 @@ input[type=password] {
 .badge {
     /*background-color: var(--primary);*/
     color: var(--primary);
-    font: 600;
+    font-weight: 300;
     font-family: 'Archivo', sans-serif;
     border-radius: 10px 10px 10px 10px;
     border: 1px solid var(--primary);
