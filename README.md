@@ -21,11 +21,10 @@
 <p align="center">
 
   <a href="https://github.com/hellodvh/ion-inventory-web-app">
-    <img src="path/to/logo" alt="Logo" width="140" height="140">
+    <img src="logo-primary.png" alt="Logo" width="140" height="140">
   </a>
   
   <h3 align="center">ION - The Inventory</h3>
-  https://img.shields.io/badge/ion-ION-69f0ae
 
   <p align="center">
     Short Project Slogan / Description <br>
