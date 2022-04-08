@@ -21,7 +21,7 @@
 <p align="center">
 
   <a href="https://github.com/hellodvh/ion-inventory-web-app">
-    <img src="logo-primary.png" alt="Logo" width="140" height="140">
+    <img src="logo-primary.png" alt="Logo" width="100">
   </a>
   
   <h3 align="center">ION - The Inventory</h3>
