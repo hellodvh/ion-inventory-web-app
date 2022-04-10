@@ -241,8 +241,6 @@ For the `Ideation Process` I used the requirements provided in the project brief
 
 I made moodboards of layouts and colour palletes to generate ideas for the frontend layout I wanted to use for the project. I decided to go for a dashboard layout for the usability and responsive design. I sketeched some basic wireframes with ink and paper to get a feel of the layout I wanted to implement. I then proceeded to make high fidelity wireframes in Figma.
 
-Darkmode "insert reference resource here" was used according to this study to help aid in energy effecientcy on device power consumption. Responsive layout allows the web app to be run on table and desktop resolutions.
-
 <br>
 ![image6][image6]
 
