@@ -265,8 +265,7 @@ The `Development Process` is the technical implementations and functionality don
 ### Implementation Process
 <!-- stipulate all of the functionality you included in the project -->
 
-### MVC: Architecture
-  1. Why 
+### MVC: Architecture 
 
 ### Development Environment:
   1. Wamp Local Server was used to run a local MySql Database Server. This was to allow the application to communicate with a database and enable all the functionality.
