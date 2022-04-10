@@ -187,6 +187,8 @@ Run the `localhost server` using `phpMyAdmin` and `Import` the SQL database. Con
 <!-- You can add the links to all of your imagery at the bottom of the file as references -->
 ## Features and Functionality
 
+![image5][image5]
+
 ![image2][image2]
 ### Feature 1
 
@@ -241,7 +243,6 @@ I made moodboards of layouts and colour palletes to generate ideas for the front
 
 Darkmode "insert reference resource here" was used according to this study to help aid in energy effecientcy on device power consumption. Responsive layout allows the web app to be run on table and desktop resolutions.
 
-![image5][image5]
 <br>
 ![image6][image6]
 
