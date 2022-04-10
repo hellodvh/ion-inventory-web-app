@@ -93,6 +93,7 @@
 
 <!--PROJECT DESCRIPTION-->
 ## About the Project
+Brief Overview: Design and Develope a C# and ASP.net Core Web Application for an Inventory using Razor Pages and MySQL database.
 <!-- header image of project -->
 ![image1][image1]
 
@@ -104,7 +105,19 @@ The Inventory web app makes use of Four main locations for managing iventory ite
 
 Bootstrap 5 was used for the html and csss of this project. For the colours of the UI I opted to make use of darkmode aesthetic with bright teal and orange for the primary and secondary colours to make the aesthetic visually eye catching and noticable on the black and grey backgrounds. White was used for the body text aswell as for the different materials, parts and vehicle images. The CSS Style guide linked in the projected provides the Bootstrap CSS needed to style the various elements.
 
-For the backend the web app makes use of a MySQL Database with tables for the materials, parts, vehicles and tickets. C#, ASP.net Core and MVC Architecture pattern is used to generate the frontend and structure the logic and business needs of the project. 
+For the backend the web app makes use of a MySQL Database with tables for the materials, parts, vehicles and tickets. C#, ASP.net Core and MVC Architecture pattern is used to generate the frontend and structure the logic and business needs of the project.
+
+These are the outcomes of the course work and brief for the term : 
+
+ - [x] Implement a ASP.NET based project
+ - [x] Implement a web application with C#
+ - [x] Create complex data structures with inheritance and polymorphism
+ - [x] Create and manage a SQL Database with queries
+ - [x] Implement a user driven front end design
+ - [x] Show consistent and effective version control
+ - [x] Professionally present final work
+ - [x] Conduct and implement research on subject matter
+ - [x] Implement a data driven UI
 
 </br>
 
@@ -125,12 +138,18 @@ For the backend the web app makes use of a MySQL Database with tables for the ma
 <!-- GETTING STARTED -->
 <!-- Make sure to add appropriate information about what prerequesite technologies the user would need and also the steps to install your project on their own mashines -->
 ## Getting Started
+</br>
+<details>
+  <summary>Show Getting Started</summary>
+</br>
 
 The following instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
-Ensure that you have the latest version of [.NET 6.0](https://dotnet.microsoft.com/en-us/downloade), [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/), and [WAMP localhost](https://sourceforge.net/projects/wampserver/) installed on your machine. The [Plugin](path/to/where/they/can/download/plugin) plugin will also be required.
+Ensure that you have the latest version of [.NET 6.0](https://dotnet.microsoft.com/en-us/downloade), [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/), and [WAMP localhost](https://sourceforge.net/projects/wampserver/) installed on your machine. 
+
+<!--The [Plugin](path/to/where/they/can/download/plugin) plugin will also be required.-->
 
 ### How to install
 
@@ -160,6 +179,9 @@ Run the `localhost server` using `phpMyAdmin` and `Import` the SQL database. Con
 
 5. Build and Run
 
+</details>
+</br>
+
 
 <!-- FEATURES AND FUNCTIONALITY-->
 <!-- You can add the links to all of your imagery at the bottom of the file as references -->
@@ -168,19 +190,38 @@ Run the `localhost server` using `phpMyAdmin` and `Import` the SQL database. Con
 ![image2][image2]
 ### Feature 1
 
-Description of Feature
+Updating stock count quantity of materials.
+
+<!-- ```
+Code Snippet 
+
+``` -->
 
 ![image3][image3]
 ### Feature 2
 
-Description of Feature
+User input authentication using a SHA1 hashing algorithm to convert the plain text into hashed value which is then compared to a value stored in the sql database. This feature was implemented on the parts manufacturing function and the vehicle assembly function.
+
+<!-- ```
+Code Snippet 
+
+``` -->
 
 ![image4][image4]
 ### Feature 3
 
-Description of Feature
+Dashboard Layout with All the Materials, Parts, and Vehicles counts and totals.
+Chart JS was used to implement the bar, doughnut, and pie charts.
 
-![image5][image5]
+<!-- ```
+Code Snippet 
+
+``` -->
+
+<!-- ![image5][image5]
+### Feature 4
+
+Ticket system for adding tickets to the ticket board -->
 
 
 <!-- CONCEPT PROCESS -->
@@ -190,11 +231,15 @@ Description of Feature
 The `Conceptual Process` is the set of actions, activities and research that was done when starting this project.
 
 ### Research: 
-I started of by doing research into different types of companies that would need a system for managing inventory and manufacturing. I deciced to go focus my project on electic vehicle manufacturing as I think it is a relevant topic to focus on due to world climate and sustainability. I gathered data about electric vehicles and how they are made. I formulated a list of vehicle parts and the materials used in the parts. I simplified the list into basic type of materials and parts.
+I started off by doing research into different types of companies that would need a system for managing inventory and manufacturing. I deciced to focus the project on electic vehicle manufacturing as I thought it was a relevant topic to focus on due to world climate and sustainability. I gathered data about electric vehicles and how they are made. I formulated a list of vehicle parts and the materials used in the parts. I simplified the list into basic types of materials and parts. 
 
 ### Ideation:
 
 For the `Ideation Process` I used the requirements provided in the project brief to plan all the required features and functionality of the web app.
+
+I made moodboards of layouts and colour palletes to generate ideas for the frontend layout I wanted to use for the project. I decided to go for a dashboard layout for the usability and responsive design. I sketeched some basic wireframes with ink and paper to get a feel of the layout I wanted to implement. I then proceeded to make high fidelity wireframes in Figma.
+
+Darkmode "insert reference resource here" was used according to this study to help aid in energy effecientcy on device power consumption. Responsive layout allows the web app to be run on table and desktop resolutions.
 
 ![image5][image5]
 <br>
@@ -209,30 +254,57 @@ For the `Ideation Process` I used the requirements provided in the project brief
 ![image8][image8]
 
 <!-- DEVELOPMENT PROCESS -->
-## Development Process
+# Development Process
 
 The `Development Process` is the technical implementations and functionality done in the frontend and backend of the application.
+
+### Agile 8 Week Sprint
+  Dates: Start [2022/02/14] 
+  Due[2022/04/08]
 
 ### Implementation Process
 <!-- stipulate all of the functionality you included in the project -->
 
-* Made use of both `functionality` to implement a specific feature.
-* `MVC/MVVM` design architecture implemented.
-* `Plugin` for this.
-* ETC.
+### MVC: Architecture
+  1. Why 
+
+### Development Environment:
+  1. Wamp Local Server was used to run a local MySql Database Server. This was to allow the application to communicate with a database and enable all the functionality.
+  2. Visual Studio Code was used as the IDE for this project because it provided a stable development environment and setup.
+  3. Git and Github was used for the version control and documentaion of the project.
+  4. Windows 11 was my desktop OS (for interest sake).
+   
+### Razor Pages:
+  1. Function 1
+  2. Function 2
+
+### C# Language:
+  1. Function 1
+  2. Function 2
+
+### MySQL 
+  1. ERD Diagram
 
 #### Highlights
 <!-- stipulated the highlight you experienced with the project -->
-* Sunshine.
-* Rainbows.
+* Hightlight 1: I really enjoy learning the C# Language and ASP.net Core Framework because I got to work with Microsoft development environment. Learning Object Orientated Programming was also very important part of learning experience. 
+
+* Hightlight 2: Being able to choose my own theme and concept for the project because I would like to own a Electric Vehicle in the future and I would like to get the change to build or work on more projects similar to this dashboard. I enjoyed making my own version of a dashboard.
+
+* Hightlight 3: Being able to explore a new visual web design style during this project, although I initially design the project with a corporate and miniml design, I decided rather implement a darker and flat design. The fontend was design by using the darkmode aesthetic for the visual elements.
 
 #### Challenges
 <!-- stipulated the challenges you faced with the project and why you think you faced it or how you think you'll solve it (if not solved) -->
-* Bugs.
-* Bugs.
+* Bugs 1:
+  The layout of the charts in `Inventory.cshtml` were a bit small when I initially implemented them (before the data was working with the graphs). When I connected the data using the `@foreach` loop, `` method and `sql` query to the database, the doughnut chart and pie chart were squashed by the lables at the top. 
+  * Fix Attempt 1: I increased the area height of the charts to take up more space on the desktop layout. This pushed the Lists further down the view. However user is still able to scroll down to view the lists of items.
+  <br>
+* Bugs 2: 
+  The `@foreach` loop in the `Manufacturing.cshtml` does not return the `@part.imageURL` from the database.
+  * Fix Attempt 1: For now I have provided the `src=''` with a `/path` to the relevant file in wwwroot folder. A better solution to this problem needs to be used because the image and data should be displayed on the front-end dynamically.
 
-### Reviews & Testing
-<!-- stipulate how you've conducted testing in the form of peer reviews, feedback and also functionality testing, like unit tests (if applicable) -->
+<!--### Reviews & Testing
+ stipulate how you've conducted testing in the form of peer reviews, feedback and also functionality testing, like unit tests (if applicable) -->
 
 <!--#### Feedback from Reviews
 
@@ -248,11 +320,18 @@ The `Development Process` is the technical implementations and functionality don
 * Test 1 of this functionality
 * Test 2 of this functionality -->
 
-### Future Implementation
+## Future Implementation
 <!-- stipulate functionality and improvements that can be implemented in the future. -->
+Aim to implement this by my end year portfolio presentation as continued progress and code maintenance. This is to challenge myself in programming and see if I can implement extra code features and functions.
 
-* Future 1.
-* Future 2.
+* Future 1: Implement User Registration and Sign-In using Authentication. (Functionality update)
+* Future 1.1: Implement User View Access. Permissions for different types of users. (Functions update)
+* Future 2: Deploy and Host Demo on Azure Cloud Services. (Free Tier)
+* Future 3: Source 3D Imagery for each item in the database. (Visuals update)
+* Future 3.1: Add responsive side bar to the Dashboard. 
+* Future 4: Implement Dark/Light mode toggler on the front-end (Function)
+* Future 5: Implement CRUD functionality for adding new vehicle recipes. (Functionality update)
+* Future 6: Implement CRUD functionality for selling a vehicle and calculate a revenue value (Function update)
 
 <!-- MOCKUPS -->
 ## Final Outcome
@@ -305,11 +384,17 @@ Distributed under the MIT License. See `LICENSE` for more information.\
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 <!-- all resources that you used and Acknowledgements here -->
-* [Resource Name](path/to/resource)
-* [Resource Name](path/to/resource)
-* [Resource Name](path/to/resource)
-* [Resource Name](path/to/resource)
-* [Resource Name](path/to/resource)
+Functionality and programming concepts of the application was learned from the course work provided throughout the term. I used what I learned during lectures to build this. I give credit to my Lecturer Armand who facilitated the lessons on OOP programming, C# Language.
+
+* [Lecturer](https://www.github.com/ArmandPret/)
+* [Flat Icons](https://www.flaticons.com)
+* [Stack Overflow](https://www.stackoverflow.com/)
+* [W3Schools C#](https://www.w3schools.com/)
+* [W3Schools SQL](https://www.w3schools.com/)
+* [Tesla](https://www.tesla.com)
+* [Mockups](path/to/resource)
+* [Mockups](path/to/resource)
+* [Mockups](path/to/resource)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [image1]: /Screenshots/image1.png
